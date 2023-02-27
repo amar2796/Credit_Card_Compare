@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.cdac.dao.AdminRepo;
 import com.cdac.model.Admin;
+import com.cdac.model.Team;
 
 @Service
 public class AdminServiceImplementation implements AdminService{
@@ -33,7 +34,18 @@ public class AdminServiceImplementation implements AdminService{
 		}
 		
 	}
-	
-	
 
+	@Override
+	public Optional<Admin> validateLogin(String userId, String password) {
+		try {
+			Optional<Admin> admin= adminRepo.findById(userId);
+			if(admin.get().getUserId().equals(userId))
+			{
+				return admin;	
+			}
+		} catch (Exception e) {
+			
+		}
+		return null;
+	}
 }

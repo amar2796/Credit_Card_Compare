@@ -3,18 +3,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Registration Form</title>
+	<link rel="stylesheet" href="/CSS_File/register.css">
 </head>
 <body>
-<h1>Welcome to Register Page</h1>
-<form action="addRegister">
-Enter Full name<input type="text" id="fullName" name="fullName"><br>
-Enter User id<input type="text" id="userId" name="userId"><br>
-Enter User email<input type="text" id="userEmail" name="userEmail"><br>
-Enter User password<input type="text" id="userPassword" name="userPassword"><br>
-<input type="submit" />
-</form>
-<a href="getUser">Views Data</a>
+		<form>
+            <div class="container">
+                <div class="firstLine">Please select as your choice</div>
+                <div class="outer">
+                    <a class="first" href="userRegister">
+                        <p>User</p>
+                    </a>
+                    <a href="teamRegister" class="second">
+                        <p>Team</p>
+                    </a>
+                </div>
+                <a href=""><div class="third">Back</div></a>
+            </div>
+        </form>
 </body>
 </html>
