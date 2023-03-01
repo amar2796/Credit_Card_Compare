@@ -22,18 +22,8 @@
   </head>
   <body>
     <div class="container">
-      <section class="">
-        <div class="navbar">
-          <nav>
-            <a href="home">Home</a>
-            <a href="register">Registration</a>
-            <a href="login">Login</a>
-            <a href="viewCard">View Card</a>
-            <a href="#">About</a>
-            <a href="contact">Contact</a>
-          </nav>
-        </div>
-      </section>
+      
+      <jsp:include page="header.jsp"></jsp:include>
 
       <div class="mainDiv">
         <div class="leftside">
@@ -132,35 +122,10 @@
         </div>
         <div class="sixSecond"><img class="sixImage" src="image/about-us.webp" alt=""></div>
       </section>
-      <footer>
-        <div class="footerdiv">
-          <div class="footerDivFirst">
-            <p class="footerDivFirstP1">Credit Card Compare</p>
-            <p class="footerDivFirstp2">
-              Choose from Variety of credit cards that suit your own need. The
-              credit card comparison tool helps you to compare credit cards,
-              find the best deals, apply at the same time & get approved.
-            </p>
-          </div>
-          <div class="footerDivSecond">
-            <p class="footerDivSecondInfo">Company</p>
-            <ul>
-              <li class="footerUl"><a href="#">About</a></li>
-              <li class="footerUl"><a href="contact">Contact</a></li>
-            </ul>
-          </div>
-          <div class="footerDivThird">
-            <p class="footerDivSecondInfo">Contact Info</p>
-            <p>Abcd building Noida 122016</p>
-          </div>
-        </div>
-        <div class="footerDivlast">
-          <p class="footerDivlastP">
-            &copy; 2023 My Website. All rights reserved.
-          </p>
-          <p class="footerdivlastp2">Made in India</p>
-        </div>
-      </footer>
+      
+      
+      <jsp:include page="footer.jsp"></jsp:include>
+      
     </div>
   </body>
 </html>

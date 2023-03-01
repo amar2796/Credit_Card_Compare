@@ -22,6 +22,13 @@ public class TeamController {
 	@Autowired
 	TeamService teamService;
 	
+	// Team register form
+	@RequestMapping("/teamRegister")
+	public String teamRegister()
+	{
+		return "teamRegister";
+	}
+	
 	//team register data in database
 	@RequestMapping("/teamAddRegister")
 	public String teamAddRegister(Team team)
@@ -49,9 +56,9 @@ public class TeamController {
 		}
 		else
 		{
-			return "home";
+			return "teamDashboard";
 		}
 	}
 	
-
+	
 }

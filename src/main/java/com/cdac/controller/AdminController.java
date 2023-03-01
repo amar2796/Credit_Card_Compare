@@ -25,6 +25,12 @@ public class AdminController {
 	@Autowired
 	AdminService adminService;
 	
+	//team login
+	@RequestMapping("/adminLogin")
+	public String adminLogin()
+	{
+		return "adminLogin";
+	}
 	
 	//validate login data
 	@GetMapping("/adminLoginValidate")
@@ -38,7 +44,7 @@ public class AdminController {
 		}
 		else
 		{
-			return "home";
+			return "adminDashboard";
 		}
 	}
 

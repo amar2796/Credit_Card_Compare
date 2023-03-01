@@ -1,0 +1,29 @@
+nav {
+    overflow: hidden;
+    background-color: rgb(255, 255, 255);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50px;
+    padding-top: 45px;
+  }
+  
+  nav a {
+    color: #000000;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 18px;
+  }
+  nav a:hover {
+    background-color: #b4b4b4;
+    border-radius: 5px;
+    transition-duration: 1s; 
+  }
+  @media (max-width: 600px) {
+    nav a {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+    }
+  }

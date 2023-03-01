@@ -1,84 +1,31 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>My Website</title>
-	<style>
-		body {
-			font-family: Arial, sans-serif;
-			background-color: #f2f2f2;
-			margin: 0;
-		}
-		header {
-			background-color: #333;
-			color: #fff;
-			padding: 20px;
-			text-align: center;
-		}
-		nav {
-			position: sticky;
-            top: 0;
-            width: 100%;
-			background-color: #4CAF50;
-			overflow: hidden;
-		}
-		nav a {
-			float: left;
-			display: block;
-			color: #fff;
-			text-align: center;
-			padding: 14px 16px;
-			text-decoration: none;
-			font-size: 18px;
-		}
-		nav a:hover {
-			background-color: #3e8e41;
-		}
-		@media (max-width: 600px) {
-			nav a {
-				float: none;
-				display: block;
-				text-align: left;
-			}
-		}
-		footer {
-			background-color: #333;
-			color: #fff;
-			padding: 20px;
-			text-align: center;
-			position: absolute;
-			bottom: 0;
-			width: 100%;
-		}
-		.active{
-			background-color: black;
-		}
-	</style>
+  <meta charset="UTF-8">
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="/CSS_File/contactStyle.css">
 </head>
 <body>
-	<header>
-		<h1>Welcome to My Website</h1>
-	</header>
+  <div class="container">
+    <h1>Contact Us</h1>
+    <form action="submit.php" method="post">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your name..." required>
 
-	<nav>
-		<a href="home">Home</a>
-		<a href="#">Registration</a>
-		<a href="#">Login</a>
-		<a href="#">View Card</a>
-		<a href="#">About</a>
-		<a class="active" href="#">Contact</a>
-	</nav>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="Your email..." required>
 
-	<main>
-		${data }
-		<p>8127991402</p>
-	</main>
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" name="subject" placeholder="Subject..." required>
 
-	<footer>
-		<p>&copy; 2023 My Website. All rights reserved.</p>
-	</footer>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+
+      <input type="submit" value="Send">
+    </form>
+  </div>
+  <jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

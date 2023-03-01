@@ -8,7 +8,9 @@
 	<title>Registration Form</title>
 	<link rel="stylesheet" href="/CSS_File/registrationStyle.css">
 </head>
+
 <body>
+	
 	<form action="/teamAddRegister">
 		<div class="outer">
 			<div class="heading">

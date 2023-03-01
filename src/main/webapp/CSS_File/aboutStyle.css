@@ -1,0 +1,50 @@
+nav {
+    background-color: #333;
+    color: white;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  li {
+    margin-right: 20px;
+  }
+  
+  a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  a:hover {
+    background-color: #555;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+  }
+  
+  img {
+    max-width: 300px;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  

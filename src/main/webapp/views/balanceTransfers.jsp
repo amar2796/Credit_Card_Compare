@@ -1,0 +1,48 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Balance Transfer</title>
+	<link rel="stylesheet" href="/CSS_File/balanceTransfers.css">
+</head>
+<body>
+	<form action="cashbacks">
+		<div class="outer">
+			<div class="heading">
+				<p>Balance Transfer</p>
+			</div>
+		</div>
+		<label >Intrest Free Period:</label>
+		<input type="text" id="intrestFreePeriod" name="intrestFreePeriod" required>
+
+		<label >Post Balance Transfer:</label>
+		<input type="text" id="postBalanceTransfer" name="postBalanceTransfer" required>
+
+		<label >0% Balance Transfer:</label>
+		<input type="text" id="zeroPercentBalanceTransfer" name="zeroPercentBalanceTransfer" required>
+
+		<label >EMI Payment:</label>
+		<input type="text" id="emiPayment" name="emiPayment" required>
+		
+		<label >Perpetual Balance Transfer:</label>
+		<input type="text" id="perpetualBalanceTransfer" name="perpetualBalanceTransfer" required>
+
+		<label >Travel:</label>
+		<input type="text" id="travel" name="travel" required>
+
+        <label >Domestic Lounge:</label>
+		<input type="text" id="domesticLounge" name="domesticLounge" required>
+
+		<label >International Lounge:</label>
+		<input type="text" id="internationalLounge" name="internationalLounge" required>
+
+        <label >Fuels:</label>
+		<input type="text" id="fuels" name="fuels" required>
+
+		<input type="submit" value="Submit">
+	</form>
+</body>
+</html>

@@ -53,15 +53,6 @@ public class userController {
 	}
 	
 	
-	
-	//team login
-	@RequestMapping("/adminLogin")
-	public String adminLogin()
-	{
-		return "adminLogin";
-	}
-	
-	
 	//View Card page
 	@RequestMapping("/viewCard")
 	public String viewCard()
@@ -69,19 +60,21 @@ public class userController {
 		return "ViewCard";
 	}
 	
-	//Contact page
+	//Contact page mapping
 	@RequestMapping("/contact")
 	public String contactPage(Model model)
 	{
-		model.addAttribute("data","Amarjeet");
 		return "contact";
 	}
 	
-	// Team register form
-	@RequestMapping("/teamRegister")
-	public String teamRegister()
+	
+	
+	//about page mapping
+	@RequestMapping("/about")
+	public String about()
 	{
-		return "teamRegister";
+		return "about";
 	}
+	
 	
 }
