@@ -16,6 +16,7 @@
   <main>
     <h2>Add Card Type Details</h2>
     <form action="addCardRegister">
+    <label>${bankId }</label>
       <label for="bankid">Bank Id:</label>
       <input type="number" id="bankid" name="bankid" required>
       

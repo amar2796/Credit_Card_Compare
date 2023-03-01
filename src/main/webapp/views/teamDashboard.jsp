@@ -1,6 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html>
+     
+     
+     
+<!DOCTYPE html >
 <html>
 <head>
 	<title>Admin Dashboard</title>
@@ -23,6 +26,27 @@
 				<h3>Add Bank Details</h3>
 				<p><a href="addBank">Click here</a></p>
 			</div>
+			
+			<div class="card">
+				<h3>All Bank Details</h3>
+				<p>${bank.getBankid() }  ${bank.getBank_name() }</p>
+			</div>
+
+			<table>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+        </tr>
+        <c:forEach var="item" items="${users}">
+  			<li>${item}</li>
+		</c:forEach>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+    </table>
+			
+		
 			
 			<div class="card">
 				<h3>Add Card Details</h3>

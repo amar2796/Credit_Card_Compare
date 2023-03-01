@@ -34,6 +34,7 @@ public class CardController {
 		Optional<Bank> bank= bankRepo.findById(card.getBankid());
 		card1.setBank(bank.get());
 		cardService.saveCardRegister(card1);
+	
 		return "addCard";
 	}
 }
