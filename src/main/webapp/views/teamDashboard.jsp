@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-     
+    pageEncoding="ISO-8859-1" isELIgnored="false"%>
+     <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
      
      
 <!DOCTYPE html >
@@ -37,13 +37,17 @@
             <th>ID</th>
             <th>Name</th>
         </tr>
-        <c:forEach var="item" items="${users}">
-  			<li>${item}</li>
-		</c:forEach>
-            <tr>
-                <td></td>
-                <td></td>
+        <c:out value=""></c:out>
+        <c:forEach var="user" items="${users}">
+  			<tr>
+                <td>
+                	<c:out value="${user.bankid}" />
+                </td>
+               	<td>
+                	<c:out value="${user.bank_name}" />
+               	</td>
             </tr>
+		</c:forEach>            
     </table>
 			
 		
