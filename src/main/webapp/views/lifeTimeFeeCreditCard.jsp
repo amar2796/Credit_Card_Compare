@@ -9,19 +9,22 @@
 	<link rel="stylesheet" href="/CSS_File/lifeTimeFreeCreditCard.css">
 </head>
 <body>
-	<form action="feesAndCharges">
+	<form action="lifeTimeFreeCreditCardRegister">
 		<div class="outer">
 			<div class="heading">
 				<p>Lifetime Free Credit Card</p>
 			</div>
 		</div>
+		<label >Card Id:</label>
+		<input type="text" id="cardid" name="cardid" value="${cardid }" readonly="readonly">
+		
 		<label >No Annual Fee:</label>
 		<input type="text" id="noAnnualFee" name="noAnnualFee" required>
 
 		<label >Renewal Fee:</label>
 		<input type="text" id="renewalFee" name="renewalFee" required>
 
-		<label >Intrest Charge</label>:</label>
+		<label >Intrest Charge</label>:
 		<input type="text" id="intrestCharge" name="intrestCharge" required>
 
 		<label >Cash Advance Charge:</label>

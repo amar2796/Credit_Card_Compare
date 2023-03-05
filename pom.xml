@@ -25,16 +25,6 @@
     <version>10.1.2</version>
 </dependency>
 	
-
-
-	<!-- https://mvnrepository.com/artifact/jakarta.servlet.jsp.jstl/jakarta.servlet.jsp.jstl-api -->
-<dependency>
-    <groupId>jakarta.servlet.jsp.jstl</groupId>
-    <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
-    <version>2.0.0</version>
-</dependency>
-	
-
 	
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -62,21 +52,38 @@
 			<scope>test</scope>
 		</dependency>
 		
-		<!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
-<dependency>
-    <groupId>javax.servlet</groupId>
-    <artifactId>servlet-api</artifactId>
-    <version>2.5</version>
-    <scope>provided</scope>
-</dependency>
 		
-		<!-- https://mvnrepository.com/artifact/javax.servlet/jsp-api -->
+		
+		
+		<!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
 <dependency>
     <groupId>javax.servlet</groupId>
-    <artifactId>jsp-api</artifactId>
-    <version>2.0</version>
+    <artifactId>javax.servlet-api</artifactId>
+    <version>3.0.1</version>
     <scope>provided</scope>
 </dependency>
+		<!-- https://mvnrepository.com/artifact/javax.servlet.jsp/jsp-api -->
+<dependency>
+    <groupId>javax.servlet.jsp</groupId>
+    <artifactId>jsp-api</artifactId>
+    <version>2.2</version>
+    <scope>provided</scope>
+</dependency>
+		<!-- https://mvnrepository.com/artifact/org.eclipse.gemini.blueprint/gemini-blueprint-test -->
+<dependency>
+    <groupId>org.eclipse.gemini.blueprint</groupId>
+    <artifactId>gemini-blueprint-test</artifactId>
+    <version>2.1.0.RELEASE</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
+
+<!-- https://mvnrepository.com/artifact/jakarta.servlet.jsp.jstl/jakarta.servlet.jsp.jstl-api -->
+<dependency>
+    <groupId>jakarta.servlet.jsp.jstl</groupId>
+    <artifactId>jakarta.servlet.jsp.jstl-api</artifactId>
+    <version>3.0.0</version>
+</dependency>
+
 		
 		
 	</dependencies>

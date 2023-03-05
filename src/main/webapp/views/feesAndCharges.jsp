@@ -9,12 +9,15 @@
 	<link rel="stylesheet" href="/CSS_File/fees&Charges.css">
 </head>
 <body>
-	<form action="teamDashboardLogin">
+	<form action="feesAndChargesRegister">
 		<div class="outer">
 			<div class="heading">
 				<p>Fees And Charges</p>
 			</div>
 		</div>
+		<label >Card Id:</label>
+		<input type="text" id="cardid" name="cardid" value="${cardid }" readonly="readonly">
+		
 		<label >No Annual Fees:</label>
 		<input type="text" id="noAnnualFees" name="noAnnualFees" required>
 

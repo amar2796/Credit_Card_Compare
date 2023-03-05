@@ -15,10 +15,10 @@
   
   <main>
     <h2>Add Card Account</h2>
-    <form action="reward&Benefits">
+    <form>
       <label for="routing-number">Reward and Benefits</label>
       
-      <button type="submit">Add Card Account</button>
+      <a href="reward&Benefits?cardid=${cardid }">Click here</a>
     </form>
   </main>
 </body>

@@ -1,8 +1,7 @@
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" isELIgnored="false"%>
-     <%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
-     
-     
+
 <!DOCTYPE html >
 <html>
 <head>
@@ -21,63 +20,18 @@
 	<main>
 		<section class="overview">
 			<h2>Dashboard Overview</h2>
-			
+			Latest Bank Id ${bank }
 			<div class="card">
 				<h3>Add Bank Details</h3>
 				<p><a href="addBank">Click here</a></p>
 			</div>
-			
-			<div class="card">
-				<h3>All Bank Details</h3>
-				<p>${bank.getBankid() }  ${bank.getBank_name() }</p>
-			</div>
-
-			<table>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-        </tr>
-        <c:out value=""></c:out>
-        <c:forEach var="user" items="${users}">
-  			<tr>
-                <td>
-                	<c:out value="${user.bankid}" />
-                </td>
-               	<td>
-                	<c:out value="${user.bank_name}" />
-               	</td>
-            </tr>
-		</c:forEach>            
-    </table>
-			
 		
-			
 			<div class="card">
 				<h3>Add Card Details</h3>
 				<p><a href="addCardDashboard">Click here</a></p>
 			</div>
 			
-			<div class="card">
-				<h3>Reward and Benefits</h3>
-				<p><a href="reward&Benefits">Click here</a></p>
-			</div>
-			<div class="card">
-				<h3>Balance Transfers</h3>
-				<p><a href="balanceTransfers">Click here</a></p>
-			</div>
-			<div class="card">
-				<h3>Cashbacks</h3>
-				<p><a href="cashbacks">Click here</a></p>
-			</div>
-			<div class="card">
-				<h3>Life Time Fee Credit Card</h3>
-				<p><a href="lifeTimeFeeCreditCard">Click here</a></p>
-			</div>
-			<div class="card">
-				<h3>Fees and Charges</h3>
-				<p><a href="feesAndCharges">Click here</a></p>
-			</div>
-		</section>
+			</section>
 		<section class="user-list">
 			<h2>User List</h2>
 			<table>

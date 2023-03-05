@@ -1,5 +1,6 @@
 package com.cdac.controller;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.cdac.dao.BankRepo;
+import com.cdac.dto.CardDTO;
 import com.cdac.model.Bank;
 import com.cdac.service.BankService;
 
@@ -32,20 +34,23 @@ public class BankController {
 	@RequestMapping("/addBankRegister")
 	public String addCard(Bank bank, Model model)
 	{
-		
 		bankService.addDataInBankTable(bank);
-		
-		model.addAttribute("bankId", "select * from bank");
-		return "teamDashboard";
+		return "redirect:/teamDashboard";
 	}
-	
-	@RequestMapping("/bankdata")
-    public  ModelAndView getUsers() {
-        List<Bank> userList = (List<Bank>) bankRepo.findAll();
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("users", userList);
-        
-        modelAndView.setViewName("teamDashboard");
-        return modelAndView;
+	@RequestMapping("/teamDashboard")
+    public String newPage(Model model) {
+		model.addAttribute("bank",bankRepo.findAll());
+        return "teamDashboard";
     }
+	
+//	@RequestMapping("/bankdata")
+//    public  ModelAndView getUsers() {
+//        ArrayList<Bank> userList = (ArrayList<Bank>) bankRepo.findAll();
+//        ModelAndView modelAndView = new ModelAndView();
+//        modelAndView.addObject("len", userList.size());
+//        modelAndView.addObject("users", userList);
+//        
+//        modelAndView.setViewName("teamDashboard");
+//        return modelAndView;
+//    }
 }

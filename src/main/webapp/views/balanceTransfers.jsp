@@ -9,12 +9,16 @@
 	<link rel="stylesheet" href="/CSS_File/balanceTransfers.css">
 </head>
 <body>
-	<form action="cashbacks">
+	<form action="balanceTransfersRegister">
 		<div class="outer">
 			<div class="heading">
 				<p>Balance Transfer</p>
 			</div>
 		</div>
+		<label >Card Id:</label>
+		<input type="text" id="cardid" name="cardid" value="${cardid }" >
+		
+		
 		<label >Intrest Free Period:</label>
 		<input type="text" id="intrestFreePeriod" name="intrestFreePeriod" required>
 

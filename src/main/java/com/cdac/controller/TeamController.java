@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.cdac.dao.BankRepo;
+import com.cdac.model.Bank;
 import com.cdac.model.Team;
 import com.cdac.service.TeamService;
 
@@ -21,6 +23,8 @@ public class TeamController {
 	
 	@Autowired
 	TeamService teamService;
+	@Autowired
+	BankRepo bankRepo;
 	
 	// Team register form
 	@RequestMapping("/teamRegister")
@@ -56,6 +60,7 @@ public class TeamController {
 		}
 		else
 		{
+			model.addAttribute("bank",bankRepo.findAll());
 			return "teamDashboard";
 		}
 	}

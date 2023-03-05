@@ -9,12 +9,15 @@
 	<link rel="stylesheet" href="/CSS_File/cashbacks.css">
 </head>
 <body>
-	<form action="lifeTimeFeeCreditCard">
+	<form action="cashbacksRegister">
 		<div class="outer">
 			<div class="heading">
 				<p>Cashbacks</p>
 			</div>
 		</div>
+		<label >Card Id:</label>
+		<input type="text" id="cardid" name="cardid" value="${cardid }" readonly="readonly">
+		
 		<label >Welcome Benefits:</label>
 		<input type="text" id="welcomeBenefits" name="welcomeBenefits" required>
 
