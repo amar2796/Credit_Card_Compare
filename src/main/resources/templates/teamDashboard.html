@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"> 
+<head>
+<meta charset="UTF-8">
+	<title>Admin Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="/CSS_File/teamDashboardStyle.css">
+</head>
+<body>
+	<header>
+		<h1>Team Dashboard</h1>
+		<nav>
+			<ul>
+				<li><a href="#">Logout</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section class="overview">
+			<h2>Dashboard Overview</h2>
+			
+    <section class="user-list">
+			<h2>Bank List</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Bank Id</th>
+						<th>Bank Name</th>
+						<th>Action</th>
+						<th>No of Card Type</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="person : ${bank}">
+                	<td th:text="${person.bankid}"></td>
+                	<td th:text="${person.bank_name}"></td>
+					<td><a style="text-decoration:none" th:href="@{/bankDetail/edit/{id}(id=${person.bankid})}">Edit</a> |
+					 <a style="text-decoration:none" th:href="@{/bankDetail/delete/{id}(id=${person.bankid})}" onclick="confirm('Are you sure you want to delete this record?')">Delete</a></td>					
+					</tr>
+				</tbody>
+			</table>
+		</section>
+   
+    
+    
+			<div class="card">
+				<h3>Add Bank Details</h3>
+				<p><a href="addBank">Click here</a></p>
+			</div>
+		
+			<div class="card">
+				<h3>Add Card Details</h3>
+				<p><a href="addCardDashboard">Click here</a></p>
+			</div>
+			</section>
+		
+	</main>
+	<footer>
+		<p>&copy; 2023 Team Dashboard</p>
+	</footer>
+</body>
+</html>

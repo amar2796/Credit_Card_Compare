@@ -6,4 +6,5 @@ public interface RewardBenefitsService {
 
 	void registerData(RewardBenefits rewardBenefits);
 
+	
 }

@@ -3,6 +3,7 @@ package com.cdac.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -22,13 +23,20 @@ public class FeesAndChargesController {
 	@Autowired
 	BankRepo bankRepo;
 	
+	//feesAndCharges mapping same class
+	@RequestMapping("/feesAndCharges")
+	public String feesAndCharges()
+	{
+		return "feesAndCharges";
+	}
+	
+	
 	// feesAndCharges register data database and throw next page
 			@RequestMapping("/feesAndChargesRegister")
 			public String balanceTransfersRegister(@RequestParam("cardid") Card cardid,FeesAndCharges feesAndCharges,Model model) 
 			{
 				feesAndCharges.setCard(cardid);
 				model.addAttribute("cardid", cardid.getCardid());
-				System.out.println(feesAndCharges);
 				try {
 					feesAndChargesService.addDataRegister(feesAndCharges);
 				} catch (Exception e) {
@@ -42,4 +50,16 @@ public class FeesAndChargesController {
 				model.addAttribute("bank",bankRepo.findAll());
 		        return "teamDashboard";
 		    }
+			
+			//feesAndCharges mapping for editing
+			@RequestMapping("/feesAndChargesEditing")
+			public String feesAndChargesEditing(Model model)
+			{
+				model.addAttribute("editing", feesAndChargesService.findById());
+				
+				return "/Updation/feesAndChargesUpdate";
+			}
+			
+			
+		
 }

@@ -6,4 +6,6 @@ public interface FeesAndChargesService {
 
 	void addDataRegister(FeesAndCharges feesAndCharges);
 
+	Object findById();
+
 }

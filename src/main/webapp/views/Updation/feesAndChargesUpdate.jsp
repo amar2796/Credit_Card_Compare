@@ -9,17 +9,20 @@
 	<link rel="stylesheet" href="/CSS_File/fees&Charges.css">
 </head>
 <body>
-	<form action="feesAndChargesRegister">
+	<form action="feesAndChargesUpdate">
 		<div class="outer">
 			<div class="heading">
 				<p>Fees And Charges</p>
 			</div>
 		</div>
+		${editing.get().getFeesAndChargesId() }
+		${editing.get().getNoAnnualFees() }
 		<label >Card Id:</label>
-		<input type="text" id="cardid" name="cardid" value="${cardid }" >
+		<input type="text" id="cardid" name="cardid" value="${editing.get().getFeesAndChargesId() }" readonly="readonly">
+		
 		
 		<label >No Annual Fees:</label>
-		<input type="text" id="noAnnualFees" name="noAnnualFees" required>
+		<input type="text" id="noAnnualFees" name="noAnnualFees" value="${editing.get().getNoAnnualFees() }" required>
 
 		<label >Membership Charges:</label>
 		<input type="text" id="membershipCharges" name="membershipCharges" required>

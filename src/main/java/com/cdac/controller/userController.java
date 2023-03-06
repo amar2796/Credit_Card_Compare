@@ -20,6 +20,11 @@ public class userController {
 
 	@Autowired
 	UserService userService;
+	
+//	@RequestMapping("/thy")
+//	public String thy() {
+//		return "thy";
+//	}
 	@RequestMapping("/home")
 	public String getHome()
 	{
