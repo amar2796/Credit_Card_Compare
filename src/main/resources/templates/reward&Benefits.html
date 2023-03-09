@@ -7,14 +7,14 @@
 	<link rel="stylesheet" href="/CSS_File/reward&Benefits.css">
 </head>
 <body>
-	<form action="rewardBenefitsRegister">
+	<form th:action="@{/rewardBenefitsRegister}"  th:object="${person}">
 		<div class="outer">
 			<div class="heading">
 				<p>Rewards And Benefits</p>
 			</div>
 		</div>
 		<label >Card Id:</label>
-		<input type="text" id="cardid" name="cardid" value="${cardid }" readonly="readonly">
+		<input type="text" th:field="*{cardid}" id="cardid" name="cardid"  >
 		
 		<label >Welcome Benefits:</label>
 		<input type="text" id="welcomeBenefits" name="welcomeBenefits" required>

@@ -12,16 +12,16 @@
   
   <main>
     <h2>Add Card Type Details</h2>
-     <form th:action="@{/addCardRegister}"  th:object="${person}">
+     <form th:action="@{/card/update/{id}(id=${person.cardid})}"  th:object="${person}" method="post">
       
-      <input type="hidden" th:field="*{bankid}" id="bankid" name="bankid" readonly="readonly" >
+      <input type="hidden" th:field="*{bank.bankid}" id="bankid" name="bankid" readonly="readonly" >
       
       <label for="bank_name">Bank Name:</label>
-      <input type="text" th:field="*{bank_name}" id="bank_name" name="bank_name" readonly="readonly">
+      <input type="text" th:field="*{bank.bank_name}" id="bank_name" name="bank_name" readonly="readonly">
       
       
       <label for="card_type">Card Name:</label>
-      <input type="text" id="card_type" name="card_type" required>
+      <input type="text" th:field="*{card_type}" id="card_type" name="card_type" required>
       
      
       

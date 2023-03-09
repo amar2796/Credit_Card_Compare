@@ -7,14 +7,14 @@
 	<link rel="stylesheet" href="/CSS_File/cashbacks.css">
 </head>
 <body>
-	<form action="cashbacksRegister">
+	<form th:action="@{/cashbacksRegister}" th:object="${person}">
 		<div class="outer">
 			<div class="heading">
 				<p>Cashbacks</p>
 			</div>
 		</div>
 		<label >Card Id:</label>
-		<input type="text" id="cardid" name="cardid" value="${cardid }" readonly="readonly">
+		<input type="text" id="cardid" name="cardid" th:field="*{cardid}" readonly="readonly">
 		
 		<label >Welcome Benefits:</label>
 		<input type="text" id="welcomeBenefits" name="welcomeBenefits" required>

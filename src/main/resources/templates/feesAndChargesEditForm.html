@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Fees And Charges</title>
+	<link rel="stylesheet" href="/CSS_File/fees&Charges.css">
+</head>
+<body>
+	<form th:action="@{/feesAndCharges/update/{id}(id=${person.FeesAndChargesId})}" th:object="${person}" method="post">
+		<div class="outer">
+			<div class="heading">
+				<p>Fees And Charges</p>
+			</div>
+		</div>
+		
+		<input type="hidden" id="cardid" name="cardid" th:field="*{FeesAndChargesId}" >
+		
+		<label >No Annual Fees:</label>
+		<input type="text" id="noAnnualFees" name="noAnnualFees" th:field="*{noAnnualFees}" required>
+
+		<label >Membership Charges:</label>
+		<input type="text" id="membershipCharges" name="membershipCharges" th:field="*{membershipCharges}" required>
+
+		<label >Cashbacks:</label>
+		<input type="text" id="cashbacks" name="cashbacks" th:field="*{cashbacks}" required>
+
+		<label >Low Intrest:</label>
+		<input type="text" id="lowIntrest" name="lowIntrest" th:field="*{lowIntrest}" required>
+		
+		<label >Travel:</label>
+		<input type="text" id="travel" name="travel" th:field="*{travel}" required>
+
+		<label >Domestic Lounge:</label>
+		<input type="text" id="domesticLounge" name="domesticLounge" th:field="*{domesticLounge}" required>
+
+		<label >International Lounge:</label>
+		<input type="text" id="internationalLounge" name="internationalLounge" th:field="*{internationalLounge}" required>
+
+		<label >Balance Transfer:</label>
+		<input type="text" id="balanceTransfer" name="balanceTransfer" th:field="*{balanceTransfer}" required>
+
+        <label >International Transaction:</label>
+		<input type="text" id="internationalTransaction" name="internationalTransaction" th:field="*{internationalTransaction}" required>
+
+
+		<input type="submit" value="Update">
+	</form>
+</body>
+</html>
+>

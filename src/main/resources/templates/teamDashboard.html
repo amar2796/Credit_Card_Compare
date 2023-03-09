@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 	<title>Admin Dashboard</title>
 	<link rel="stylesheet" type="text/css" href="/CSS_File/teamDashboardStyle.css">
+	
 </head>
 <body>
 	<header>
@@ -16,41 +17,93 @@
 	</header>
 	<main>
 		<section class="overview">
-			<h2>Dashboard Overview</h2>
-			
+		<div class="firstSection">
+			<div class="card">
+				<h2>Add Bank Details</h2>
+				<button ><a style="text-decoration:none" href="addBank">Click here</a></button>
+				<h2>View Details Card More Details</h2>
+				<button><a style="text-decoration:none" href="teamDashboardDetails">View</a></button>
+			</div>
+			<div>
+				<p>Hint</p>
+				<p>*Reward&Benefit <b>Step 1</b></p>
+				<p>*Balance Transfer <b>Step 2</b></p>
+				<p>*Cashback <b>Step 3</b></p>
+				<p>*Life Time <b>Step 4</b></p>
+				<p>*Fees And Charges <b>Step 5</b></p>
+			</div>
+			</div>
     <section class="user-list">
+    <div class="first">
 			<h2>Bank List</h2>
 			<table>
 				<thead>
 					<tr>
-						<th>Bank Id</th>
 						<th>Bank Name</th>
 						<th>Action</th>
-						<th>No of Card Type</th>
+						<th>No of Card</th>
+						<th>Add Card</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr th:each="person : ${bank}">
-                	<td th:text="${person.bankid}"></td>
                 	<td th:text="${person.bank_name}"></td>
 					<td><a style="text-decoration:none" th:href="@{/bankDetail/edit/{id}(id=${person.bankid})}">Edit</a> |
 					 <a style="text-decoration:none" th:href="@{/bankDetail/delete/{id}(id=${person.bankid})}" onclick="confirm('Are you sure you want to delete this record?')">Delete</a></td>					
+					<td>0</td>
+					<td><a style="text-decoration:none" th:href="@{/addCardDashboard/{id}(id=${person.bankid})}">click</a></td>
 					</tr>
 				</tbody>
 			</table>
+			</div>
+			
 		</section>
    
-    
-    
-			<div class="card">
-				<h3>Add Bank Details</h3>
-				<p><a href="addBank">Click here</a></p>
+    <div class="second">
+			<h2>Card List</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Bank Name</th>
+						<th>Card Type</th>
+						<th>Action</th>
+						<th>Reward & Benefit</th>
+						<th>Balance Transfer</th>
+						<th>Cashback</th>
+						<th>Lifetime Free Creditcard</th>
+						<th>Fees And Charges</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="person1 : ${card}">
+					<td th:text="${person1.Bank.bank_name}"></td>
+                	<td th:text="${person1.card_type}"></td>
+                	
+                	<td><a style="text-decoration:none" th:href="@{/card/edit/{id}(id=${person1.cardid})}">Edit</a></td>
+                	
+                	<td><a style="text-decoration:none" th:href="@{/reward&Benefits/{id}(id=${person1.cardid})}">Add</a>
+                	</td>
+                	
+                	<td><a style="text-decoration:none" th:href="@{/balanceTransfers/{id}(id=${person1.cardid})}">Add</a>
+                	</td>
+                	
+                	<td><a style="text-decoration:none" th:href="@{/cashbacks/{id}(id=${person1.cardid})}">Add</a>
+                	</td>
+                	
+                	<td><a style="text-decoration:none" th:href="@{/lifeTimeFreeCreditCard/{id}(id=${person1.cardid})}">Add</a> 
+                	</td>
+                	
+                	<td><a style="text-decoration:none" th:href="@{/feesAndCharges/{id}(id=${person1.cardid})}">Add</a>
+                	</td>
+					</tr>
+					
+				</tbody>
+			</table>
 			</div>
-		
-			<div class="card">
-				<h3>Add Card Details</h3>
-				<p><a href="addCardDashboard">Click here</a></p>
-			</div>
+    
+			
+			
+			
 			</section>
 		
 	</main>

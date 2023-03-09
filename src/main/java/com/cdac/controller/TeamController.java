@@ -17,10 +17,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.cdac.dao.BalanceTransferRepo;
 import com.cdac.dao.BankRepo;
+import com.cdac.dao.CardRepo;
+import com.cdac.dao.FeesAndChargesRepo;
+import com.cdac.dao.LifeTimeFeeCreditCardRepo;
 import com.cdac.dao.RewardBenefitsRepo;
 import com.cdac.model.Bank;
-import com.cdac.model.RewardBenefits;
 import com.cdac.model.Team;
 import com.cdac.service.TeamService;
 
@@ -34,6 +37,16 @@ public class TeamController {
 	BankRepo bankRepo;
 	@Autowired
 	RewardBenefitsRepo rewardBenefitsRepo;
+	@Autowired
+	BalanceTransferRepo balanceTransfersRepo;
+	@Autowired
+	com.cdac.dao.cashbacksRepo cashbacksRepo;
+	@Autowired
+	LifeTimeFeeCreditCardRepo lifeTimeFeeCreditCardRepo;
+	@Autowired
+	CardRepo cardRepo;
+	@Autowired
+	FeesAndChargesRepo  feesAndChargesRepo;
 	
 	// Team register form
 	@RequestMapping("/teamRegister")
@@ -72,9 +85,8 @@ public class TeamController {
 			//List<RewardBenefits> list= rewardBenefitsRepo.findByRewardBenefits();
 			//System.out.println(list);
 			//model.addAttribute("rewards", rewardBenefitsRepo.findByTable());
-			model.addAttribute("bank",bankRepo.findAll());
 			
-			return "teamDashboard";
+			return "redirect:/teamDashboard1";
 		}
 	}
 	
@@ -91,16 +103,46 @@ public class TeamController {
 	@PostMapping("/bankDetail/update")
 	public String updatePerson(@ModelAttribute("person") Bank person) {
 		bankRepo.save(person);
-	  return "redirect:/teamDashboard";
+	  return "redirect:/teamDashboard1";
 	}
+	
 	
 	// Bank detail delete
 	@GetMapping("/bankDetail/delete/{id}")
     public String showDeleteForm(@PathVariable("id") int id) {
         Bank person1 = bankRepo.findById(id)
             .orElseThrow(() -> new IllegalArgumentException("Invalid person id: " + id));
-        System.out.println(id);
         bankRepo.deleteById(id);
-        return "redirect:/teamDashboard";
+        return "redirect:/teamDashboard1";
+	}
+	
+	//home page divert
+	@RequestMapping("/teamDashboard1")
+	public String teamDashboard(Model model) {
+		model.addAttribute("bank",bankRepo.findAll());
+		model.addAttribute("card", cardRepo.findAll());
+	
+		return "teamDashboard";
+	}
+	
+	
+	//view add dashboard details
+	@RequestMapping("/teamDashboardDetails")
+	public String teamDashboardDetails(Model model)
+	{
+		model.addAttribute("rewardBenefit", rewardBenefitsRepo.findAll());
+		model.addAttribute("balanceTransfer", balanceTransfersRepo.findAll());
+		model.addAttribute("cashback", cashbacksRepo.findAll());
+		model.addAttribute("lifeTimeFree", lifeTimeFeeCreditCardRepo.findAll());
+		model.addAttribute("feesAndCharges", feesAndChargesRepo.findAll());
+	
+		return "teamDashboardView";
+	}
+	
+	//back button to back to team dashboard
+	@RequestMapping("/backTeamDashboard")
+	public String backTeamDashboard()
+	{
+		return "redirect:teamDashboard1";
 	}
 }

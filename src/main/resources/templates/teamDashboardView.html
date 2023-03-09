@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"> 
+<head>
+<meta charset="UTF-8">
+	<title>Admin Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="/CSS_File/teamDashboardViewStyle.css">
+	
+</head>
+<body>
+	<header>
+		<h1>Team Dashboard</h1>
+		<nav>
+			<ul>
+				<li><a href="backTeamDashboard">Back</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+	<section class="overview">
+		
+		<h2>Reward and Benefit</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Card Type</th>
+						<th>welcomeBenefits</th>
+						<th>rewardRates</th>
+						<th>movieDining</th>
+						<th>domesticLoungeAcces</th>
+						<th>rewardPoints</th>
+						<th>travel</th>
+						<th>domesticLounge</th>
+						<th>internationalLounge</th>
+						<th>fuel</th>
+						<th colspan="2">Action</th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="person : ${rewardBenefit}">
+                	<td th:text="${person.Card.card_type}"></td>
+                	<td th:text="${person.welcomeBenefits}"></td>
+                	<td th:text="${person.rewardRates}"></td>
+                	<td th:text="${person.movieDining}"></td>
+                	<td th:text="${person.domesticLoungeAcces}"></td>
+                	<td th:text="${person.rewardPoints}"></td>
+                	<td th:text="${person.travel}"></td>
+                	<td th:text="${person.domesticLounge}"></td>
+                	<td th:text="${person.internationalLounge}"></td>
+                	<td th:text="${person.fuel}"></td>
+                	<td><a th:href="@{/rewardAndBenefit/edit/{id}(id=${person.RewardBenefitsId})}">Edit</a></td>
+                	<td><a th:href="@{/feesAndCharges/delete/{id}(id=${person.RewardBenefitsId})}">Delete</a></td>
+					
+				</tbody>
+			</table>
+			</section>
+		
+		<section class="overview">
+		
+		<h2>Balance Transfer</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Card Type</th>
+						<th>intrestFreePeriod</th>
+						<th>postBalanceTransfer</th>
+						<th>zeroPercentBalanceTransfer</th>
+						<th>emiPayment</th>
+						<th>perpetualBalanceTransfer</th>
+						<th>travel</th>
+						<th>domesticLounge</th>
+						<th>internationalLounge</th>
+						<th>fuels</th>
+						<th colspan="2">Action</th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="person : ${balanceTransfer}">
+                	<td th:text="${person.Card.card_type}"></td>
+                	<td th:text="${person.intrestFreePeriod}"></td>
+                	<td th:text="${person.postBalanceTransfer}"></td>
+                	<td th:text="${person.zeroPercentBalanceTransfer}"></td>
+                	<td th:text="${person.emiPayment}"></td>
+                	<td th:text="${person.perpetualBalanceTransfer}"></td>
+                	<td th:text="${person.travel}"></td>
+                	<td th:text="${person.domesticLounge}"></td>
+                	<td th:text="${person.internationalLounge}"></td>
+                	<td th:text="${person.fuels}"></td>
+                	<td><a th:href="@{/balanceTransfer/edit/{id}(id=${person.BalanceTransfersId})}">Edit</a></td>
+                	<td><a th:href="@{/feesAndCharges/delete/{id}(id=${person.BalanceTransfersId})}">Delete</a></td>
+					
+				</tbody>
+			</table>
+			</section>
+			
+			<section class="overview">
+		
+		<h2>Cashback</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Card Type</th>
+						<th>welcomeBenefits</th>
+						<th>milestoneBenefits</th>
+						<th>travelBenefits</th>
+						<th>moviesAndDiningBenefits</th>
+						<th>rewardsAndFeatures</th>
+						<th>onlineSpends</th>
+						<th>offlineSpends</th>
+						<th>fuels</th>
+						<th>eCommerceCashbacks</th>
+						<th colspan="2">Action</th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="person : ${cashback}">
+                	<td th:text="${person.Card.card_type}"></td>
+                	<td th:text="${person.welcomeBenefits}"></td>
+                	<td th:text="${person.milestoneBenefits}"></td>
+                	<td th:text="${person.travelBenefits}"></td>
+                	<td th:text="${person.moviesAndDiningBenefits}"></td>
+                	<td th:text="${person.rewardsAndFeatures}"></td>
+                	<td th:text="${person.onlineSpends}"></td>
+                	<td th:text="${person.offlineSpends}"></td>
+                	<td th:text="${person.fuels}"></td>
+                	<td th:text="${person.eCommerceCashbacks}"></td>
+                	<td><a th:href="@{/cashbacks/edit/{id}(id=${person.CashbacksId})}">Edit</a></td>
+                	<td><a th:href="@{/cashbacks/delete/{id}(id=${person.CashbacksId})}">Delete</a></td>
+					
+				</tbody>
+			</table>
+			</section>
+			
+			<section class="overview">
+		
+		<h2>Life Time Free Credit Card</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Card Type</th>
+						<th>noAnnualFee</th>
+						<th>renewalFee</th>
+						<th>intrestCharge</th>
+						<th>cashAdvanceCharge</th>
+						<th>welcomeBonus</th>
+						<th>rewardsAndBonus</th>
+						<th>specialPerks</th>
+						<th>loungeAcces</th>
+						<th>internationalTravel</th>
+						<th colspan="2">Action</th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="person : ${lifeTimeFree}">
+                	<td th:text="${person.Card.card_type}"></td>
+                	<td th:text="${person.noAnnualFee}"></td>
+                	<td th:text="${person.renewalFee}"></td>
+                	<td th:text="${person.intrestCharge}"></td>
+                	<td th:text="${person.cashAdvanceCharge}"></td>
+                	<td th:text="${person.welcomeBonus}"></td>
+                	<td th:text="${person.rewardsAndBonus}"></td>
+                	<td th:text="${person.specialPerks}"></td>
+                	<td th:text="${person.loungeAcces}"></td>
+                	<td th:text="${person.internationalTravel}"></td>
+                	<td><a th:href="@{/lifeTimeFree/edit/{id}(id=${person.LifeTimeFeeCreditCardId})}">Edit</a></td>
+                	<td><a th:href="@{/lifeTimeFree/delete/{id}(id=${person.LifeTimeFeeCreditCardId})}">Delete</a></td>
+					
+				</tbody>
+			</table>
+			</section>	
+			
+		<section class="overview">
+		
+		<h2>Fees and Charges</h2>
+			<table>
+				<thead>
+					<tr>
+						<th>Card Type</th>
+						<th>noAnnualFees</th>
+						<th>membershipCharges</th>
+						<th>cashbacks</th>
+						<th>lowIntrest</th>
+						<th>travel</th>
+						<th>domesticLounge</th>
+						<th>internationalLounge</th>
+						<th>balanceTransfer</th>
+						<th>internationalTransaction</th>
+						<th colspan="2">Action</th>
+						
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="person : ${feesAndCharges}">
+                	<td th:text="${person.Card.card_type}"></td>
+                	<td th:text="${person.noAnnualFees}"></td>
+                	<td th:text="${person.membershipCharges}"></td>
+                	<td th:text="${person.cashbacks}"></td>
+                	<td th:text="${person.lowIntrest}"></td>
+                	<td th:text="${person.travel}"></td>
+                	<td th:text="${person.domesticLounge}"></td>
+                	<td th:text="${person.internationalLounge}"></td>
+                	<td th:text="${person.balanceTransfer}"></td>
+                	<td th:text="${person.internationalTransaction}"></td>
+                	<td><a th:href="@{/feesAndCharges/edit/{id}(id=${person.FeesAndChargesId})}">Edit</a></td>
+                	<td><a th:href="@{/feesAndCharges/delete/{id}(id=${person.FeesAndChargesId})}">Delete</a></td>
+					
+				</tbody>
+			</table>
+			
+			</section>
+			
+			
+		
+	</main>
+	<footer>
+		<p>&copy; 2023 Team Dashboard</p>
+	</footer>
+</body>
+</html>

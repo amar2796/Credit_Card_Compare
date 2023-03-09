@@ -15,8 +15,6 @@ public class CardServiceImplementation implements CardService{
 
 	@Override
 	public void saveCardRegister(Card card) {
-		System.out.println(card);
 		cardRepo.save(card);
-		
 	}
 }

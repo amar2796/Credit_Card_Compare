@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Registration Form</title>
+	<link rel="stylesheet" href="/CSS_File/cashbacks.css">
+</head>
+<body>
+	<form th:action="@{/cashbacks/update/{id}(id=${person.CashbacksId})}" th:object="${person}" method="post">
+		<div class="outer">
+			<div class="heading">
+				<p>Cashbacks</p>
+			</div>
+		</div>
+		<input type="hidden" id="cardid" name="cardid" th:field="*{CashbacksId}" readonly="readonly">
+		
+		<label >Welcome Benefits:</label>
+		<input type="text" id="welcomeBenefits" name="welcomeBenefits" th:field="*{welcomeBenefits}" required>
+
+		<label >Milestone Benefits:</label>
+		<input type="text" id="milestoneBenefits" name="milestoneBenefits" th:field="*{milestoneBenefits}" required>
+
+		<label >Travel Benefits:</label>
+		<input type="text" id="travelBenefits" name="travelBenefits" th:field="*{travelBenefits}" required>
+
+		<label >Movies and Dining Benefits:</label>
+		<input type="text" id="moviesAndDiningBenefits" name="moviesAndDiningBenefits" th:field="*{moviesAndDiningBenefits}" required>
+		
+		<label >Rewards and Features:</label>
+		<input type="text" id="rewardsAndFeatures" name="rewardsAndFeatures" th:field="*{rewardsAndFeatures}" required>
+
+		<label >Online Spends:</label>
+		<input type="text" id="onlineSpends" name="onlineSpends" th:field="*{onlineSpends}" required>
+
+        <label >Offline Spends:</label>
+		<input type="text" id="offlineSpends" name="offlineSpends" th:field="*{offlineSpends}" required>
+
+
+		<label >Fuels:</label>
+		<input type="text" id="fuels" name="fuels" th:field="*{fuels}" required>
+
+		<label >e-Commerce Cashbacks:</label>
+		<input type="text" id="eCommerceCashbacks" name="eCommerceCashbacks" th:field="*{eCommerceCashbacks}" required>
+
+		<input type="submit" value="Update">
+	</form>
+</body>
+</html>

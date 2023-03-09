@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Reward and Benefits</title>
+	<link rel="stylesheet" href="/CSS_File/reward&Benefits.css">
+</head>
+<body>
+	<form th:action="@{/rewardAndBenefit/update/{id}(id=${person.RewardBenefitsId})}"  th:object="${person}" method="post">
+		<div class="outer">
+			<div class="heading">
+				<p>Rewards And Benefits</p>
+			</div>
+		</div>
+		<input type="hidden" th:field="*{RewardBenefitsId}" id="cardid" name="cardid"  >
+		
+		<label >Welcome Benefits:</label>
+		<input type="text" id="welcomeBenefits" name="welcomeBenefits" th:field="*{welcomeBenefits}" required>
+
+		<label >Rewards Rates:</label>
+		<input type="text" id="rewardRates" name="rewardRates" th:field="*{rewardRates}" required>
+
+		<label >Movie and Dining:</label>
+		<input type="text" id="movieDining" name="movieDining" th:field="*{movieDining}" required>
+
+		<label >Domestic Lounge Acces :</label>
+		<input type="text" id="domesticLoungeAcces" name="domesticLoungeAcces" th:field="*{domesticLoungeAcces}" required>
+		
+		<label >Reward Points:</label>
+		<input type="text" id="rewardPoints" name="rewardPoints" th:field="*{rewardPoints}" required>
+
+		<label >Travel:</label>
+		<input type="text" id="travel" name="travel" th:field="*{travel}" required>
+
+		<label >Domestic Lounge:</label>
+		<input type="text" id="domesticLounge" name="domesticLounge" th:field="*{domesticLounge}" required>
+
+		<label >International Lounge:</label>
+		<input type="text" id="internationalLounge" name="internationalLounge" th:field="*{internationalLounge}" required>
+
+		<label >Fuel:</label>
+		<input type="text" id="fuel" name="fuel" th:field="*{fuel}" required>
+
+		<input type="submit" value="Update">
+	</form>
+</body>
+</html>

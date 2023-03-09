@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lifetime Free Credit Card</title>
+	<link rel="stylesheet" href="/CSS_File/lifeTimeFreeCreditCard.css">
+</head>
+<body>
+	<form th:action="@{/lifeTimeFree/update/{id}(id=${person.LifeTimeFeeCreditCardId})}" th:object="${person}" method="post">
+		<div class="outer">
+			<div class="heading">
+				<p>Lifetime Free Credit Card</p>
+			</div>
+		</div>
+		<input type="hidden" id="cardid" name="cardid" th:field="*{LifeTimeFeeCreditCardId}" readonly="readonly">
+		
+		<label >No Annual Fee:</label>
+		<input type="text" id="noAnnualFee" name="noAnnualFee" th:field="*{noAnnualFee}" required>
+
+		<label >Renewal Fee:</label>
+		<input type="text" id="renewalFee" name="renewalFee" th:field="*{renewalFee}" required>
+
+		<label >Intrest Charge</label>:
+		<input type="text" id="intrestCharge" name="intrestCharge" th:field="*{intrestCharge}" required>
+
+		<label >Cash Advance Charge:</label>
+		<input type="text" id="cashAdvanceCharge" name="cashAdvanceCharge" th:field="*{cashAdvanceCharge}" required>
+		
+		<label >Welcome Bonus:</label>
+		<input type="text" id="welcomeBonus" name="welcomeBonus" th:field="*{welcomeBonus}" required>
+
+		<label >Rewards and Bonus:</label>
+		<input type="text" id="rewardsAndBonus" name="rewardsAndBonus" th:field="*{rewardsAndBonus}" required>
+
+        <label >Special Perks:</label>
+		<input type="text" id="specialPerks" name="specialPerks" th:field="*{specialPerks}" required>
+
+		<label >Lounge Acces:</label>
+		<input type="text" id="loungeAcces" name="loungeAcces" th:field="*{loungeAcces}" required>
+
+		<label >International Travel:</label>
+		<input type="text" id="internationalTravel" name="internationalTravel" th:field="*{internationalTravel}" required>
+
+		<input type="submit" value="Update">
+	</form>
+</body>
+</html>

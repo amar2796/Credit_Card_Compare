@@ -1,5 +1,6 @@
 package com.cdac.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.context.annotation.Primary;
@@ -27,6 +28,9 @@ public class Card {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int cardid;
 
+	@OneToMany(mappedBy = "card", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<RewardBenefits> products = new ArrayList<>();
+	
 	public Bank getBank() {
 		return bank;
 	}

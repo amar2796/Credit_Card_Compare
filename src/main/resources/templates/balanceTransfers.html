@@ -7,14 +7,14 @@
 	<link rel="stylesheet" href="/CSS_File/balanceTransfers.css">
 </head>
 <body>
-	<form action="balanceTransfersRegister">
+	<form th:action="@{/balanceTransfersRegister}" th:object="${person}">
 		<div class="outer">
 			<div class="heading">
 				<p>Balance Transfer</p>
 			</div>
 		</div>
 		<label >Card Id:</label>
-		<input type="text" id="cardid" name="cardid" value="${cardid }" >
+		<input type="text" id="cardid" name="cardid" th:field="*{cardid}" >
 		
 		
 		<label >Intrest Free Period:</label>

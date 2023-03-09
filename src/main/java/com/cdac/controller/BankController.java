@@ -35,13 +35,13 @@ public class BankController {
 	public String addCard(Bank bank, Model model)
 	{
 		bankService.addDataInBankTable(bank);
-		return "redirect:/teamDashboard";
+		return "redirect:/teamDashboard1";
 	}
-	@RequestMapping("/teamDashboard")
-    public String newPage(Model model) {
-		model.addAttribute("bank",bankRepo.findAll());
-        return "teamDashboard";
-    }
+//	@RequestMapping("/teamDashboard")
+//    public String newPage(Model model) {
+//		model.addAttribute("bank",bankRepo.findAll());
+//        return "teamDashboard";
+//    }
 	
 //	@RequestMapping("/bankdata")
 //    public  ModelAndView getUsers() {

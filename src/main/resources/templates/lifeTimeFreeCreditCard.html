@@ -7,14 +7,14 @@
 	<link rel="stylesheet" href="/CSS_File/lifeTimeFreeCreditCard.css">
 </head>
 <body>
-	<form action="lifeTimeFreeCreditCardRegister">
+	<form th:action="@{/lifeTimeFreeCreditCardRegister}" th:object="${person}">
 		<div class="outer">
 			<div class="heading">
 				<p>Lifetime Free Credit Card</p>
 			</div>
 		</div>
 		<label >Card Id:</label>
-		<input type="text" id="cardid" name="cardid" value="${cardid }" readonly="readonly">
+		<input type="text" id="cardid" name="cardid" th:field="*{cardid}" readonly="readonly">
 		
 		<label >No Annual Fee:</label>
 		<input type="text" id="noAnnualFee" name="noAnnualFee" required>
