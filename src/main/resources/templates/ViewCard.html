@@ -29,9 +29,28 @@
 		.card p {
 			font-size: 1rem;
 		}
+		table {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: left;
+}
+th, td {
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
 	</style>
 </head>
 <body>
+	
+					<tr th:each="message : ${feesAndCharges}">
+        <td th:text="${message}"></td>
+    </tr>
+
 	<div class="container">
 		<div class="card">
 			<img src="https://via.placeholder.com/300x200" alt="Card Image">

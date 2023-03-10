@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.cdac.dao.FeesAndChargesRepo;
 import com.cdac.dao.UserRepo;
 import com.cdac.model.User;
 import com.cdac.service.UserService;
@@ -20,6 +21,8 @@ public class userController {
 
 	@Autowired
 	UserService userService;
+	@Autowired
+	FeesAndChargesRepo feesAndChargesRepo; 
 	
 //	@RequestMapping("/thy")
 //	public String thy() {
@@ -60,8 +63,10 @@ public class userController {
 	
 	//View Card page
 	@RequestMapping("/viewCard")
-	public String viewCard()
+	public String viewCard(Model model)
 	{
+		model.addAttribute("feesAndCharges",feesAndChargesRepo.findById(452));
+		System.out.println(model);
 		return "ViewCard";
 	}
 	
