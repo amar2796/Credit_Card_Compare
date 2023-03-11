@@ -5,9 +5,13 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-import com.cdac.model.RewardBenefits;
+import com.cdac.model.Card;
+import com.cdac.model.RewardBenefit;
+import com.cdac.service.CardService;
 import com.cdac.service.RewardBenefitsService;
 
 @Controller
@@ -15,6 +19,9 @@ public class HomeController {
 	
 	@Autowired
 	private RewardBenefitsService benefitsService;
+	
+	@Autowired
+	private CardService cardService;
 
 	@RequestMapping("/")
 	public String showAllCards(Model model) {
@@ -23,6 +30,19 @@ public class HomeController {
 		//System.out.println(rewardBenefits);
 		//model.addAttribute("rewardBenefits", rewardBenefits);
 		return "home";
+	}
+	
+	//categoriesPage mapping
+	@RequestMapping("/categoriesPage")
+	public String categoriesPage() {
+		return "categoriesPage";
+	}
+	
+	@RequestMapping("/categoriesPage/{id}")
+	public String categoriesPage(@PathVariable int id, Model model){
+		List<Card> cards = cardService.getCardByCategoryId(id);
+		model.addAttribute("cards", cards);
+		return "categoriesPage";
 	}
 	
 }

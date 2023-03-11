@@ -7,6 +7,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import lombok.Data;
 
 @Entity
 public class Bank {
@@ -14,37 +15,37 @@ public class Bank {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	int bankid;
-	
-	String bank_name;
-	
-	public String getBank_name() {
-		return bank_name;
-	}
-	
-	
-	public void setBank_name(String bank_name) {
-		this.bank_name = bank_name;
-	}
+	String bankName;
+	String description;
+	boolean isApproved;
 	public int getBankid() {
 		return bankid;
 	}
 	public void setBankid(int bankid) {
 		this.bankid = bankid;
 	}
-	public Bank(String bank_name, int bankid) {
-		super();
-		this.bank_name = bank_name;
-		this.bankid = bankid;
+	public String getBankName() {
+		return bankName;
 	}
-	public Bank() {
-		super();
-		// TODO Auto-generated constructor stub
+	public void setBankName(String bankName) {
+		this.bankName = bankName;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public boolean getIsApproved() {
+		return isApproved;
+	}
+	public void setIsApproved(boolean isApproved) {
+		this.isApproved = isApproved;
 	}
 	@Override
 	public String toString() {
-		return "Bank [bank_name=" + bank_name + ", bankid=" + bankid + "]";
+		return "Bank [bankid=" + bankid + ", bankName=" + bankName + ", description=" + description + ", isApproved="
+				+ isApproved + "]";
 	}
-	
-	
 	
 }

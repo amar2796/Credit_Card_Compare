@@ -9,61 +9,56 @@
 		<h1>Admin Dashboard</h1>
 		<nav>
 			<ul>
-				<li><a href="#">Dashboard</a></li>
-				<li><a href="#">Users</a></li>
-				<li><a href="#">Settings</a></li>
+				
 				<li><a href="#">Logout</a></li>
 			</ul>
 		</nav>
 	</header>
 	<main>
 		<section class="overview">
-			<h2>Dashboard Overview</h2>
+			<h2>Bank List</h2>
 			<div class="card">
-				<h3>Total Users</h3>
-				<p>100</p>
-			</div>
-			<div class="card">
-				<h3>Total Orders</h3>
-				<p>50</p>
-			</div>
-			<div class="card">
-				<h3>Total Revenue</h3>
-				<p>$500</p>
+				<table>
+				<thead>
+					<tr>
+						<th>Bank Name</th>
+						<th>Status</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="bank : ${bank}">
+                	<td th:text="${bank.bankName}"></td>
+					<td><a style="text-decoration:none" th:href="@{/bankStatusAccept/{id}(id=${bank.bankid})}">Accept</a> |
+					 <a style="text-decoration:none" th:href="@{/bankStatusReject/{id}(id=${bank.bankid})}">Reject</a></td>					
+					</tr>
+				</tbody>
+			</table>
 			</div>
 		</section>
 		<section class="user-list">
-			<h2>User List</h2>
+			<h2>Card List</h2>
+			<div class="card">
 			<table>
 				<thead>
 					<tr>
-						<th>Name</th>
-						<th>Email</th>
-						<th>Role</th>
+						<th>Bank Name</th>
+						<th>Card Name</th>
 						<th>Action</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>John Doe</td>
-						<td>johndoe@example.com</td>
-						<td>Admin</td>
-						<td><a href="#">Edit</a> | <a href="#">Delete</a></td>
+					<tr th:each="card : ${card}">
+					<td th:text="${card.Bank.bankName}"></td>
+                	<td th:text="${card.cardName}"></td>
+                	
+                	<td><a style="text-decoration:none" th:href="@{/card/edit/{id}(id=${card.cardid})}">Edit</a></td>
+                	
+                	
 					</tr>
-					<tr>
-						<td>Jane Doe</td>
-						<td>janedoe@example.com</td>
-						<td>User</td>
-						<td><a href="#">Edit</a> | <a href="#">Delete</a></td>
-					</tr>
-					<tr>
-						<td>James Smith</td>
-						<td>jamessmith@example.com</td>
-						<td>User</td>
-						<td><a href="#">Edit</a> | <a href="#">Delete</a></td>
-					</tr>
+					
 				</tbody>
 			</table>
+			</div>
 		</section>
 	</main>
 </body>

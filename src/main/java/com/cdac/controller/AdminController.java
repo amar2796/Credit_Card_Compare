@@ -14,16 +14,27 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.cdac.model.Admin;
+import com.cdac.model.Bank;
 import com.cdac.model.Team;
 import com.cdac.service.AdminService;
+import com.cdac.service.BankService;
+import com.cdac.service.CardService;
 
 
 
 @Controller
 public class AdminController {
 
+	private static final boolean True = false;
+
 	@Autowired
 	AdminService adminService;
+	
+	@Autowired
+	BankService bankService;
+	
+	@Autowired
+	CardService cardService;
 	
 	//team login
 	@RequestMapping("/adminLogin")
@@ -44,8 +55,35 @@ public class AdminController {
 		}
 		else
 		{
-			return "adminDashboard";
+			return "redirect:/adminDashboardControl";
 		}
+	}
+	
+	//admin dashboard controller
+	@RequestMapping("/adminDashboardControl")
+	public String adminDashboardControl(Model model) {
+		model.addAttribute("bank", bankService.getApprovedBanks(false));
+		model.addAttribute("card", cardService.getCardsByStatus(false));
+		return "adminDashboard";
+	}
+	
+	//Accept Bank
+	@RequestMapping("/bankStatusAccept/{id}")
+	public String bankStatusAccept(@PathVariable Integer id) {
+		Bank bank=bankService.getBank(id).get();
+		System.out.println(id);
+		bank.setIsApproved(true);
+		bankService.addDataInBankTable(bank);
+		return "redirect:/adminDashboardControl";
+	}
+	
+	//Reject Bank
+	@RequestMapping("/bankStatusReject/{id}")
+	public String bankStatusReject(@PathVariable Integer id) {
+		Bank bank=bankService.getBank(id).get();
+		bank.setIsApproved(false);	
+		bankService.addDataInBankTable(bank);
+		return "redirect:/adminDashboardControl";
 	}
 
 }

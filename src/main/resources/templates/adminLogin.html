@@ -8,7 +8,7 @@
 </head>
 <body>
 	<form action="adminLoginValidate" >
-		<label class="error">${error } </label>
+		<label class="error" th:text="${error }" ></label>
 		<label for="userId">User id:</label>
 		<input type="text" id="userId" name="userId" required>
 

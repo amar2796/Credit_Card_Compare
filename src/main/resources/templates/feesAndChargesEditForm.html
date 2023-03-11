@@ -7,42 +7,42 @@
 	<link rel="stylesheet" href="/CSS_File/fees&Charges.css">
 </head>
 <body>
-	<form th:action="@{/feesAndCharges/update/{id}(id=${person.FeesAndChargesId})}" th:object="${person}" method="post">
+	<form th:action="@{/feesAndCharges/update/}" th:object="${feesAndCharge}" method="post">
 		<div class="outer">
 			<div class="heading">
 				<p>Fees And Charges</p>
 			</div>
 		</div>
 		
-		<input type="hidden" id="cardid" name="cardid" th:field="*{FeesAndChargesId}" >
+		<input type="hidden" id="feesAndChargesId" name="feesAndChargesId" th:field="*{feesAndChargesId}" required>
 		
-		<label >No Annual Fees:</label>
-		<input type="text" id="noAnnualFees" name="noAnnualFees" th:field="*{noAnnualFees}" required>
+		<label >Joining Fee:</label>
+		<input type="text" id="joiningFee" name="joiningFee" th:field="*{joiningFee}" required>
 
-		<label >Membership Charges:</label>
-		<input type="text" id="membershipCharges" name="membershipCharges" th:field="*{membershipCharges}" required>
+		<label >Renewal Fee:</label>
+		<input type="text" id="renewalFee" name="renewalFee" th:field="*{renewalFee}" required>
 
-		<label >Cashbacks:</label>
-		<input type="text" id="cashbacks" name="cashbacks" th:field="*{cashbacks}" required>
+		<label >Spend Based Waiver:</label>
+		<input type="text" id="spendBasedWaiver" name="spendBasedWaiver" th:field="*{spendBasedWaiver}" required>
 
-		<label >Low Intrest:</label>
-		<input type="text" id="lowIntrest" name="lowIntrest" th:field="*{lowIntrest}" required>
+		<label >Rewards Redemption Fee:</label>
+		<input type="text" id="rewardsRedemptionFee" name="rewardsRedemptionFee" th:field="*{rewardsRedemptionFee}" required>
 		
-		<label >Travel:</label>
-		<input type="text" id="travel" name="travel" th:field="*{travel}" required>
+		<label >Interest Rates:</label>
+		<input type="text" id="interestRates" name="interestRates" th:field="*{interestRates}" required>
 
-		<label >Domestic Lounge:</label>
-		<input type="text" id="domesticLounge" name="domesticLounge" th:field="*{domesticLounge}" required>
+		<label >Foreign Currency Markup:</label>
+		<input type="text" id="foreignCurrencyMarkup" name="foreignCurrencyMarkup" th:field="*{foreignCurrencyMarkup}" required>
 
-		<label >International Lounge:</label>
-		<input type="text" id="internationalLounge" name="internationalLounge" th:field="*{internationalLounge}" required>
+		<label >Fuel Surcharge:</label>
+		<input type="text" id="fuelSurcharge" name="fuelSurcharge" th:field="*{fuelSurcharge}" required>
 
-		<label >Balance Transfer:</label>
-		<input type="text" id="balanceTransfer" name="balanceTransfer" th:field="*{balanceTransfer}" required>
+		<label >Cash Advance Charge:</label>
+		<input type="text" id="cashAdvanceCharge" name="cashAdvanceCharge" th:field="*{cashAdvanceCharge}" required>
 
-        <label >International Transaction:</label>
-		<input type="text" id="internationalTransaction" name="internationalTransaction" th:field="*{internationalTransaction}" required>
-
+        <label >Add On Card Fee:</label>
+		<input type="text" id="addOnCardFee" name="addOnCardFee" th:field="*{addOnCardFee}" required>
+		
 
 		<input type="submit" value="Update">
 	</form>

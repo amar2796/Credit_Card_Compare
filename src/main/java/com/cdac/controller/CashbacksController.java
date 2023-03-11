@@ -15,7 +15,7 @@ import com.cdac.dao.cashbacksRepo;
 import com.cdac.model.BalanceTransfers;
 import com.cdac.model.Card;
 import com.cdac.model.Cashbacks;
-import com.cdac.model.RewardBenefits;
+import com.cdac.model.RewardBenefit;
 import com.cdac.service.CashbacksService;
 
 import jakarta.servlet.http.HttpServletResponse;
@@ -45,7 +45,7 @@ public class CashbacksController {
 	public String balanceTransfersRegister(@RequestParam Card cardid,Cashbacks cashbacks,Model model) 
 	{
 		cashbacks.setCard(cardid);
-		model.addAttribute("cardid", cardid.getCardid());
+//		model.addAttribute("cardid", cardid.getCardid());
 		System.out.println(cashbacks);
 		try {
 			cashbacksService.addDataRegister(cashbacks);

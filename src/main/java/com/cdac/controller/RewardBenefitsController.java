@@ -1,5 +1,7 @@
 package com.cdac.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,7 +16,8 @@ import com.cdac.dao.CardRepo;
 import com.cdac.dao.RewardBenefitsRepo;
 import com.cdac.model.Bank;
 import com.cdac.model.Card;
-import com.cdac.model.RewardBenefits;
+import com.cdac.model.RewardBenefit;
+import com.cdac.service.CardService;
 import com.cdac.service.RewardBenefitsService;
 
 import jakarta.servlet.http.Cookie;
@@ -23,6 +26,9 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @Controller
 public class RewardBenefitsController {
+	
+	@Autowired
+	private CardService cardService;
 
 	@Autowired
 	RewardBenefitsService rewardBenefitsService;
@@ -35,20 +41,22 @@ public class RewardBenefitsController {
 	@RequestMapping("/reward&Benefits/{cardid}")
 	public String rewardBenefits(@PathVariable("cardid") int cardid, Model model,HttpServletResponse response)
 	{
-		Card person = cardRepo.findById(cardid)
-	            .orElseThrow(() -> new IllegalArgumentException("Invalid person id: " + cardid));
-	        model.addAttribute("person", person);
-	        System.out.println(person.getCard_type());
+		Card card = cardRepo.findById(cardid)
+	            .orElseThrow(() -> new IllegalArgumentException("Invalid card id: " + cardid));
+	        model.addAttribute("card", card);
+//	        System.out.println(person.getCard_type());
 		return "reward&Benefits";
 	}
 	
 	//rewardBenefitsRegister save data (registration page)
 	@RequestMapping("/rewardBenefitsRegister")
-	public String rewardBenefitsRegister(@RequestParam Card cardid, Model model,RewardBenefits rewardBenefits, HttpServletRequest request)
+	public String rewardBenefitsRegister(@RequestParam Integer cardid, Model model,RewardBenefit rewardBenefits, HttpServletRequest request)
 	{
-		System.out.println(cardid);
-		
-		rewardBenefits.setCard(cardid);
+		rewardBenefitsService.registerData(rewardBenefits);
+		Card card = cardService.getCard(cardid).get();
+		card.setRewardBenefit(rewardBenefits);
+		cardService.saveCard(card);
+//		rewardBenefits.setCard(cardid);
 		//model.addAttribute("cardid", cardid.getCardid());
 //		Integer idcard = 0;
 //		Cookie[] cookies = request.getCookies();
@@ -60,32 +68,21 @@ public class RewardBenefitsController {
 //	        }
 //	    }
 //	    card.setCardid(idcard);
-		rewardBenefitsService.registerData(rewardBenefits);
+		//rewardBenefitsService.registerData(rewardBenefits);
 		return "redirect:teamDashboard1";
 	}
 	
 	// Reward Edit detail
 		@GetMapping("/rewardAndBenefit/edit/{id}")
 	    public String showEditForm(@PathVariable("id") int id, Model model) {
-	        RewardBenefits person = rewardBenefitsRepo.findById(id)
-	            .orElseThrow(() -> new IllegalArgumentException("Invalid person id: " + id));
-	        model.addAttribute("person", person);
+	        RewardBenefit rewardBenefit = rewardBenefitsService.findById(id).get();
+	        model.addAttribute("rewardBenefit", rewardBenefit);
 	        return "reward&BenefitsEditForm";
 	    }
 
-		@PostMapping("/rewardAndBenefit/update/{id}")
-		public String updatePerson(@ModelAttribute("person") RewardBenefits person,@PathVariable("id") int id) {
-			RewardBenefits person1=rewardBenefitsRepo.findById(id).orElseThrow();
-			person1.setWelcomeBenefits(person.getWelcomeBenefits());
-			person1.setRewardRates(person.getRewardRates());
-			person1.setMovieDining(person.getMovieDining());
-			person1.setDomesticLoungeAcces(person.getDomesticLoungeAcces());
-			person1.setRewardPoints(person.getRewardPoints());
-			person1.setTravel(person.getTravel());
-			person1.setDomesticLounge(person.getDomesticLounge());
-			person1.setInternationalLounge(person.getInternationalLounge());
-			person1.setFuel(person.getFuel());
-			rewardBenefitsRepo.save(person1);
+		@PostMapping("/rewardAndBenefit/update/")
+		public String updatePerson(@ModelAttribute("rewardBenefit") RewardBenefit rewardBenefit) {
+			rewardBenefitsService.registerData(rewardBenefit);
 		  return "redirect:/teamDashboardDetails";
 		}
 		

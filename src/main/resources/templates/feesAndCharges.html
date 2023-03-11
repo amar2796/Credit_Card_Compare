@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="/CSS_File/fees&Charges.css">
 </head>
 <body>
-	<form th:action="@{/feesAndChargesRegister}" th:object="${person}">
+	<form th:action="@{/feesAndChargesRegister}" th:object="${card}">
 		<div class="outer">
 			<div class="heading">
 				<p>Fees And Charges</p>
@@ -16,32 +16,32 @@
 		<label >Card Id:</label>
 		<input type="text" id="cardid" name="cardid" th:field="*{cardid}" >
 		
-		<label >No Annual Fees:</label>
-		<input type="text" id="noAnnualFees" name="noAnnualFees" required>
+		<label >Joining Fee:</label>
+		<input type="text" id="joiningFee" name="joiningFee" required>
 
-		<label >Membership Charges:</label>
-		<input type="text" id="membershipCharges" name="membershipCharges" required>
+		<label >Renewal Fee:</label>
+		<input type="text" id="renewalFee" name="renewalFee" required>
 
-		<label >Cashbacks:</label>
-		<input type="text" id="cashbacks" name="cashbacks" required>
+		<label >Spend Based Waiver:</label>
+		<input type="text" id="spendBasedWaiver" name="spendBasedWaiver" required>
 
-		<label >Low Intrest:</label>
-		<input type="text" id="lowIntrest" name="lowIntrest" required>
+		<label >Rewards Redemption Fee:</label>
+		<input type="text" id="rewardsRedemptionFee" name="rewardsRedemptionFee" required>
 		
-		<label >Travel:</label>
-		<input type="text" id="travel" name="travel" required>
+		<label >Interest Rates:</label>
+		<input type="text" id="interestRates" name="interestRates" required>
 
-		<label >Domestic Lounge:</label>
-		<input type="text" id="domesticLounge" name="domesticLounge" required>
+		<label >Foreign Currency Markup:</label>
+		<input type="text" id="foreignCurrencyMarkup" name="foreignCurrencyMarkup" required>
 
-		<label >International Lounge:</label>
-		<input type="text" id="internationalLounge" name="internationalLounge" required>
+		<label >Fuel Surcharge:</label>
+		<input type="text" id="fuelSurcharge" name="fuelSurcharge" required>
 
-		<label >Balance Transfer:</label>
-		<input type="text" id="balanceTransfer" name="balanceTransfer" required>
+		<label >Cash Advance Charge:</label>
+		<input type="text" id="cashAdvanceCharge" name="cashAdvanceCharge" required>
 
-        <label >International Transaction:</label>
-		<input type="text" id="internationalTransaction" name="internationalTransaction" required>
+        <label >Add On Card Fee:</label>
+		<input type="text" id="addOnCardFee" name="addOnCardFee" required>
 
 
 		<input type="submit" value="Submit">

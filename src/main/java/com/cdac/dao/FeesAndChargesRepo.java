@@ -7,12 +7,12 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import com.cdac.model.Card;
-import com.cdac.model.FeesAndCharges;
+import com.cdac.model.FeesAndCharge;
 
 @Repository
-public interface FeesAndChargesRepo extends CrudRepository<FeesAndCharges, Integer>{
+public interface FeesAndChargesRepo extends CrudRepository<FeesAndCharge, Integer>{
 
-	void save(Optional<FeesAndCharges> data);
+	void save(Optional<FeesAndCharge> data);
 
 
 }

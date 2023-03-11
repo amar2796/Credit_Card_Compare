@@ -7,7 +7,7 @@
 	<link rel="stylesheet" href="/CSS_File/reward&Benefits.css">
 </head>
 <body>
-	<form th:action="@{/rewardBenefitsRegister}"  th:object="${person}">
+	<form th:action="@{/rewardBenefitsRegister}"  th:object="${card}">
 		<div class="outer">
 			<div class="heading">
 				<p>Rewards And Benefits</p>
@@ -16,7 +16,7 @@
 			
 		</div>
 		<label >Card Name:</label>
-		<input type="text" id="welcomeBenefits" name="welcomeBenefits" th:field="*{card_type}" readonly="readonly" required>
+		<input type="text" id="welcomeBenefits" name="welcomeBenefits" th:field="*{cardName}" readonly="readonly" required>
 		
 		<input type="hidden" th:field="*{cardid}" id="cardid" name="cardid"  >
 		
@@ -24,13 +24,10 @@
 		<input type="text" id="welcomeBenefits" name="welcomeBenefits" required>
 
 		<label >Rewards Rates:</label>
-		<input type="text" id="rewardRates" name="rewardRates" required>
+		<input type="text" id="rewardRate" name="rewardRate" required>
 
 		<label >Movie and Dining:</label>
-		<input type="text" id="movieDining" name="movieDining" required>
-
-		<label >Domestic Lounge Acces :</label>
-		<input type="text" id="domesticLoungeAcces" name="domesticLoungeAcces" required>
+		<input type="text" id="movieAndDining" name="movieAndDining" required>
 		
 		<label >Reward Points:</label>
 		<input type="text" id="rewardPoints" name="rewardPoints" required>
@@ -46,6 +43,15 @@
 
 		<label >Fuel:</label>
 		<input type="text" id="fuel" name="fuel" required>
+		
+		<label >Golf:</label>
+		<input type="text" id="golf" name="golf" required>
+		
+		<label >Insurance Benefits:</label>
+		<input type="text" id="insuranceBenefits" name="insuranceBenefits" required>
+		
+		<label >Zero Liability Protection:</label>
+		<input type="text" id="zeroLiabilityProtection" name="zeroLiabilityProtection" required>
 
 		<input type="submit" value="Submit">
 	</form>

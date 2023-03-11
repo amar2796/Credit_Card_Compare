@@ -7,37 +7,36 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
 
 @Entity
-public class RewardBenefits {
-	
-	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "cardid")
-	private Card card;   
+public class RewardBenefit {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private int RewardBenefitsId;
+	private int rewardBenefitsId;
 	private String welcomeBenefits;
-	private String rewardRates;
-	private String movieDining;
+	private String rewardRate;
+	private String movieAndDining;
 	private String domesticLoungeAcces;
 	private String rewardPoints;
 	private String travel;
 	private String domesticLounge;
 	private String internationalLounge;
 	private String fuel;
-	public Card getCard() {
-		return card;
-	}
-	public void setCard(Card card) {
-		this.card = card;
-	}
+	private String golf;
+	private String insuranceBenefits;
+	private String zeroLiabilityProtection;
 	public int getRewardBenefitsId() {
-		return RewardBenefitsId;
+		return rewardBenefitsId;
 	}
 	public void setRewardBenefitsId(int rewardBenefitsId) {
-		RewardBenefitsId = rewardBenefitsId;
+		this.rewardBenefitsId = rewardBenefitsId;
 	}
 	public String getWelcomeBenefits() {
 		return welcomeBenefits;
@@ -45,17 +44,17 @@ public class RewardBenefits {
 	public void setWelcomeBenefits(String welcomeBenefits) {
 		this.welcomeBenefits = welcomeBenefits;
 	}
-	public String getRewardRates() {
-		return rewardRates;
+	public String getRewardRate() {
+		return rewardRate;
 	}
-	public void setRewardRates(String rewardRates) {
-		this.rewardRates = rewardRates;
+	public void setRewardRate(String rewardRate) {
+		this.rewardRate = rewardRate;
 	}
-	public String getMovieDining() {
-		return movieDining;
+	public String getMovieAndDining() {
+		return movieAndDining;
 	}
-	public void setMovieDining(String movieDining) {
-		this.movieDining = movieDining;
+	public void setMovieAndDining(String movieAndDining) {
+		this.movieAndDining = movieAndDining;
 	}
 	public String getDomesticLoungeAcces() {
 		return domesticLoungeAcces;
@@ -93,34 +92,32 @@ public class RewardBenefits {
 	public void setFuel(String fuel) {
 		this.fuel = fuel;
 	}
-	public RewardBenefits(Card card, int rewardBenefitsId, String welcomeBenefits, String rewardRates,
-			String movieDining, String domesticLoungeAcces, String rewardPoints, String travel, String domesticLounge,
-			String internationalLounge, String fuel) {
-		super();
-		this.card = card;
-		RewardBenefitsId = rewardBenefitsId;
-		this.welcomeBenefits = welcomeBenefits;
-		this.rewardRates = rewardRates;
-		this.movieDining = movieDining;
-		this.domesticLoungeAcces = domesticLoungeAcces;
-		this.rewardPoints = rewardPoints;
-		this.travel = travel;
-		this.domesticLounge = domesticLounge;
-		this.internationalLounge = internationalLounge;
-		this.fuel = fuel;
+	public String getGolf() {
+		return golf;
 	}
-	public RewardBenefits() {
-		super();
-		// TODO Auto-generated constructor stub
+	public void setGolf(String golf) {
+		this.golf = golf;
+	}
+	public String getInsuranceBenefits() {
+		return insuranceBenefits;
+	}
+	public void setInsuranceBenefits(String insuranceBenefits) {
+		this.insuranceBenefits = insuranceBenefits;
+	}
+	public String getZeroLiabilityProtection() {
+		return zeroLiabilityProtection;
+	}
+	public void setZeroLiabilityProtection(String zeroLiabilityProtection) {
+		this.zeroLiabilityProtection = zeroLiabilityProtection;
 	}
 	@Override
 	public String toString() {
-		return "RewardBenefits [card=" + card + ", RewardBenefitsId=" + RewardBenefitsId + ", welcomeBenefits="
-				+ welcomeBenefits + ", rewardRates=" + rewardRates + ", movieDining=" + movieDining
-				+ ", domesticLoungeAcces=" + domesticLoungeAcces + ", rewardPoints=" + rewardPoints + ", travel="
-				+ travel + ", domesticLounge=" + domesticLounge + ", internationalLounge=" + internationalLounge
-				+ ", fuel=" + fuel + "]";
+		return "RewardBenefit [rewardBenefitsId=" + rewardBenefitsId + ", welcomeBenefits=" + welcomeBenefits
+				+ ", rewardRate=" + rewardRate + ", movieAndDining=" + movieAndDining + ", domesticLoungeAcces="
+				+ domesticLoungeAcces + ", rewardPoints=" + rewardPoints + ", travel=" + travel + ", domesticLounge="
+				+ domesticLounge + ", internationalLounge=" + internationalLounge + ", fuel=" + fuel + ", golf=" + golf
+				+ ", insuranceBenefits=" + insuranceBenefits + ", zeroLiabilityProtection=" + zeroLiabilityProtection
+				+ "]";
 	}
-	
 	
 }

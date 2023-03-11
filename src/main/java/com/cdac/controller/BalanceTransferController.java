@@ -14,7 +14,7 @@ import com.cdac.dao.BalanceTransferRepo;
 import com.cdac.dao.CardRepo;
 import com.cdac.model.BalanceTransfers;
 import com.cdac.model.Card;
-import com.cdac.model.RewardBenefits;
+import com.cdac.model.RewardBenefit;
 import com.cdac.service.BalanceTransferService;
 
 import jakarta.servlet.http.HttpServletResponse;
@@ -43,7 +43,7 @@ public class BalanceTransferController {
 	public String balanceTransfersRegister(@RequestParam Card cardid,BalanceTransfers balanceTransfers,Model model) 
 	{
 		balanceTransfers.setCard(cardid);
-		model.addAttribute("cardid", cardid.getCardid());
+//		model.addAttribute("cardid", cardid.get);
 		try {
 			balanceTransferService.addDataRegister(balanceTransfers);
 		} catch (Exception e) {

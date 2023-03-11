@@ -7,15 +7,15 @@
 </head>
 <body>
     <h1>Edit Bank Detail</h1>
-    <form th:action="@{/bankDetail/update}" th:object="${person}" method="post">
+    <form th:action="@{/bankDetail/update}" th:object="${bank}" method="post">
         
         <div>
-            <label for="bank-id">Bank Id:</label>
+            <label for="bankid">Bank Id:</label>
             <input type="text" th:field="*{bankid}" readonly="readonly"/>
         </div>
         <div>
             <label for="bank-name">Bank Name:</label>
-            <input type="text" th:field="*{bank_name}" />
+            <input type="text" th:field="*{bankName}" />
         </div>
         <div>
             <button type="submit">Save</button>

@@ -15,7 +15,7 @@ import com.cdac.dao.LifeTimeFeeCreditCardRepo;
 import com.cdac.model.Card;
 import com.cdac.model.Cashbacks;
 import com.cdac.model.LifeTimeFeeCreditCard;
-import com.cdac.model.RewardBenefits;
+import com.cdac.model.RewardBenefit;
 import com.cdac.service.LifeTimeFeeCreditCardService;
 
 import jakarta.servlet.http.HttpServletResponse;
@@ -45,7 +45,7 @@ public class LifeTimeFeeCreditCardController {
 		public String balanceTransfersRegister(@RequestParam Card cardid,LifeTimeFeeCreditCard lifeTimeFeeCreditCard,Model model) 
 		{
 			lifeTimeFeeCreditCard.setCard(cardid);
-			model.addAttribute("cardid", cardid.getCardid());
+//			model.addAttribute("cardid", cardid.getCardid());
 			System.out.println(lifeTimeFeeCreditCard);
 			try {
 				lifeTimeFeeCreditCardService.addDataRegister(lifeTimeFeeCreditCard);

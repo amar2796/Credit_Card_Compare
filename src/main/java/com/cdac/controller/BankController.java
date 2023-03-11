@@ -10,7 +10,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.cdac.dao.BankRepo;
 import com.cdac.dto.CardDTO;
 import com.cdac.model.Bank;
 import com.cdac.service.BankService;
@@ -18,8 +17,6 @@ import com.cdac.service.BankService;
 @Controller
 public class BankController {
 
-	@Autowired
-	BankRepo bankRepo;
 	@Autowired
 	BankService bankService;
 	
@@ -35,7 +32,7 @@ public class BankController {
 	public String addCard(Bank bank, Model model)
 	{
 		bankService.addDataInBankTable(bank);
-		return "redirect:/teamDashboard1";
+		return "redirect:teamDashboard1";
 	}
 //	@RequestMapping("/teamDashboard")
 //    public String newPage(Model model) {

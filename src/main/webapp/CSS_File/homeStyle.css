@@ -269,3 +269,6 @@ body {
 .tablebutton button:hover{
   box-shadow: 0 2px 10px 0 rgba(31, 32, 32, 0.57);
 }
+a{
+	text-decoration: none;
+}

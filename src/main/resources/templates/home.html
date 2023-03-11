@@ -47,30 +47,30 @@
             get started now:
           </p>
           <div class="card">
-            <div class="card1">
+            <a href="/categoriesPage/11"><div class="card1">
               <span class="material-symbols-outlined">credit_card</span>
               <p>Best Credit Card</p>
-            </div>
-            <div class="card2">
+            </div></a>
+            <a href="/categoriesPage/1"><div class="card2">
               <span class="material-symbols-outlined">social_leaderboard</span>
               <p>Rewards</p>
-            </div>
-            <div class="card3">
+            </div></a>
+            <a href="/categoriesPage/2"><div class="card3">
               <span class="material-symbols-outlined">payments</span>
               <p>Cash Back</p>
-            </div>
-            <div class="card4">
+            </div></a>
+            <a href="/categoriesPage/8"><div class="card4">
               <span class="material-symbols-outlined">flight</span>
               <p>Travel</p>
-            </div>
-            <div class="card5">
+            </div></a>
+            <a href="/categoriesPage/3"><div class="card5">
               <span class="material-symbols-outlined">local_gas_station</span>
               <p>Fuel</p>
-            </div>
-            <div class="card6">
+            </div></a>
+            <a href="/categoriesPage/4"><div class="card6">
               <span class="material-symbols-outlined">savings</span>
               <p>No Annual Fee</p>
-            </div>
+            </div></a>
           </div>
         </div>
       </section>
@@ -99,7 +99,6 @@
           </div>
         </div>
         <div class="tableSectionFirst">
-        <tr th:each="rewardBenefit : ${rewardBenefits}">
         
           <div class="tableSectionFirst1">
             <div class="tableimage">
@@ -107,7 +106,7 @@
                 <img src="/image/hdfc_dinersclub black.png" alt=""></a>
             </div>
             <div class="tableimageTitle">
-              <p th:text="${rewardBenefit.card.card_type}"></p>
+              <p ></p>
             </div>
             <div class="tableRating"></div>
             <div class="tableJoiningFee">
@@ -120,13 +119,13 @@
               <p>Rewards Rate</p>
             </div>
             <div class="tableRewardRateText">
-              <p th:text="${rewardBenefit.rewardRates}"></p>
+              <p ></p>
             </div>
             <div class="tablebutton">
               <button>Apply Now</button>
             </div>
           </div>
-</tr>
+
           <div class="tableSectionFirst2">
             <div class="tableimage">
               <img src="/image/hdfc_dinersclub premium.png" alt="">

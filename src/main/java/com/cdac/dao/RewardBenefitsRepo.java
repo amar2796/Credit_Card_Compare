@@ -7,11 +7,11 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
-import com.cdac.model.RewardBenefits;
+import com.cdac.model.RewardBenefit;
 
 @Repository
 
-public interface RewardBenefitsRepo extends CrudRepository<RewardBenefits, Integer>{
+public interface RewardBenefitsRepo extends CrudRepository<RewardBenefit, Integer>{
 
 	
 	

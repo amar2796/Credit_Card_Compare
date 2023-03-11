@@ -1,11 +1,16 @@
 package com.cdac.service;
 
-import com.cdac.model.FeesAndCharges;
+import java.util.List;
+import java.util.Optional;
+
+import com.cdac.model.FeesAndCharge;
 
 public interface FeesAndChargesService {
 
-	void addDataRegister(FeesAndCharges feesAndCharges);
+	void addDataRegister(FeesAndCharge feesAndCharges);
 
-	Object findById();
+	List<FeesAndCharge> getAllFeeAndCharge();
+
+	Optional<FeesAndCharge> getFeesAndCharge(Integer id);
 
 }

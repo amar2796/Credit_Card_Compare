@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.context.annotation.Primary;
+import org.springframework.lang.NonNull;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
@@ -13,67 +14,97 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
+import lombok.Data;
+import lombok.Setter;
 
 @Entity
 public class Card {
-
-	@ManyToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "bankid")
-	private Bank bank;   
-	
-	
-	private String card_type;
-	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int cardid;
 
-	@OneToMany(mappedBy = "card", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<RewardBenefits> products = new ArrayList<>();
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "bankId")
+	private Bank bank;   
+	private String cardName;
 	
-	public Bank getBank() {
-		return bank;
-	}
-
-	public void setBank(Bank bank) {
-		this.bank = bank;
-	}
-
-	public String getCard_type() {
-		return card_type;
-	}
-
-	public void setCard_type(String card_type) {
-		this.card_type = card_type;
-	}
-
+//	@OneToMany(mappedBy = "card", cascade = CascadeType.ALL, orphanRemoval = true)
+//    private List<RewardBenefits> products = new ArrayList<>();
+	
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "categoryId")
+	private Category category;
+	
+	private String documentRequired;
+	private String highlights;
+	
+	@OneToOne
+	@JoinColumn(name = "rewardBenefitsId")
+	private RewardBenefit rewardBenefit;
+	@OneToOne
+	@JoinColumn(name = "feesAndChargesId")
+	private FeesAndCharge feesAndCharge;
+	private boolean isApproved;
 	public int getCardid() {
 		return cardid;
 	}
-
 	public void setCardid(int cardid) {
 		this.cardid = cardid;
 	}
-
-	public Card(Bank bank, String card_type, int cardid) {
-		super();
+	public Bank getBank() {
+		return bank;
+	}
+	public void setBank(Bank bank) {
 		this.bank = bank;
-		this.card_type = card_type;
-		this.cardid = cardid;
 	}
-
-	public Card() {
-		super();
-		// TODO Auto-generated constructor stub
+	public String getCardName() {
+		return cardName;
 	}
-
+	public void setCardName(String cardName) {
+		this.cardName = cardName;
+	}
+	public Category getCategory() {
+		return category;
+	}
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+	public String getDocumentRequired() {
+		return documentRequired;
+	}
+	public void setDocumentRequired(String documentRequired) {
+		this.documentRequired = documentRequired;
+	}
+	public String getHighlights() {
+		return highlights;
+	}
+	public void setHighlights(String highlights) {
+		this.highlights = highlights;
+	}
+	public RewardBenefit getRewardBenefit() {
+		return rewardBenefit;
+	}
+	public void setRewardBenefit(RewardBenefit rewardBenefit) {
+		this.rewardBenefit = rewardBenefit;
+	}
+	public FeesAndCharge getFeesAndCharge() {
+		return feesAndCharge;
+	}
+	public void setFeesAndCharge(FeesAndCharge feesAndCharge) {
+		this.feesAndCharge = feesAndCharge;
+	}
+	public boolean getIsApproved() {
+		return isApproved;
+	}
+	public void setIsApproved(boolean isApproved) {
+		this.isApproved = isApproved;
+	}
 	@Override
 	public String toString() {
-		return "Card [bank=" + bank + ", card_type=" + card_type + ", cardid=" + cardid + "]";
+		return "Card [cardid=" + cardid + ", bank=" + bank + ", cardName=" + cardName + ", category=" + category
+				+ ", documentRequired=" + documentRequired + ", highlights=" + highlights + ", rewardBenefit="
+				+ rewardBenefit + ", feesAndCharge=" + feesAndCharge + ", isApproved=" + isApproved + "]";
 	}
-	
-	
-	
-	
 	
 }
