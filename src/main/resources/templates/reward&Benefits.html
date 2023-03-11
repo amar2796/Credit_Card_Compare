@@ -12,9 +12,13 @@
 			<div class="heading">
 				<p>Rewards And Benefits</p>
 			</div>
+		
+			
 		</div>
-		<label >Card Id:</label>
-		<input type="text" th:field="*{cardid}" id="cardid" name="cardid"  >
+		<label >Card Name:</label>
+		<input type="text" id="welcomeBenefits" name="welcomeBenefits" th:field="*{card_type}" readonly="readonly" required>
+		
+		<input type="hidden" th:field="*{cardid}" id="cardid" name="cardid"  >
 		
 		<label >Welcome Benefits:</label>
 		<input type="text" id="welcomeBenefits" name="welcomeBenefits" required>

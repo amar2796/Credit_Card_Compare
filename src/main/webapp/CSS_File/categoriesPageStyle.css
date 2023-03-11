@@ -1,0 +1,158 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+}
+.topHeading{
+    background-color: rgb(217, 223, 223);
+    height: 70px;
+}
+.topHeadingContent{
+    margin-left: 90px;
+    max-width: 1200px;
+    height: 70px;
+    background-color: rgb(217, 223, 223);
+}
+.topHeadingContent p{
+    padding-top: 15px;
+    font-weight: bold;
+    font-size: 30px;
+}
+.firstTextArea{
+    
+    height: 350px;
+}
+.firstTextArea p{
+    padding-top: 40px;
+    font-size: 20px;
+}
+.firstTextAreaContent{
+    height: 400px;
+    margin-left: 90px;
+    width: 1200px;
+    
+}
+.mainContainer{
+    max-width: 1200px;
+}
+.mainContainer{
+    max-width: 1200px;
+    height: 1000px;
+    margin-left: 90px;
+}
+.firstTopHeading{
+    width: 1200px;
+    height: 50px;
+    background-color: rgb(217, 223, 223);
+    box-shadow: 0 1px 2px 0 rgba(20, 20, 20, 0.57);
+}
+.firstTopHeading p{
+    padding-top: 10px;
+    padding-left: 5px;
+    font-size: 25px;
+    font-weight: bold;
+}
+.firstTopTextArea{
+    width: 1200px;
+    height: 120px;
+}
+.firstTopTextArea p{
+    padding-top: 20px;
+    font-size: 20px;
+}
+.firstDiv{
+    width: 100%;
+    height: 330px;
+    box-shadow: 0 2px 10px 0 rgba(96, 97, 99, 0.57);
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+.firstDivHeader{
+    display: flex;
+    width: 1200px;
+    height: 60px;
+}
+.firstDivHeader p{
+    font-weight: bold;
+    padding-left: 20px;
+    padding-top: 10px;
+    font-size: 30px;
+    color: rgb(70, 64, 64);
+}
+.fisrtDivHeaderText{
+    width: 900px;
+    height: 60px;
+}
+.firstDivHeaderButton{
+    width: 300px;
+    height: 60px;
+}
+.firstDivHeaderButton a button{
+    margin-top: 6px;
+    margin-left: 20px;
+    width: 220px;
+    height: 47px;
+    background-color: rgb(81, 175, 81);
+    border-radius: 5px;
+    border-style: none;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+.secondDivContent{
+    width: 1200px;
+    height: 250px;
+    display: flex;
+}
+.secondDivContentBox1{
+    width: 280px;
+    height: 100%;
+}
+.secondDivContaintBox1img{
+    width: 250px;
+    height: 160px;
+    margin-left: 15px;
+    margin-top: 30px;
+}
+.secondDivContaintBox1img img{
+    width: 250px;
+    height: 160px;
+    border-radius: 5px;
+}
+.secondDivContentBox2Heading{
+    margin-top: 30px;
+    height: 50px;
+}
+.secondDivContentBox2Heading p{
+    font-size: 22px;
+    font-weight: bold;
+    color: blue;
+}
+.secondDivContentBox2Text{
+    margin-top: 20px;
+    height: 140px;
+}
+.secondDivContentBox2Text p{
+    font-size: 20px;
+}
+.secondDivContentBox2{
+    margin-left: 27px;
+    width: 280px;
+    height: 100%;
+}
+.secondDivContentBox3{
+    margin-left: 26.5px;
+    width: 280px;
+    height: 100%;
+}
+.secondDivContentBox4{
+    margin-left: 26.5px;
+    width: 280px;
+    height: 100%;
+}

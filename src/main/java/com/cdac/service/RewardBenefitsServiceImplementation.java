@@ -1,5 +1,7 @@
 package com.cdac.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Service;
@@ -16,6 +18,12 @@ public class RewardBenefitsServiceImplementation implements RewardBenefitsServic
 	@Override
 	public void registerData(RewardBenefits rewardBenefits) {
 		rewardBenefitsRepo.save(rewardBenefits);
+		
+	}
+
+	@Override
+	public List<RewardBenefits> findAllCards() {
+		return (List<RewardBenefits>)rewardBenefitsRepo.findAll();
 		
 	}
 

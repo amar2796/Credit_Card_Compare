@@ -65,7 +65,7 @@ public class userController {
 	@RequestMapping("/viewCard")
 	public String viewCard(Model model)
 	{
-		model.addAttribute("feesAndCharges",feesAndChargesRepo.findById(452));
+		model.addAttribute("feesAndCharges",feesAndChargesRepo.findAll());
 		System.out.println(model);
 		return "ViewCard";
 	}

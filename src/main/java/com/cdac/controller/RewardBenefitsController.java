@@ -38,6 +38,7 @@ public class RewardBenefitsController {
 		Card person = cardRepo.findById(cardid)
 	            .orElseThrow(() -> new IllegalArgumentException("Invalid person id: " + cardid));
 	        model.addAttribute("person", person);
+	        System.out.println(person.getCard_type());
 		return "reward&Benefits";
 	}
 	

@@ -77,6 +77,198 @@
 
       <section class="forth">
         <div class="forthDiv">
+          <h2>Most Popular Credit Cards</h2>
+          <p>
+            We partner with all major credit card issuers to make sure you see
+            as many great offers as possible. Select one of the names below to
+            begin your search.
+          </p>
+        </div>
+      </section>
+
+      <section class="tableSection">
+        <div class="tableSectionFirsttop">
+          <div class="tableSectionFirsttop1">
+            <p>Most Popular Ecommerce Card</p>
+          </div>
+          <div class="tableSectionFirsttop2">
+            <p>LifeTime Free Credit Card</p>
+          </div>
+          <div class="tableSectionFirsttop3">
+            <p>Most Popular Travel Card</p>
+          </div>
+        </div>
+        <div class="tableSectionFirst">
+        <tr th:each="rewardBenefit : ${rewardBenefits}">
+        
+          <div class="tableSectionFirst1">
+            <div class="tableimage">
+              <a href="https://applyonline.hdfcbank.com/credit-cards/new-to-banking-users.html?rd_pacc=true#nbb" target="blank">
+                <img src="/image/hdfc_dinersclub black.png" alt=""></a>
+            </div>
+            <div class="tableimageTitle">
+              <p th:text="${rewardBenefit.card.card_type}"></p>
+            </div>
+            <div class="tableRating"></div>
+            <div class="tableJoiningFee">
+              <p>Joining Fee</p>
+            </div>
+            <div class="tableJoiningFeeText">
+              <p>N/A</p>
+            </div>
+            <div class="tableRewardRate">
+              <p>Rewards Rate</p>
+            </div>
+            <div class="tableRewardRateText">
+              <p th:text="${rewardBenefit.rewardRates}"></p>
+            </div>
+            <div class="tablebutton">
+              <button>Apply Now</button>
+            </div>
+          </div>
+</tr>
+          <div class="tableSectionFirst2">
+            <div class="tableimage">
+              <img src="/image/hdfc_dinersclub premium.png" alt="">
+            </div>
+            <div class="tableimageTitle">
+              <p>Flipkart Axis Bank Credit Card</p>
+            </div>
+            <div class="tableRating"></div>
+            <div class="tableJoiningFee">
+              <p>Joining Fee</p>
+            </div>
+            <div class="tableJoiningFeeText">
+              <p>Rs. 500 + applicable taxes</p>
+            </div>
+            <div class="tableRewardRate">
+              <p>Rewards Rate</p>
+            </div>
+            <div class="tableRewardRateText">
+              <p>5% cashback on Flipkart and Myntra, 4% cashback on prefered partners Swiggy, Uber</p>
+            </div>
+            <div class="tablebutton">
+              <button>Apply Now</button>
+            </div>
+          </div>
+          <div class="tableSectionFirst3">
+            <div class="tableimage">
+              <img src="/image/hdfc_dinersclub privelage.png" alt="">
+            </div>
+            <div class="tableimageTitle">
+              <p>Flipkart Axis Bank Credit Card</p>
+            </div>
+            <div class="tableRating"></div>
+            <div class="tableJoiningFee">
+              <p>Joining Fee</p>
+            </div>
+            <div class="tableJoiningFeeText">
+              <p>Rs. 500 + applicable taxes</p>
+            </div>
+            <div class="tableRewardRate">
+              <p>Rewards Rate</p>
+            </div>
+            <div class="tableRewardRateText">
+              <p>5% cashback on Flipkart and Myntra, 4% cashback on prefered partners Swiggy, Uber</p>
+            </div>
+            <div class="tablebutton">
+              <button>Apply Now</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="tableSection">
+        <div class="tableSectionFirsttop">
+          <div class="tableSectionFirsttop1">
+            <p>Most Popular Ecommerce Card</p>
+          </div>
+          <div class="tableSectionFirsttop2">
+            <p>LifeTime Free Credit Card</p>
+          </div>
+          <div class="tableSectionFirsttop3">
+            <p>Most Popular Travel Card</p>
+          </div>
+        </div>
+        <div class="tableSectionFirst">
+          <div class="tableSectionFirst1">
+            <div class="tableimage">
+              <img src="/image/Air India SBI Platinum Credit Card.png" alt="">
+            </div>
+            <div class="tableimageTitle">
+              <p>Flipkart Axis Bank Credit Card</p>
+            </div>
+            <div class="tableRating"></div>
+            <div class="tableJoiningFee">
+              <p>Joining Fee</p>
+            </div>
+            <div class="tableJoiningFeeText">
+              <p>Rs. 500 + applicable taxes</p>
+            </div>
+            <div class="tableRewardRate">
+              <p>Rewards Rate</p>
+            </div>
+            <div class="tableRewardRateText">
+              <p>5% cashback on Flipkart and Myntra, 4% cashback on prefered partners Swiggy, Uber</p>
+            </div>
+            <div class="tablebutton">
+              <button>Apply Now</button>
+            </div>
+          </div>
+
+          <div class="tableSectionFirst2">
+            <div class="tableimage">
+              <img src="/image/Club Vistara SBI Card PRIME.png" alt="">
+            </div>
+            <div class="tableimageTitle">
+              <p>Flipkart Axis Bank Credit Card</p>
+            </div>
+            <div class="tableRating"></div>
+            <div class="tableJoiningFee">
+              <p>Joining Fee</p>
+            </div>
+            <div class="tableJoiningFeeText">
+              <p>Rs. 500 + applicable taxes</p>
+            </div>
+            <div class="tableRewardRate">
+              <p>Rewards Rate</p>
+            </div>
+            <div class="tableRewardRateText">
+              <p>5% cashback on Flipkart and Myntra, 4% cashback on prefered partners Swiggy, Uber</p>
+            </div>
+            <div class="tablebutton">
+              <button>Apply Now</button>
+            </div>
+          </div>
+          <div class="tableSectionFirst3">
+            <div class="tableimage">
+              <img src="/image/Club Vistara SBI Card.png" alt="">
+            </div>
+            <div class="tableimageTitle">
+              <p>Flipkart Axis Bank Credit Card</p>
+            </div>
+            <div class="tableRating"></div>
+            <div class="tableJoiningFee">
+              <p>Joining Fee</p>
+            </div>
+            <div class="tableJoiningFeeText">
+              <p>Rs. 500 + applicable taxes</p>
+            </div>
+            <div class="tableRewardRate">
+              <p>Rewards Rate</p>
+            </div>
+            <div class="tableRewardRateText">
+              <p>5% cashback on Flipkart and Myntra, 4% cashback on prefered partners Swiggy, Uber</p>
+            </div>
+            <div class="tablebutton">
+              <button>Apply Now</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="forth">
+        <div class="forthDiv">
           <h2>Top Credit Card Issuers</h2>
           <p>
             We partner with all major credit card issuers to make sure you see
