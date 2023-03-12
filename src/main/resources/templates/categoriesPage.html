@@ -39,13 +39,14 @@
                         <p><span th:text="${card.bank.bankName}" /></p>
                     </div>
                     <div class="firstDivHeaderButton">
-                        <a><button>Apply Now</button></a>
+                        <a th:href="@{${card.urlPath}}" ><button>Apply Now</button></a>
                     </div>
                 </div>
                 <div class="secondDivContent">
                     <div class="secondDivContentBox1">
                         <div class="secondDivContaintBox1img">
-                            <img src="image/Samsung Axis Bank Signature Credit Card.png" alt="">
+                            <img th:src="@{${'/image/'+card.imagePath}}" alt="">
+                            
                         </div>
                     </div>
                     <div class="secondDivContentBox2">

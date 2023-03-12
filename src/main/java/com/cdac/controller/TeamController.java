@@ -145,12 +145,11 @@ public class TeamController {
 		for(Card card : cardService.getAllCards()) {
 		}
 		model.addAttribute("cards", cardService.getAllCards());
-		System.out.println(model);
 		//model.addAttribute("rewardBenefits", benefitsService.findAllRewardBenefits());
 //		model.addAttribute("balanceTransfer", balanceTransfersRepo.findAll());
 //		model.addAttribute("cashback", cashbacksRepo.findAll());
 //		model.addAttribute("lifeTimeFree", lifeTimeFeeCreditCardRepo.findAll());
-		//model.addAttribute("feesAndCharges", feesAndChargesService.getAllFeeAndCharge());
+		//model.addAttribute("feesAndCharges", feesAndChargesService.getAllFeeAndCharge());y
 		return "teamDashboardView";
 	}
 

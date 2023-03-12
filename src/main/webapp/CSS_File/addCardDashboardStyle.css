@@ -90,4 +90,20 @@
   button[type="submit"]:hover {
     background-color: #555;
   }
+  .my-dropdown {
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    width: 100%;
+}
+
+.my-dropdown option {
+    font-size: 20px;
+    color: #333;
+    background-color: #fff;
+}
+  
   

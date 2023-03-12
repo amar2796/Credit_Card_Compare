@@ -20,13 +20,19 @@
       <input type="text" th:field="*{bankName}" id="bankName" name="bankName" readonly="readonly">
       
       <label for="category">Category:</label>
-      <select name="categoryId">
-            <option th:each="category : ${categories}" th:value="${category.id}" th:text="${category.categoryName}"></option>
+      <select class="my-dropdown" name="categoryId">
+            <option  th:each="category : ${categories}" th:value="${category.id}" th:text="${category.categoryName}"></option>
         </select>
       <label for="cardName">Card Name:</label>
       <input type="text" id="cardName" name="cardName" required>
 
-      <button type="submit">Add Card Account</button>
+		<label for="imagePath">Image Path:</label>
+      <input type="text" id="imagePath" name="imagePath" placeholder="Like : hdfc_dinersclub premium.png *(Image Name)" required>
+		
+		<label for="urlPath">URL Path:</label>
+      <input type="text" id="urlPath" name="urlPath" placeholder="Like : https://applyonline.hdfcbank.com/credit-cards/pre-approved-credit-cards#nbb" required>
+		
+      <button type="submit">Add Card</button>
     </form>
   </main>
 </body>

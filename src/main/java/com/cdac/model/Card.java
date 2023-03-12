@@ -12,6 +12,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
@@ -26,11 +27,16 @@ public class Card {
 
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "bankId")
-	private Bank bank;   
+	private Bank bank;
 	private String cardName;
+
 	
 //	@OneToMany(mappedBy = "card", cascade = CascadeType.ALL, orphanRemoval = true)
 //    private List<RewardBenefits> products = new ArrayList<>();
+	
+	public void setApproved(boolean isApproved) {
+		this.isApproved = isApproved;
+	}
 	
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "categoryId")
@@ -46,6 +52,20 @@ public class Card {
 	@JoinColumn(name = "feesAndChargesId")
 	private FeesAndCharge feesAndCharge;
 	private boolean isApproved;
+	private String imagePath;
+	private String urlPath;
+	public String getImagePath() {
+		return imagePath;
+	}
+	public void setImagePath(String imagePath) {
+		this.imagePath = imagePath;
+	}
+	public String getUrlPath() {
+		return urlPath;
+	}
+	public void setUrlPath(String urlPath) {
+		this.urlPath = urlPath;
+	}
 	public int getCardid() {
 		return cardid;
 	}
@@ -55,6 +75,8 @@ public class Card {
 	public Bank getBank() {
 		return bank;
 	}
+	
+	
 	public void setBank(Bank bank) {
 		this.bank = bank;
 	}
@@ -104,7 +126,9 @@ public class Card {
 	public String toString() {
 		return "Card [cardid=" + cardid + ", bank=" + bank + ", cardName=" + cardName + ", category=" + category
 				+ ", documentRequired=" + documentRequired + ", highlights=" + highlights + ", rewardBenefit="
-				+ rewardBenefit + ", feesAndCharge=" + feesAndCharge + ", isApproved=" + isApproved + "]";
+				+ rewardBenefit + ", feesAndCharge=" + feesAndCharge + ", isApproved=" + isApproved + ", imagePath="
+				+ imagePath + ", urlPath=" + urlPath + "]";
 	}
+	
 	
 }

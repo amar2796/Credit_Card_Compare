@@ -18,4 +18,5 @@ public interface CardService {
 
 	List<Card> getCardsByStatus(boolean isApproved);
 
+	
 }

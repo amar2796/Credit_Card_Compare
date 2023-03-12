@@ -52,17 +52,20 @@ public class CardController {
 	}
 	// add card dashboard register mapping addCard
 	@RequestMapping("/addCardRegister")
-	public String addCardRegister(@RequestParam Integer categoryId, @RequestParam Integer bankid,@RequestParam String bankName, @RequestParam String cardName, Model model)   //Card replace CardDTO
+	public String addCardRegister(@RequestParam String imagePath,@RequestParam String urlPath,@RequestParam Integer categoryId, @RequestParam Integer bankid,@RequestParam String bankName, @RequestParam String cardName, Model model)   //Card replace CardDTO
  	{
-		System.out.println(categoryId);
 		Optional<Category> category = categoryService.getCategory(categoryId);
-		Optional<Bank> bank = bankService.getBank(bankid);
+		Bank bank = bankService.getBank(bankid).get();
 		Card card = new Card();
-		card.setBank(bank.get());
+		card.setImagePath(imagePath);
+		card.setUrlPath(urlPath);
+		card.setBank(bank);
 		card.setCardName(cardName);
 		card.setCategory(category.get());
-		model.addAttribute("bankid", bank.get().getBankid());
+		model.addAttribute("bankid", bank.getBankid());
 		cardService.saveCard(card);
+		bank.setNoOfCards(bank.getNoOfCards() + 1);
+		bankService.addDataInBankTable(bank);
 		model.addAttribute("cardid", card.getCardid());
 		return "redirect:teamDashboard1";
 	}

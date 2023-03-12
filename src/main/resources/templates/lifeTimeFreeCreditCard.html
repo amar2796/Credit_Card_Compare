@@ -13,8 +13,10 @@
 				<p>Lifetime Free Credit Card</p>
 			</div>
 		</div>
-		<label >Card Id:</label>
-		<input type="text" id="cardid" name="cardid" th:field="*{cardid}" readonly="readonly">
+		<input type="hidden" id="cardid" name="cardid" th:field="*{cardid}" readonly="readonly">
+		
+		<label >Card Name:</label>
+		<input type="text" id="welcomeBenefits" name="welcomeBenefits" th:field="*{cardName}" readonly="readonly" required>
 		
 		<label >No Annual Fee:</label>
 		<input type="text" id="noAnnualFee" name="noAnnualFee" required>

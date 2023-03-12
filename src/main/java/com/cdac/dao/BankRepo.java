@@ -11,6 +11,9 @@ import com.cdac.model.Bank;
 public interface BankRepo extends CrudRepository<Bank, Integer> {
 
 	@Query("SELECT b FROM Bank b WHERE b.isApproved = ?1")
-	List<Bank> getAllCardsByStatus(boolean isApproved); 
+	List<Bank> getAllCardsByStatus(boolean isApproved);
+	
+	@Query("SELECT b FROM Bank b WHERE b.bankName = ?1")
+	List<Bank> findByBankName(String name); 
 
 }

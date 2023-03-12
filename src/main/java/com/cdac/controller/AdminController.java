@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.cdac.model.Admin;
 import com.cdac.model.Bank;
+import com.cdac.model.Card;
 import com.cdac.model.Team;
 import com.cdac.service.AdminService;
 import com.cdac.service.BankService;
@@ -71,19 +72,19 @@ public class AdminController {
 	@RequestMapping("/bankStatusAccept/{id}")
 	public String bankStatusAccept(@PathVariable Integer id) {
 		Bank bank=bankService.getBank(id).get();
-		System.out.println(id);
 		bank.setIsApproved(true);
 		bankService.addDataInBankTable(bank);
 		return "redirect:/adminDashboardControl";
 	}
 	
-	//Reject Bank
-	@RequestMapping("/bankStatusReject/{id}")
-	public String bankStatusReject(@PathVariable Integer id) {
-		Bank bank=bankService.getBank(id).get();
-		bank.setIsApproved(false);	
-		bankService.addDataInBankTable(bank);
-		return "redirect:/adminDashboardControl";
-	}
+	//Accept Card
+		@RequestMapping("/cardStatusAccept/{id}")
+		public String cardStatusAccept(@PathVariable Integer id) {
+			Card card=cardService.getCard(id).get();
+			card.setIsApproved(true);
+			cardService.saveCard(card);
+			return "redirect:/adminDashboardControl";
+		}
+	
 
 }

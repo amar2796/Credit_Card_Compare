@@ -28,8 +28,7 @@
 				<tbody>
 					<tr th:each="bank : ${bank}">
                 	<td th:text="${bank.bankName}"></td>
-					<td><a style="text-decoration:none" th:href="@{/bankStatusAccept/{id}(id=${bank.bankid})}">Accept</a> |
-					 <a style="text-decoration:none" th:href="@{/bankStatusReject/{id}(id=${bank.bankid})}">Reject</a></td>					
+					<td><a style="text-decoration:none" th:href="@{/bankStatusAccept/{id}(id=${bank.bankid})}">Accept</a></td>					
 					</tr>
 				</tbody>
 			</table>
@@ -43,7 +42,7 @@
 					<tr>
 						<th>Bank Name</th>
 						<th>Card Name</th>
-						<th>Action</th>
+						<th>Status</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -51,7 +50,7 @@
 					<td th:text="${card.Bank.bankName}"></td>
                 	<td th:text="${card.cardName}"></td>
                 	
-                	<td><a style="text-decoration:none" th:href="@{/card/edit/{id}(id=${card.cardid})}">Edit</a></td>
+                	<td><a style="text-decoration:none" th:href="@{/cardStatusAccept/{id}(id=${card.cardid})}">Accept</a></td>
                 	
                 	
 					</tr>

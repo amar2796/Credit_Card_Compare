@@ -18,6 +18,7 @@ public class Bank {
 	String bankName;
 	String description;
 	boolean isApproved;
+	int noOfCards;
 	public int getBankid() {
 		return bankid;
 	}
@@ -42,10 +43,20 @@ public class Bank {
 	public void setIsApproved(boolean isApproved) {
 		this.isApproved = isApproved;
 	}
+	public int getNoOfCards() {
+		return noOfCards;
+	}
+	public void setNoOfCards(int noOfCards) {
+		this.noOfCards = noOfCards;
+	}
+	public void setApproved(boolean isApproved) {
+		this.isApproved = isApproved;
+	}
 	@Override
 	public String toString() {
 		return "Bank [bankid=" + bankid + ", bankName=" + bankName + ", description=" + description + ", isApproved="
-				+ isApproved + "]";
+				+ isApproved + ", noOfCards=" + noOfCards + "]";
 	}
+	
 	
 }

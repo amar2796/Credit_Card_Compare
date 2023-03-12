@@ -156,3 +156,6 @@
     width: 280px;
     height: 100%;
 }
+div p{
+	overflow-wrap:break-word;
+}

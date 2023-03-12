@@ -32,17 +32,16 @@
 				<thead>
 					<tr>
 						<th>Bank Name</th>
-						<th>Action</th>
 						<th>No of Card</th>
+						<th>Action</th>
 						<th>Add Card</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr th:each="bank : ${bank}">
                 	<td th:text="${bank.bankName}"></td>
-					<td><a style="text-decoration:none" th:href="@{/bankDetail/edit/{id}(id=${bank.bankid})}">Edit</a> |
-					 <a style="text-decoration:none" th:href="@{/bankDetail/delete/{id}(id=${bank.bankid})}" onclick="confirm('Are you sure you want to delete this record?')">Delete</a></td>					
-					<td>0</td>
+                	<td th:text="${bank.noOfCards}"></td>
+					<td><a style="text-decoration:none" th:href="@{/bankDetail/edit/{id}(id=${bank.bankid})}">Edit</a></td>					
 					<td><a style="text-decoration:none" th:href="@{/addCardDashboard/{id}(id=${bank.bankid})}">click</a></td>
 					</tr>
 				</tbody>

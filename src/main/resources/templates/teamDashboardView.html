@@ -54,8 +54,7 @@
                 	<td th:text="${card.rewardBenefit.insuranceBenefits}"></td>
                 	<td th:text="${card.rewardBenefit.zeroLiabilityProtection}"></td>
                 	<td><a th:href="@{/rewardAndBenefit/edit/{id}(id=${card.rewardBenefit.rewardBenefitsId})}">Edit</a></td>
-                	<td><a th:href="@{/feesAndCharges/delete/{id}(id=${card.rewardBenefit.rewardBenefitsId})}">Delete</a></td>
-					
+                	
 				</tbody>
 			</table>
 			</section>
@@ -94,8 +93,7 @@
                 	<td th:text="${card.feesAndCharge.cashAdvanceCharge}"></td>
                 	<td th:text="${card.feesAndCharge.addOnCardFee}"></td>
                 	<td><a th:href="@{/feesAndCharges/edit/{id}(id=${card.feesAndCharge.feesAndChargesId})}">Edit</a></td>
-                	<!-- <td><a th:href="@{/feesAndCharges/delete/{id}(id=${card.feesAndCharge.rewardBenefitsId})}">Delete</a></td>
-					  -->
+                	
 				</tbody>
 			</table>
 			 
