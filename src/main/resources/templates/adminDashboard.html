@@ -15,7 +15,9 @@
 		</nav>
 	</header>
 	<main>
-		<section class="overview">
+		<div class="first">
+			<div class="second">
+				<section class="overview">
 			<h2>Bank List</h2>
 			<div class="card">
 				<table>
@@ -59,6 +61,34 @@
 			</table>
 			</div>
 		</section>
+			</div>
+			<div class="third">
+			<section class="user-list">
+			<h2>Contact Info</h2>
+			<div class="card">
+			<table>
+				<thead>
+					<tr class="last">
+						<th>Name</th>
+						<th>Email</th>
+						<th>Subject</th>
+						<th>Message</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="contact : ${contacts}">
+					<td th:text="${contact.name}"></td>
+                	<td th:text="${contact.email}"></td>
+                	<td th:text="${contact.subject}"></td>
+                	<td th:text="${contact.message}"></td>
+                	</tr>
+					
+				</tbody>
+			</table>
+			</div>
+		</section>
+			</div>
+		</div>
 	</main>
 </body>
 </html>

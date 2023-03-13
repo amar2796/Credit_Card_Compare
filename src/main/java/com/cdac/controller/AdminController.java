@@ -20,6 +20,7 @@ import com.cdac.model.Team;
 import com.cdac.service.AdminService;
 import com.cdac.service.BankService;
 import com.cdac.service.CardService;
+import com.cdac.service.ContactService;
 
 
 
@@ -36,6 +37,9 @@ public class AdminController {
 	
 	@Autowired
 	CardService cardService;
+	
+	@Autowired
+	ContactService contactService;
 	
 	//team login
 	@RequestMapping("/adminLogin")
@@ -65,6 +69,7 @@ public class AdminController {
 	public String adminDashboardControl(Model model) {
 		model.addAttribute("bank", bankService.getApprovedBanks(false));
 		model.addAttribute("card", cardService.getCardsByStatus(false));
+		model.addAttribute("contacts", contactService.findAllDetails());
 		return "adminDashboard";
 	}
 	
@@ -86,5 +91,7 @@ public class AdminController {
 			return "redirect:/adminDashboardControl";
 		}
 	
+	
+		
 
 }

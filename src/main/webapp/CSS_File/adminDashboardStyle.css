@@ -72,3 +72,12 @@ th {
   background-color: #555;
   color: #fff;
 }
+.first{
+	display: flex;
+}
+.third{
+	margin-left: 450px;
+}
+.last th{
+	padding-right: auto;
+}

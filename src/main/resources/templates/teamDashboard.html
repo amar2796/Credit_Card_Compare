@@ -24,9 +24,13 @@
 				<h2>View All Cards Details</h2>
 				<button><a style="text-decoration:none" href="teamDashboardDetails">View</a></button>
 			</div>
+			
 			</div>
     <section class="user-list">
     <div class="first">
+    
+    
+		
 			<h2>Bank List</h2>
 			<table>
 				<thead>
@@ -47,7 +51,50 @@
 				</tbody>
 			</table>
 			</div>
-			
+			<section class="overview">
+			<h2>Bank List Status</h2>
+			<div class="card">
+				<table>
+				<thead>
+					<tr>
+						<th>Bank Name</th>
+						<th>Status</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="bank : ${bankStatus}">
+                	<td th:text="${bank.bankName}"></td>
+					<td>Pending</td>					
+					</tr>
+				</tbody>
+			</table>
+			</div>
+		</section>
+		<section class="overview">
+			<h2>Card List Status</h2>
+			<div class="card">
+			<table>
+				<thead>
+					<tr>
+						<th>Bank Name</th>
+						<th>Card Name</th>
+						<th>Status</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="card : ${cardStatus}">
+					<td th:text="${card.Bank.bankName}"></td>
+                	<td th:text="${card.cardName}"></td>
+                	
+                	<td>Pending</td>
+                	
+                	
+					</tr>
+					
+				</tbody>
+			</table>
+			</div>
+		</section>
 		</section>
    
     <div class="second">

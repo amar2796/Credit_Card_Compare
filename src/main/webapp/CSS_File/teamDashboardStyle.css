@@ -80,8 +80,24 @@ th {
 }
 .firstSection{
 	display: flex;
-	gap:45em;
+	gap:auto;
+	height: auto;
 }
 a:hover {
 	color:red;
+}
+.user-list h2,.card h2{
+	margin-top:20px;
+	padding:5px;
+	background-color:#555;
+	color: white;
+	text-align: center;
+}
+.second h2{
+	width:890px;
+	margin-top:20px;
+	padding:5px;
+	background-color:#555;
+	color: white;
+	text-align: center;
 }

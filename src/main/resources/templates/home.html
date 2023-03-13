@@ -5,6 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js"></script>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
@@ -28,7 +29,23 @@
       <div class="mainDiv">
         <div class="leftside">
           <p class="leftside_first">Find The Right</p>
-          <p class="leftside_second">Credit Card</p>
+          <p class="leftside_second"><span class="role" th:text="${role}"></span></p>
+          
+          
+          <script th:inline="javascript">
+    var typeData = new Typed(".role", {
+      strings: [
+        "Credit Card"
+      ],
+      loop: true,
+      typeSpeed: 150,
+      backSpeed: 100,
+      backDelay: 1200,
+    });
+  </script>
+          
+          
+          
           <p class="leftside_p">
             Compare India's best credit cards under one roof and apply for the
             one that fits your needs.

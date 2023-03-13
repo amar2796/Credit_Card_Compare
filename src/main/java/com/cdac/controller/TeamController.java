@@ -135,6 +135,8 @@ public class TeamController {
 		model.addAttribute("bank", bankService.getApprovedBanks(true));
 		//model.addAttribute("bank", bankRepo.findAll());
 		model.addAttribute("card", cardService.getCardsByStatus(true));
+		model.addAttribute("bankStatus", bankService.getApprovedBanks(false));
+		model.addAttribute("cardStatus", cardService.getCardsByStatus(false));
 
 		return "teamDashboard";
 	}
