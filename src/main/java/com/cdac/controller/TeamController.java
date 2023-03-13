@@ -87,7 +87,7 @@ public class TeamController {
 	// validate login data
 	@GetMapping("/teamLoginValidate")
 	public String teamLoginValidate(@RequestParam String userId, @RequestParam String password, Model model) {
-		Optional<Team> team = teamService.validateLogin(userId, password);
+		Team team = teamService.validateLogin(userId, password);
 		if (team == null) {
 			model.addAttribute("error", "* Please check Id, Password and Try again!");
 			return "teamLogin";
@@ -157,5 +157,11 @@ public class TeamController {
 	@RequestMapping("/backTeamDashboard")
 	public String backTeamDashboard() {
 		return "redirect:teamDashboard1";
+	}
+	
+	
+	@RequestMapping("/logout")
+	public String logout() {
+		return "home";
 	}
 }

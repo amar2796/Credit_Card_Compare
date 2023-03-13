@@ -5,17 +5,17 @@ nav {
     top: 0;
     width: 100%;
     height: 50px;
-    padding-top: 45px;
+    padding-top: 25px;
   }
   
-  nav a {
+ .menu a {
     color: #000000;
     text-align: center;
-    padding: 14px 16px;
+    padding: 8px 20px;
     text-decoration: none;
     font-size: 18px;
   }
-  nav a:hover {
+  .menu a:hover {
     background-color: #b4b4b4;
     border-radius: 5px;
     transition-duration: 1s; 

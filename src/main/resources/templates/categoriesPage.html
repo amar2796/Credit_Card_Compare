@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Sample Thymeleaf Page with CSS</title>
+    
     <link rel="stylesheet" href="/CSS_File/categoriesPageStyle.css" th:href="@{/CSS_File/categoriesPageStyle.css}" />
+    
+  
 </head>
 <body>
     <div class="container">
@@ -34,7 +37,7 @@
             <div th:each="card : ${cards}">
             <div class="firstDiv">
                 <div class="firstDivHeader">
-                
+                <!-- <p><span th:text="${card.cardid}" /></p> -->
                     <div class="fisrtDivHeaderText">
                         <p><span th:text="${card.bank.bankName}" /></p>
                     </div>
@@ -45,7 +48,7 @@
                 <div class="secondDivContent">
                     <div class="secondDivContentBox1">
                         <div class="secondDivContaintBox1img">
-                            <img th:src="@{${'/image/'+card.imagePath}}" alt="">
+                            <a th:href="${'/cardDetail/'+card.cardid}" ><img th:src="@{${'/image/'+card.imagePath}}" alt=""></a>
                             
                         </div>
                     </div>
@@ -80,5 +83,6 @@
             
         </div>
     </div>
-</body>
+    </body>
+
 </html>

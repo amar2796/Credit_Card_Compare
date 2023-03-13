@@ -18,12 +18,16 @@ public class TeamServiceImplementation implements TeamService{
 		teamRepo.save(team);
 	}
 	@Override
-	public Optional<Team> validateLogin(String userId, String password) {
+	public Team validateLogin(String userId, String password) {
 		try {
-			Optional<Team> team= teamRepo.findById(userId);
-			if(team.get().getUserId().equals(userId))
+			Team team= teamRepo.findById(userId).get();
+			if(team.getUserId().equals(userId))
 			{
-				return team;	
+				if(team.getPassword().equals(password))
+				{
+					return team;
+				}
+					return null;
 			}
 		} catch (Exception e) {
 			

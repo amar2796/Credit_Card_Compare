@@ -1,0 +1,220 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.container{
+    width: 100%;
+    margin: 0;
+}
+.firstHeading{
+    width: 100%;
+    height: 60px;
+    background-color: rgb(217, 223, 223);
+}
+.firstHeadingTitle{
+    width: 1200px;
+    margin-left: 90px;
+    height: 60px;
+}
+.firstHeadingTitle p{
+    padding-top: 10px;
+    font-weight: bold;
+    font-size: 30px;
+}
+.secondLine{
+    width: 100%;
+    height: 380px;
+}
+.secondLineContent{
+    width: 1200px;
+    margin-left: 90px;
+    height: 100%;
+}
+.secondLineContent p{
+    font-size: 20px;
+    padding-top: 25px;
+}
+.firstDivMain{
+    width: 1200px;
+    height: auto;
+    margin-top: 30px;
+    margin-left: 90px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px 0 rgba(20, 20, 20, 0.57);
+}
+.firstDivMainFirstLine{
+    width: 100%;
+    height: 230px;
+    display: flex;
+}
+.firstDivMainFirstLineImage{
+    width: 300px;
+    height: 100%;
+}
+.firstDivMainFirstLineImageBox{
+    width: 250px;
+    height: 150px;
+    margin-top: 25px;
+    margin-left: 25px;
+}
+.firstDivMainFirstLineImageBox img{
+    width: 250px;
+    height: 150px;
+    border-radius: 5px;
+    box-shadow: 0 5px 10px 0 rgba(20, 20, 20, 0.57);
+}
+.secondDivMain{
+    width: 900px;
+    height: 100%;
+}
+.secondDivMainTitle{
+    width: 600px;
+    height: 80px;
+    
+}
+.secondDivMainTitle p{
+    font-size: 25px;
+    font-weight: bold;
+    padding-top: 25px;
+}
+.secondDivMainDivTitle p{
+    font-size: 25px;
+    font-weight: bold;
+    color: blue;
+}
+.secondDivMainSecond{
+    width: 900px;
+    height: 190px;
+    display: flex;
+}
+.secondDivMainDiv1{
+    width: 300px;
+    height: 100%;
+}
+.secondDivMainDiv2{
+    width: 300px;
+    height: 100%;
+}
+.secondDivMainDiv3{
+    width: 300px;
+    height: 100%;
+}
+.secondTitle{
+    width: 100%;
+    height: 60px;
+}
+.secondTitle p{
+    font-size: 25px;
+    font-weight: bold;
+    padding-left: 30px;
+    color: blue;
+}
+.thirdTextArea{
+    width: 100%;
+    height: 310px;
+}
+.thirdTextAreaContent{
+    width: 90%;
+    height: 100%;
+    margin-left: 50px;
+}
+.thirdTextAreaContent li{
+    font-size: 20px;
+    padding: 5px;
+}
+.secondDivMainDivTitle{
+    height: 50px;
+    width: 100%;
+}
+.secondDivMainDivContent{
+    width: 100%;
+    height: 100px;
+}
+.secondDivMainDivContent p{
+    font-size: 20px;
+}
+
+/* Second Div  */
+
+.secondDiv{
+    width: 1200px;
+    height: auto;
+    margin-top: 30px;
+    margin-left: 90px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px 0 rgba(20, 20, 20, 0.57); 
+   padding-bottom: 7px;
+   padding-top: 7px;
+}
+.secondDiv h2{
+    font-weight: 500;
+    background-color: #f3f9fd;
+    border-radius: 0.5rem;
+    padding: 10px;
+}
+.secondDiv h3{
+    color: #2365d5;
+    font-size: 1.5rem;
+    margin-top: 0!important;
+}
+
+.dynamicP{
+    margin-top: 1rem;
+    line-height: 1.2rem;
+    
+}
+.secondC{
+    width: 550px;
+    max-width: 500px;
+}
+.secondD{
+    width: 550px;
+    max-width: 500px;
+}
+
+
+/* Fees and Charges */
+.thirdDiv{
+    width: 1200px;
+    height: auto;
+    margin-top: 30px;
+    margin-left: 90px;
+    border-radius: 10px;
+    box-shadow: 0 5px 10px 0 rgba(20, 20, 20, 0.57); 
+   padding-bottom: 7px;
+   padding-top: 7px;
+   margin-bottom: 3rem;
+}
+.thirdDiv h2{
+    font-weight: 500;
+    background-color: #f3f9fd;
+    border-radius: 0.5rem;
+    padding: 10px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.thirdDiv h3{
+    color: #2365d5;
+    font-size: 1.5rem;
+}
+.dynamicThird{
+    margin-top: 1rem;
+    line-height: 1.2rem;
+    
+}
+.JRF{
+    display: flex;
+    margin: 3rem;
+    gap: 5rem;
+}
+.RFee{
+    width: 400px;
+    max-width: 320px;
+}
+.JFee{
+    width: 400px;
+    max-width: 320px;
+}
+.SBW{
+width: 400px;
+max-width: 320px;
+}

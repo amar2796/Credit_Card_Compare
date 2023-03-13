@@ -33,13 +33,13 @@ nav {
     padding: 20px;
     text-align: center;
   }
-  
-  h1 {
-    margin-bottom: 20px;
+  .logo h1{
+  	padding-left:10rem; 
+  	margin-top: 0;
   }
-  
+ 
   img {
-    max-width: 300px;
+    width: 200px;
     margin-bottom: 20px;
   }
   
@@ -47,4 +47,6 @@ nav {
     line-height: 1.5;
     margin-bottom: 20px;
   }
-  
+  .logo{
+  display: flex;
+  }

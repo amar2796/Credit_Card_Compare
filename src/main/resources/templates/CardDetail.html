@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Sample Thymeleaf Page with CSS</title>
+    <link rel="stylesheet" href="/CSS_File/CardDetailStyle.css" th:href="@{/CSS_File/CardDetailStyle.css}" />
+</head>
+<body>
+    <div class="container">
+        <div class="firstHeading">
+            <div class="firstHeadingTitle">
+                <p>HDFC Bank INFINIA Credit Card Metal Edition</p>
+            </div>
+        </div>
+        <div class="secondLine">
+            <div class="secondLineContent">
+                <p>The Infinia Credit Card is the most premium product offered by the HDFC bank. Recently, HDFC relaunched the Infinia Credit Card in the metallic variant (all new issuances of the card will now be on the metallic variant). It is an invite-only card. HDFC is targeting HNIs (High Net-Worth Individuals) with this card who want a luxurious lifestyle with exclusive privileges like 24*7 concierge services, access to premium golf destinations, and attractive dining benefits at some of the country’s most premium restaurant chains. All these benefits put this card in direct competition with ICICI Bank Emeralde Credit Card, Citibank Prestige Card, and Standard Chartered Ultimate Credit Card.</p>
+                <br><br>
+                <p>Keeping the international traveling needs of its premium customers in consideration, HDFC offers a lower foreign currency exchange rate of 2% and a complimentary membership to the Priority Pass program with this card. HDFC Infinia Metal is a Reward Points-based card: you earn 5 Reward Points for every Rs. 150 spent using this card. Although the membership fee for this card is slightly on the higher side, Rs. 12,500/annum, is most certainly worth it and it can be the card of preference for you if you’re someone who is financially stable and can not compromise with your lifestyle needs.</p>
+            </div>
+        </div>
+        
+        
+        <!-- First -->
+        <div th:each="card : ${cards}">
+        
+        
+        
+        <div class="firstDivMain">
+            <div class="firstDivMainFirstLine">
+                <div class="firstDivMainFirstLineImage">
+                    <div class="firstDivMainFirstLineImageBox">
+                        <img th:src="@{${'/image/'+card.imagePath}}" alt="">
+                    </div>
+                </div>
+                <div class="secondDivMain">
+                    <div class="secondDivMainTitle">
+                        <p><span th:text="${card.cardName}" /></p>
+                    </div>
+                    <div class="secondDivMainSecond">
+                        <div class="secondDivMainDiv1">
+                            <div class="secondDivMainDivTitle">
+                                <p>Welcome Benefits</p>
+                            </div>
+                            <div class="secondDivMainDivContent">
+                                <p><span th:text="${card.rewardBenefit.welcomeBenefits}" /></p>
+                            </div>
+                        </div>
+                        <div class="secondDivMainDiv2">
+                            <div class="secondDivMainDivTitle">
+                                <p>Joining Fee</p>
+                            </div>
+                            <div class="secondDivMainDivContent">
+                                <p><span th:text="${card.feesAndCharge.joiningFee}" /></p>
+                            </div>
+                        </div>
+                        <div class="secondDivMainDiv3">
+                            <div class="secondDivMainDivTitle">
+                                <p>Reward Rate</p>
+                            </div>
+                            <div class="secondDivMainDivContent">
+                                <p><span th:text="${card.rewardBenefit.rewardRate}" /></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="secondTitle">
+                <p>Product Details</p>
+            </div>
+            <div class="thirdTextArea">
+                <div class="thirdTextAreaContent">
+                    <ul>
+                        <li>1 year complimentary Club Marriott membership.</li>
+                        <li>12,500 Reward Points as an introductory benefit.</li>
+                        <li>Unlimited access to airport lounges across the globe for both primary as well as add-on cardholders.</li>
+                        <li>Get 5 Reward Points on every Rs. 150 spent (except fuel transactions) with your HDFC Bank Infinia Card.</li>
+                        <li>24*7 global concierge service.</li>
+                        <li>Unlimited golf games at leading golf destinations in India and abroad.</li>
+                        <li>Low foreign currency markup of 2%.</li>
+                        <li>Dining benefits with Good Food Trail program.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="secondDiv">
+            <h2>Rewards and Benefits</h2>
+
+            <div class="JRF">
+                <div class="secondD">
+                    <h3>Welcome Benefits</h3>
+                    <p class="dynamicP"><span th:text="${card.rewardBenefit.welcomeBenefits}" /></p>
+                </div>
+                <div class="secondC">
+                    <h3>Movie & Dining</h3>
+                    <p class="dynamicP"><span th:text="${card.rewardBenefit.movieAndDining}" /></p>
+                </div>
+            </div>
+
+            <div class="JRF">
+                <div class="secondD">
+                    <h3>Rewards Rate</h3>
+                    <p class="dynamicP"><span th:text="${card.rewardBenefit.rewardRate}" /></p>
+                </div>
+                <div class="secondC">
+                    <h3>Reward Redemption</h3>
+                    <p class="dynamicP"><span th:text="${card.rewardBenefit.rewardPoints}" /></p>
+                </div>
+            </div>
+
+            <div class="JRF">
+                <div class="secondD">
+                    <h3>Travel</h3>
+                    <p class="dynamicP"><span th:text="${card.rewardBenefit.travel}" /></p>
+                </div>
+                <div class="secondC">
+                    <h3>Golf</h3>
+                    <p class="dynamicP"><span th:text="${card.rewardBenefit.golf}" /></p>
+                </div>
+            </div>
+
+            <div class="JRF">
+                <div class="secondD">
+                    <h3>Domestic Lounge Access</h3>
+                    <p class="dynamicP"><span th:text="${card.rewardBenefit.domesticLoungeAcces}" /></p>
+                </div>
+                <div class="secondC">
+                    <h3>International Lounge Access</h3>
+                    <p class="dynamicP"><span th:text="${card.rewardBenefit.internationalLounge}" /></p>
+                </div>
+            </div>
+
+            <div class="JRF">
+                <div class="secondD">
+                    <h3>Insurance Benefits</h3>
+                    <p class="dynamicP"><span th:text="${card.rewardBenefit.insuranceBenefits}" /></p>
+                </div>
+                <div class="secondC">
+                    <h3>Zero Liability Protection</h3>
+                    <p class="dynamicP"><span th:text="${card.rewardBenefit.zeroLiabilityProtection}" /></p>
+                </div>
+            </div>
+
+            <div class="JRF">
+                <div class="secondD">
+                    <h3>Fuel</h3>
+                    <p class="dynamicP"><span th:text="${card.rewardBenefit.fuel}" /></p>
+                </div>
+                
+            </div>
+            
+        </div>
+
+        <!-- Third Div Start -->
+
+        <div class="thirdDiv">
+            <h2>Fees & Charges</h2>
+
+            <div class="JRF">
+                <div class="JFee">
+                    <h3>Joining Fee</h3>
+                    <p class="dynamicThird"><span th:text="${card.feesAndCharge.joiningFee}" /></p>
+                </div>
+                <div class="RFee">
+                    <h3>Renewal Fee</h3>
+                    <p class="dynamicThird"><span th:text="${card.feesAndCharge.renewalFee}" /></p>
+                </div>
+                <div class="SBW">
+                    <h3>Spend based Waiver</h3>
+                    <p class="dynamicThird"><span th:text="${card.feesAndCharge.spendBasedWaiver}" /></p>
+                </div>
+            </div>
+
+            <div class="JRF">
+                <div class="JFee">
+                    <h3>Rewards Redemption Fee</h3>
+                    <p class="dynamicThird"><span th:text="${card.feesAndCharge.rewardsRedemptionFee}" /></p>
+                </div>
+                <div class="RFee">
+                    <h3>Foreign Currency Markup</h3>
+                    <p class="dynamicThird"><span th:text="${card.feesAndCharge.foreignCurrencyMarkup}" /></p>
+                </div>
+                <div class="SBW">
+                    <h3>Interest Rates</h3>
+                    <p class="dynamicThird"><span th:text="${card.feesAndCharge.interestRates}" /></p>
+                </div>
+            </div>
+
+            <div class="JRF">
+                <div class="JFee">
+                    <h3>Fuel Surcharge</h3>
+                    <p class="dynamicThird"><span th:text="${card.feesAndCharge.fuelSurcharge}" /></p>
+                </div>
+                <div class="RFee">
+                    <h3>Cash Advance Charge</h3>
+                    <p class="dynamicThird"><span th:text="${card.feesAndCharge.cashAdvanceCharge}" /></p>
+                </div>
+                <div class="SBW">
+                    <h3>Add-on Card Fee</h3>
+                    <p class="dynamicThird"><span th:text="${card.feesAndCharge.addOnCardFee}" /></p>
+                </div>
+            </div>
+            
+        </div>
+
+	
+	</div>
+	<!-- End First -->
+
+    </div>
+</body>
+</html>

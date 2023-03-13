@@ -18,5 +18,9 @@ public interface CardService {
 
 	List<Card> getCardsByStatus(boolean isApproved);
 
+	Card getCardById(Integer id);
+
+	List<Card> getCardByBankId(Integer id);
+
 	
 }

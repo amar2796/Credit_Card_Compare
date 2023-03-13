@@ -41,12 +41,27 @@ public class CardServiceImplementation implements CardService{
 		List<Card> cards = cardRepo.findByCategoryId(id);
 		return cards;
 	}
+	
+	@Override
+	public List<Card> getCardByBankId(Integer id) {
+//		List<Card> cards = cardRepo.findById(id);
+//		System.out.println(cards);
+		return null;
+	}
 
 	@Override
 	public List<Card> getCardsByStatus(boolean isApproved) {
 		// TODO Auto-generated method stub
 		return cardRepo.getApprovedCards(isApproved);
 	}
+
+	@Override
+	public Card getCardById(Integer id) {
+		Card cards = cardRepo.findById(id).get();
+		return cards;
+	}
+
+	
 
 
 	

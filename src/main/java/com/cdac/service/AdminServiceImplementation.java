@@ -41,7 +41,11 @@ public class AdminServiceImplementation implements AdminService{
 			Optional<Admin> admin= adminRepo.findById(userId);
 			if(admin.get().getUserId().equals(userId))
 			{
-				return admin;	
+				if(admin.get().getUserPassword().equals(password))
+				{
+					return admin;
+				}
+				return null;
 			}
 		} catch (Exception e) {
 			

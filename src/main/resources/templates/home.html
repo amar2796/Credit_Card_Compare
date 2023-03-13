@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Website</title>
+    <title>Home</title>
     <link
       rel="stylesheet"
       href="https://use.fontawesome.com/releases/v5.15.2/css/all.css"
@@ -20,9 +20,10 @@
     <link rel="stylesheet" href="/CSS_File/homeStyle.css" />
   </head>
   <body>
+  <span th:include="header"></span>
     <div class="container">
       
-      <span th:include="header"></span>
+      
 
       <div class="mainDiv">
         <div class="leftside">
@@ -47,30 +48,35 @@
             get started now:
           </p>
           <div class="card">
-            <a href="/categoriesPage/11"><div class="card1">
+            <a href="/categoriesPage/1"><div class="card1">
               <span class="material-symbols-outlined">credit_card</span>
               <p>Best Credit Card</p>
             </div></a>
-            <a href="/categoriesPage/15"><div class="card2">
+            <a href="/categoriesPage/2"><div class="card2">
               <span class="material-symbols-outlined">social_leaderboard</span>
               <p>Rewards</p>
             </div></a>
-            <a href="/categoriesPage/1"><div class="card3">
+            <a href="/categoriesPage/3"><div class="card3">
               <span class="material-symbols-outlined">payments</span>
               <p>Cash Back</p>
             </div></a>
-            <a href="/categoriesPage/8"><div class="card4">
+            <a href="/categoriesPage/6"><div class="card4">
               <span class="material-symbols-outlined">flight</span>
-              <p>Travel</p>
+              <p>Secured</p>
             </div></a>
-            <a href="/categoriesPage/3"><div class="card5">
+            <a href="/categoriesPage/4"><div class="card5">
               <span class="material-symbols-outlined">local_gas_station</span>
               <p>Fuel</p>
             </div></a>
-            <a href="/categoriesPage/4"><div class="card6">
+            <a href="/categoriesPage/5"><div class="card6">
               <span class="material-symbols-outlined">savings</span>
-              <p>No Annual Fee</p>
+              <p>Life Time Free</p>
             </div></a>
+            <a href="/categoriesPage/8"><div class="card6">
+              <span class="material-symbols-outlined">savings</span>
+              <p>Low Interest</p>
+            </div></a>
+            
           </div>
         </div>
       </section>
@@ -279,15 +285,21 @@
       <section class="five">
         <div class="fiveFirst">
           <a href="/categoriesPageBank/1"><div class="fiveDivCard1">HDFC Bank</div></a>
-          <div class="fiveDivCard2">AXIS Bank</div>
-          <div class="fiveDivCard3">ICICI Bank</div>
-          <div class="fiveDivCard4">AMEX</div>
+          <a href="/categoriesPageBank/1"><div class="fiveDivCard2">AXIS Bank</div></a>
+          <a href="/categoriesPageBank/1"><div class="fiveDivCard3">ICICI Bank</div></a>
+          <a href="/categoriesPageBank/1"><div class="fiveDivCard4">AMEX</div></a>
         </div>
         <div class="fiveSecond">
-          <div class="fiveDivCard5">SBI Cards</div>
-          <div class="fiveDivCard6">IDFC Bank</div>
-          <div class="fiveDivCard7">CITI Bank</div>
-          <div class="fiveDivCard8">AU Bank</div>
+          <a href="/categoriesPageBank/1"><div class="fiveDivCard5">SBI Cards</div></a>
+          <a href="/categoriesPageBank/1"><div class="fiveDivCard6">IDFC Bank</div></a>
+          <a href="/categoriesPageBank/1"><div class="fiveDivCard7">CITI Bank</div></a>
+          <a href="/categoriesPageBank/1"><div class="fiveDivCard8">AU Bank</div></a>
+        </div>
+        <div class="fiveSecond">
+          <a href="/categoriesPageBank/1"><div class="fiveDivCard5">SBI Cards</div></a>
+          <a href="/categoriesPageBank/1"><div class="fiveDivCard6">IDFC Bank</div></a>
+          <a href="/categoriesPageBank/1"><div class="fiveDivCard7">CITI Bank</div></a>
+          <a href="/categoriesPageBank/1"><div class="fiveDivCard8">AU Bank</div></a>
         </div>
       </section>
       <section class="six">

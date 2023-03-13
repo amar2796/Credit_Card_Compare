@@ -51,11 +51,20 @@ public class HomeController {
 		return "categoriesPage";
 	}
 	
+	// CardDetail page mapping
+	@RequestMapping("/cardDetail/{id}")
+	public String cardDetail(@PathVariable int id,Model model) {
+		Card cards = cardService.getCardById(id);
+		model.addAttribute("cards", cards);
+		return "cardDetail";
+	}
 	// bank wise categories
 	@RequestMapping("/categoriesPageBank/{id}")
-	public void categoriesPageBank(@PathVariable int id, Model model){
-		
-		//return "categoriesPage";
+	public String categoriesPageBank(@PathVariable int id, Model model){
+//		
+//		List<Card> cards = cardService.getCardById(id);
+//		model.addAttribute("cards", cards);
+		return "categoriesPage";
 	}
 	
 	//contact page mapping
@@ -64,4 +73,6 @@ public class HomeController {
 		contactService.registerContact(contact);
 		return "home";
 	}
+	
+	
 }

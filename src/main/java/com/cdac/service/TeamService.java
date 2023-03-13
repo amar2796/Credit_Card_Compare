@@ -8,6 +8,6 @@ public interface TeamService {
 
 	void AddRegisterData(Team team);
 
-	Optional<Team> validateLogin(String userId, String password);
+	Team validateLogin(String userId, String password);
 
 }
