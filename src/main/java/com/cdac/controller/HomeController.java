@@ -61,9 +61,9 @@ public class HomeController {
 	// bank wise categories
 	@RequestMapping("/categoriesPageBank/{id}")
 	public String categoriesPageBank(@PathVariable int id, Model model){
-//		
-//		List<Card> cards = cardService.getCardById(id);
-//		model.addAttribute("cards", cards);
+		
+		List<Card> cards = cardService.getCardByBankBankid(id);
+		model.addAttribute("cards", cards);
 		return "categoriesPage";
 	}
 	

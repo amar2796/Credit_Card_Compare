@@ -20,7 +20,7 @@ public interface CardService {
 
 	Card getCardById(Integer id);
 
-	List<Card> getCardByBankId(Integer id);
+	List<Card> getCardByBankBankid(Integer id);
 
 	
 }

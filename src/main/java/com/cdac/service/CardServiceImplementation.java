@@ -43,10 +43,9 @@ public class CardServiceImplementation implements CardService{
 	}
 	
 	@Override
-	public List<Card> getCardByBankId(Integer id) {
-//		List<Card> cards = cardRepo.findById(id);
-//		System.out.println(cards);
-		return null;
+	public List<Card> getCardByBankBankid(Integer id) {
+		List<Card> cards = cardRepo.findByBankBankid(id);
+		return cards;
 	}
 
 	@Override
@@ -60,6 +59,8 @@ public class CardServiceImplementation implements CardService{
 		Card cards = cardRepo.findById(id).get();
 		return cards;
 	}
+
+	
 
 	
 

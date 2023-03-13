@@ -17,10 +17,10 @@ public interface CardRepo extends JpaRepository<Card, Integer>{
 	@Query("SELECT c FROM Card c WHERE c.isApproved = ?1")
 	List<Card> getApprovedCards(boolean isApproved);
 
-//	@Query("SELECT c FROM Card c WHERE c.bankid=id")
-//	List<Card> findByBankId(Integer id);
 
 
-	//Card findByCard(Integer id);
+	List<Card> findByBankBankid(Integer id);
+
+
 	
 }
