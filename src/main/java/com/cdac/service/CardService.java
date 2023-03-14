@@ -22,5 +22,7 @@ public interface CardService {
 
 	List<Card> getCardByBankBankid(Integer id);
 
+	Card getFirstCard(int i);
+
 	
 }

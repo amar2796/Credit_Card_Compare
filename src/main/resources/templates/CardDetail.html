@@ -2,14 +2,15 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Sample Thymeleaf Page with CSS</title>
+    <title>Card Detail</title>
     <link rel="stylesheet" href="/CSS_File/CardDetailStyle.css" th:href="@{/CSS_File/CardDetailStyle.css}" />
 </head>
 <body>
     <div class="container">
+    <div th:each="card : ${cards}">
         <div class="firstHeading">
             <div class="firstHeadingTitle">
-                <p>HDFC Bank INFINIA Credit Card Metal Edition</p>
+                <p><span th:text="${card.cardName}" /></p>
             </div>
         </div>
         <div class="secondLine">
@@ -22,7 +23,7 @@
         
         
         <!-- First -->
-        <div th:each="card : ${cards}">
+        
         
         
         
@@ -36,6 +37,9 @@
                 <div class="secondDivMain">
                     <div class="secondDivMainTitle">
                         <p><span th:text="${card.cardName}" /></p>
+                        <div class="tablebutton">
+              				<a th:href="@{${card.urlPath}}" ><button>Apply Now</button></a>
+            			</div>
                     </div>
                     <div class="secondDivMainSecond">
                         <div class="secondDivMainDiv1">

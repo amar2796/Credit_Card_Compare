@@ -53,6 +53,13 @@ public class CardServiceImplementation implements CardService{
 		// TODO Auto-generated method stub
 		return cardRepo.getApprovedCards(isApproved);
 	}
+	
+	@Override
+	public Card getFirstCard(int i) {
+		
+		return cardRepo.getCardId(i);
+	}
+
 
 	@Override
 	public Card getCardById(Integer id) {
@@ -60,6 +67,7 @@ public class CardServiceImplementation implements CardService{
 		return cards;
 	}
 
+	
 	
 
 	

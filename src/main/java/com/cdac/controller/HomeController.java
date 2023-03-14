@@ -30,10 +30,12 @@ public class HomeController {
 
 	@RequestMapping("/")
 	public String showAllCards(Model model) {
-		//List<RewardBenefits> rewardBenefits =  benefitsService.findAllCards();
-		
-		//System.out.println(rewardBenefits);
-		//model.addAttribute("rewardBenefits", rewardBenefits);
+		model.addAttribute("firstCard", cardService.getFirstCard(1));
+		model.addAttribute("secondCard", cardService.getFirstCard(2));
+		model.addAttribute("thirdCard", cardService.getFirstCard(7));
+		model.addAttribute("forthCard", cardService.getFirstCard(9));
+		model.addAttribute("fiveCard", cardService.getFirstCard(8));
+		model.addAttribute("sixCard", cardService.getFirstCard(52));
 		return "home";
 	}
 	

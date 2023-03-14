@@ -118,79 +118,76 @@
           </div>
         </div>
         <div class="tableSectionFirst">
-        
           <div class="tableSectionFirst1">
             <div class="tableimage">
-              <a href="https://applyonline.hdfcbank.com/credit-cards/new-to-banking-users.html?rd_pacc=true#nbb" target="blank">
-                <img src="/image/hdfc_dinersclub black.png" alt=""></a>
+              <a th:href="${'/cardDetail/'+firstCard.cardid}" ><img th:src="@{${'/image/'+firstCard.imagePath}}" alt=""></a>
             </div>
             <div class="tableimageTitle">
-              <p ></p>
+              <p th:text="${firstCard.cardName}"></p>
             </div>
-            <div class="tableRating"></div>
             <div class="tableJoiningFee">
               <p>Joining Fee</p>
             </div>
             <div class="tableJoiningFeeText">
-              <p>N/A</p>
+              <p th:text="${firstCard.feesAndCharge.joiningFee}">N/A</p>
             </div>
             <div class="tableRewardRate">
               <p>Rewards Rate</p>
             </div>
             <div class="tableRewardRateText">
-              <p ></p>
+              <p th:text="${firstCard.rewardBenefit.rewardRate}"></p>
             </div>
             <div class="tablebutton">
-              <button>Apply Now</button>
+              <a th:href="@{${firstCard.urlPath}}" ><button>Apply Now</button></a>
             </div>
           </div>
 
           <div class="tableSectionFirst2">
             <div class="tableimage">
-              <img src="/image/hdfc_dinersclub premium.png" alt="">
+              <a th:href="${'/cardDetail/'+secondCard.cardid}" ><img th:src="@{${'/image/'+secondCard.imagePath}}" alt=""></a>
             </div>
             <div class="tableimageTitle">
-              <p>Flipkart Axis Bank Credit Card</p>
+              <p th:text="${secondCard.cardName}"></p>
             </div>
             <div class="tableRating"></div>
             <div class="tableJoiningFee">
               <p>Joining Fee</p>
             </div>
             <div class="tableJoiningFeeText">
-              <p>Rs. 500 + applicable taxes</p>
+              <p th:text="${secondCard.feesAndCharge.joiningFee}">N/A</p>
             </div>
             <div class="tableRewardRate">
               <p>Rewards Rate</p>
             </div>
             <div class="tableRewardRateText">
-              <p>5% cashback on Flipkart and Myntra, 4% cashback on prefered partners Swiggy, Uber</p>
+              <p th:text="${secondCard.rewardBenefit.rewardRate}"></p>
             </div>
             <div class="tablebutton">
-              <button>Apply Now</button>
+              <a th:href="@{${secondCard.urlPath}}" ><button>Apply Now</button></a>
             </div>
           </div>
           <div class="tableSectionFirst3">
             <div class="tableimage">
-              <img src="/image/hdfc_dinersclub privelage.png" alt="">
+              <a th:href="${'/cardDetail/'+thirdCard.cardid}" ><img th:src="@{${'/image/'+thirdCard.imagePath}}" alt=""></a>
             </div>
             <div class="tableimageTitle">
-              <p>Flipkart Axis Bank Credit Card</p>
+              <p th:text="${thirdCard.cardName}"></p>
             </div>
             <div class="tableRating"></div>
             <div class="tableJoiningFee">
               <p>Joining Fee</p>
             </div>
             <div class="tableJoiningFeeText">
-              <p>Rs. 500 + applicable taxes</p>
+              <p th:text="${thirdCard.feesAndCharge.joiningFee}">N/A</p>
             </div>
             <div class="tableRewardRate">
               <p>Rewards Rate</p>
             </div>
             <div class="tableRewardRateText">
-              <p>5% cashback on Flipkart and Myntra, 4% cashback on prefered partners Swiggy, Uber</p>
+              <p th:text="${thirdCard.rewardBenefit.rewardRate}"></p>
             </div>
             <div class="tablebutton">
-              <button>Apply Now</button>
+              <a th:href="@{${thirdCard.urlPath}}" ><button>Apply Now</button></a>
             </div>
           </div>
         </div>
@@ -211,75 +208,75 @@
         <div class="tableSectionFirst">
           <div class="tableSectionFirst1">
             <div class="tableimage">
-              <img src="/image/Air India SBI Platinum Credit Card.png" alt="">
+              <a th:href="${'/cardDetail/'+forthCard.cardid}" ><img th:src="@{${'/image/'+forthCard.imagePath}}" alt=""></a>
             </div>
             <div class="tableimageTitle">
-              <p>Flipkart Axis Bank Credit Card</p>
+              <p th:text="${forthCard.cardName}"></p>
             </div>
             <div class="tableRating"></div>
             <div class="tableJoiningFee">
               <p>Joining Fee</p>
             </div>
             <div class="tableJoiningFeeText">
-              <p>Rs. 500 + applicable taxes</p>
+              <p th:text="${forthCard.feesAndCharge.joiningFee}">N/A</p>
             </div>
             <div class="tableRewardRate">
               <p>Rewards Rate</p>
             </div>
             <div class="tableRewardRateText">
-              <p>5% cashback on Flipkart and Myntra, 4% cashback on prefered partners Swiggy, Uber</p>
+              <p th:text="${forthCard.rewardBenefit.rewardRate}"></p>
             </div>
             <div class="tablebutton">
-              <button>Apply Now</button>
+              <a th:href="@{${forthCard.urlPath}}" ><button>Apply Now</button></a>
             </div>
           </div>
 
           <div class="tableSectionFirst2">
             <div class="tableimage">
-              <img src="/image/Club Vistara SBI Card PRIME.png" alt="">
+              <a th:href="${'/cardDetail/'+fiveCard.cardid}" ><img th:src="@{${'/image/'+fiveCard.imagePath}}" alt=""></a>
             </div>
             <div class="tableimageTitle">
-              <p>Flipkart Axis Bank Credit Card</p>
+              <p th:text="${fiveCard.cardName}"></p>
             </div>
             <div class="tableRating"></div>
             <div class="tableJoiningFee">
               <p>Joining Fee</p>
             </div>
             <div class="tableJoiningFeeText">
-              <p>Rs. 500 + applicable taxes</p>
+              <p th:text="${fiveCard.feesAndCharge.joiningFee}">N/A</p>
             </div>
             <div class="tableRewardRate">
               <p>Rewards Rate</p>
             </div>
             <div class="tableRewardRateText">
-              <p>5% cashback on Flipkart and Myntra, 4% cashback on prefered partners Swiggy, Uber</p>
+              <p th:text="${fiveCard.rewardBenefit.rewardRate}"></p>
             </div>
             <div class="tablebutton">
-              <button>Apply Now</button>
+              <a th:href="@{${fiveCard.urlPath}}" ><button>Apply Now</button></a>
             </div>
           </div>
           <div class="tableSectionFirst3">
             <div class="tableimage">
-              <img src="/image/Club Vistara SBI Card.png" alt="">
+              <a th:href="${'/cardDetail/'+sixCard.cardid}" ><img th:src="@{${'/image/'+sixCard.imagePath}}" alt=""></a>
             </div>
             <div class="tableimageTitle">
-              <p>Flipkart Axis Bank Credit Card</p>
+              <p th:text="${sixCard.cardName}"></p>
             </div>
             <div class="tableRating"></div>
             <div class="tableJoiningFee">
               <p>Joining Fee</p>
             </div>
             <div class="tableJoiningFeeText">
-              <p>Rs. 500 + applicable taxes</p>
+              <p th:text="${sixCard.feesAndCharge.joiningFee}">N/A</p>
             </div>
             <div class="tableRewardRate">
               <p>Rewards Rate</p>
             </div>
             <div class="tableRewardRateText">
-              <p>5% cashback on Flipkart and Myntra, 4% cashback on prefered partners Swiggy, Uber</p>
+              <p th:text="${sixCard.rewardBenefit.rewardRate}"></p>
             </div>
             <div class="tablebutton">
-              <button>Apply Now</button>
+              <a th:href="@{${sixCard.urlPath}}" ><button>Apply Now</button></a>
             </div>
           </div>
         </div>

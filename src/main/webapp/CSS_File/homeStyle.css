@@ -172,6 +172,7 @@ body {
 }
 .tableSectionFirst1{
   border-radius: 7px;
+  margin-left:10px;
   padding-left: 10px;
   padding-right: 10px;
   border: 1px solid rgb(189, 182, 182);
@@ -210,7 +211,7 @@ body {
 }
 .tableimage{
   margin-left: 25%;
-  margin-top: 15%;
+  margin-top: 10%;
   border-radius: 5px;
   width: 176px;
   height: 111px;
@@ -230,27 +231,29 @@ body {
   height: 30px;
   font-size: 18px;
 }
-.tableRating{
-  margin-top: 20px;
-  height: 30px;
-}
 .tableJoiningFee{
+	margin-left:20px;
   height: 30px;
   color: blue;
 
 }
 .tableJoiningFeeText{
-  margin-top: -10px;
+  margin-left:20px;
+  margin-top: -20px;
   height: 30px;
 }
 .tableRewardRate{
+	margin-left:20px;
   margin-top: 5px;
   height: 30px;
   color: blue;
 }
 .tableRewardRateText{
   margin-top: -10px;
-  height: 40px;
+  margin-left:20px;
+  margin-right:15px;
+  height: 120px;
+  overflow: hidden;
 }
 .tablebutton{
   margin-top: 10px;

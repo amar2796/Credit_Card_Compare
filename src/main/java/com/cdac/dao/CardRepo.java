@@ -21,6 +21,9 @@ public interface CardRepo extends JpaRepository<Card, Integer>{
 
 	List<Card> findByBankBankid(Integer id);
 
+	@Query("SELECT c FROM Card c WHERE c.cardid = ?1")
+	Card getCardId(int i);
+
 
 	
 }
