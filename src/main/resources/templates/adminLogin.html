@@ -8,14 +8,22 @@
 </head>
 <body>
 	<form action="adminLoginValidate" >
+		<div class="userimage">
+		<img src="/image/userlogin.png" width="70px">
+		<h3>Welcome to Admin Login</h2>
+		</div>
 		<label class="error" th:text="${error }" ></label>
-		<label for="userId">User id:</label>
-		<input type="text" id="userId" name="userId" required>
+		<label for="userId">User Id</label>
+		<input type="text" placeholder="Enter your user Id" id="userId" name="userId" required>
 
-		<label for="password">Password:</label>
-		<input type="password" id="password" name="password" required>
+		<label for="password">Password</label>
+		<input type="password" id="password" placeholder="Enter your password" name="password" required>
+
+		<a href=""><p>Forget Password</p></a>
 
 		<input type="submit" value="Login">
+
+		
 	</form>
 </body>
 </html>

@@ -34,20 +34,4 @@ public class BankController {
 		bankService.addDataInBankTable(bank);
 		return "redirect:teamDashboard1";
 	}
-//	@RequestMapping("/teamDashboard")
-//    public String newPage(Model model) {
-//		model.addAttribute("bank",bankRepo.findAll());
-//        return "teamDashboard";
-//    }
-	
-//	@RequestMapping("/bankdata")
-//    public  ModelAndView getUsers() {
-//        ArrayList<Bank> userList = (ArrayList<Bank>) bankRepo.findAll();
-//        ModelAndView modelAndView = new ModelAndView();
-//        modelAndView.addObject("len", userList.size());
-//        modelAndView.addObject("users", userList);
-//        
-//        modelAndView.setViewName("teamDashboard");
-//        return modelAndView;
-//    }
 }

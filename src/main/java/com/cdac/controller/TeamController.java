@@ -52,18 +52,6 @@ public class TeamController {
 	
 	@Autowired
 	BankService bankService;
-	@Autowired
-	RewardBenefitsRepo rewardBenefitsRepo;
-	@Autowired
-	BalanceTransferRepo balanceTransfersRepo;
-	@Autowired
-	com.cdac.dao.cashbacksRepo cashbacksRepo;
-	@Autowired
-	LifeTimeFeeCreditCardRepo lifeTimeFeeCreditCardRepo;
-	@Autowired
-	CardRepo cardRepo;
-	@Autowired
-	FeesAndChargesRepo feesAndChargesRepo;
 
 	// Team register form
 	@RequestMapping("/teamRegister")
@@ -75,7 +63,7 @@ public class TeamController {
 	@RequestMapping("/teamAddRegister")
 	public String teamAddRegister(Team team) {
 		teamService.AddRegisterData(team);
-		return "home";
+		return "redirect:/teamLogin";
 	}
 
 	// team login
@@ -91,19 +79,17 @@ public class TeamController {
 		if (team == null) {
 			model.addAttribute("error", "* Please check Id, Password and Try again!");
 			return "teamLogin";
-		} else {
-			// List<RewardBenefits> list= rewardBenefitsRepo.findByRewardBenefits();
-			// System.out.println(list);
-			// model.addAttribute("rewards", rewardBenefitsRepo.findByTable());
-
+		}
+		else if (team.isApproved()==false) {
+			model.addAttribute("error", "* Your id is under Processing");
+			return "teamLogin";
+		}
+		else {
+		
+			
 			return "redirect:/teamDashboard1";
 		}
 	}
-
-//	@RequestMapping("/teamDashboard")
-//	public String teamDashboard() {
-//		return "teamDashboard";
-//	}
 	
 	// Bank Edit detail
 	@GetMapping("/bankDetail/edit/{id}")
@@ -133,11 +119,9 @@ public class TeamController {
 	public String teamDashboard(Model model) {
 		List<Bank> banks = bankService.getApprovedBanks();
 		model.addAttribute("bank", bankService.getApprovedBanks(true));
-		//model.addAttribute("bank", bankRepo.findAll());
 		model.addAttribute("card", cardService.getCardsByStatus(true));
 		model.addAttribute("bankStatus", bankService.getApprovedBanks(false));
 		model.addAttribute("cardStatus", cardService.getCardsByStatus(false));
-
 		return "teamDashboard";
 	}
 
@@ -147,11 +131,6 @@ public class TeamController {
 		for(Card card : cardService.getAllCards()) {
 		}
 		model.addAttribute("cards", cardService.getAllCards());
-		//model.addAttribute("rewardBenefits", benefitsService.findAllRewardBenefits());
-//		model.addAttribute("balanceTransfer", balanceTransfersRepo.findAll());
-//		model.addAttribute("cashback", cashbacksRepo.findAll());
-//		model.addAttribute("lifeTimeFree", lifeTimeFeeCreditCardRepo.findAll());
-		//model.addAttribute("feesAndCharges", feesAndChargesService.getAllFeeAndCharge());y
 		return "teamDashboardView";
 	}
 
@@ -164,6 +143,6 @@ public class TeamController {
 	
 	@RequestMapping("/logout")
 	public String logout() {
-		return "home";
+		return "redirect:/";
 	}
 }

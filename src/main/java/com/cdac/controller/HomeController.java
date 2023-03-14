@@ -73,8 +73,13 @@ public class HomeController {
 	@RequestMapping("/submitContact")
 	public String submitContact(Contact contact) {
 		contactService.registerContact(contact);
-		return "home";
+		return "redirect:/";
 	}
 	
+	//back mapping
+	@RequestMapping("/back")
+	public String back() {
+		return "redirect:/";
+	}
 	
 }

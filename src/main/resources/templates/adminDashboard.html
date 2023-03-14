@@ -89,6 +89,64 @@
 		</section>
 			</div>
 		</div>
+		<div class="forthMain">
+			<div class="forthMainLeft">
+			<section class="user-list">
+			<h2>Team List</h2>
+			<div class="card">
+			<table>
+				<thead>
+					<tr class="last">
+						<th>Name</th>
+						<th>Email</th>
+						<th>Mobile</th>
+						<th>Address</th>
+						<th>Status</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="team : ${teamPending}">
+					<td th:text="${team.fullName}"></td>
+                	<td th:text="${team.email}"></td>
+                	<td th:text="${team.mobileNumber}"></td>
+                	<td th:text="${team.fullAddress}"></td>
+                	<td><a style="text-decoration:none" th:href="@{/teamStatusAccept/{id}(id=${team.userId})}">Accept</a> | 
+                	<a style="text-decoration:none" th:href="@{/teamStatusReject/{id}(id=${team.userId})}">Reject</a>
+                	</td>
+                	</tr>
+					
+				</tbody>
+			</table>
+			</div>
+		</section>
+			</div>
+			<div class="forthMainRight">
+			<section class="user-list">
+			<h2>Team Info</h2>
+			<div class="card">
+			<table>
+				<thead>
+					<tr class="last">
+						<th>Name</th>
+						<th>Email</th>
+						<th>Mobile</th>
+						<th>Address</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="team : ${teamAccept}">
+					<td th:text="${team.fullName}"></td>
+                	<td th:text="${team.email}"></td>
+                	<td th:text="${team.mobileNumber}"></td>
+                	<td th:text="${team.fullAddress}"></td>
+                	</tr>
+					
+				</tbody>
+			</table>
+			</div>
+		</section>
+			</div>
+		</div>
 	</main>
 </body>
 </html>

@@ -88,15 +88,4 @@ public class CardController {
 		  return "redirect:/teamDashboard1";
 		}
 		
-//		
-//		// Bank detail delete
-//		@GetMapping("/bankDetail/delete/{id}")
-//	    public String showDeleteForm(@PathVariable("id") int id) {
-//	        Bank person1 = bankRepo.findById(id)
-//	            .orElseThrow(() -> new IllegalArgumentException("Invalid person id: " + id));
-//	        bankRepo.deleteById(id);
-//	        return "redirect:/teamDashboard1";
-//		}
-//	
-	
 }

@@ -31,7 +31,7 @@ public class userController {
 	@RequestMapping("/home")
 	public String getHome()
 	{
-		return "home";
+		return "redirect:/";
 	}
 	@RequestMapping("/register")
 	public String getRegister()
@@ -50,7 +50,7 @@ public class userController {
 	public String getRegisterData(User user)
 	{
 		userService.registerData(user);
-		return "home";
+		return "redirect:/";
 	}
 	
 	// login dashboard
@@ -84,6 +84,12 @@ public class userController {
 	public String about()
 	{
 		return "about";
+	}
+	
+	//user page mapping
+	@RequestMapping("/userLogin")
+	public String userLogin() {
+		return "userLogin";
 	}
 	
 	

@@ -7,10 +7,10 @@
 	<link rel="stylesheet" href="/CSS_File/teamLogin.css">
 </head>
 <body>
-	<form action="teamLoginValidate" >
+	<form  >
 		<div class="userimage">
 			<img src="/image/userlogin.png" width="70px">
-			<h3>Welcome to Team Login</h2>
+			<h3>Welcome to User Login</h2>
 		</div>
 		<label class="error" th:text="${error }" ></label>
 		<label for="userId">User Id</label>
@@ -19,11 +19,11 @@
 		<label for="password">Password</label>
 		<input type="password" id="password" placeholder="Enter your password" name="password" required>
 
-		<a th:href="@{/forgot}"><p>Forget Password</p></a>
+		<a href=""><p>Forget Password</p></a>
 
 		<input type="submit" value="Login">
 
-		<p class="signup">Don't you have an account? <a href="teamRegister" >Sign up</a></p>
+		<p class="signup">Don't you have an account? <a href="userRegister" >Sign up</a></p>
 	</form>
 	
 </body>

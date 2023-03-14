@@ -14,6 +14,7 @@ public class Team {
 	private String email;
 	private String gender;
 	private String fullAddress;
+	boolean isApproved;
 	public String getFullName() {
 		return fullName;
 	}
@@ -56,13 +57,20 @@ public class Team {
 	public void setFullAddress(String fullAddress) {
 		this.fullAddress = fullAddress;
 	}
+	public boolean isApproved() {
+		return isApproved;
+	}
+	public void setApproved(boolean isApproved) {
+		this.isApproved = isApproved;
+	}
 	@Override
 	public String toString() {
 		return "Team [fullName=" + fullName + ", userId=" + userId + ", password=" + password + ", mobileNumber="
-				+ mobileNumber + ", email=" + email + ", gender=" + gender + ", fullAddress=" + fullAddress + "]";
+				+ mobileNumber + ", email=" + email + ", gender=" + gender + ", fullAddress=" + fullAddress
+				+ ", isApproved=" + isApproved + "]";
 	}
 	public Team(String fullName, String userId, String password, String mobileNumber, String email, String gender,
-			String fullAddress) {
+			String fullAddress, boolean isApproved) {
 		super();
 		this.fullName = fullName;
 		this.userId = userId;
@@ -71,10 +79,12 @@ public class Team {
 		this.email = email;
 		this.gender = gender;
 		this.fullAddress = fullAddress;
+		this.isApproved = isApproved;
 	}
 	public Team() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
 	
 }

@@ -21,6 +21,7 @@ import com.cdac.service.AdminService;
 import com.cdac.service.BankService;
 import com.cdac.service.CardService;
 import com.cdac.service.ContactService;
+import com.cdac.service.TeamService;
 
 
 
@@ -40,6 +41,9 @@ public class AdminController {
 	
 	@Autowired
 	ContactService contactService;
+	
+	@Autowired
+	TeamService teamService;
 	
 	//team login
 	@RequestMapping("/adminLogin")
@@ -70,6 +74,8 @@ public class AdminController {
 		model.addAttribute("bank", bankService.getApprovedBanks(false));
 		model.addAttribute("card", cardService.getCardsByStatus(false));
 		model.addAttribute("contacts", contactService.findAllDetails());
+		model.addAttribute("teamPending", teamService.getApprovedTeams(false));
+		model.addAttribute("teamAccept", teamService.getApprovedTeams(true));
 		return "adminDashboard";
 	}
 	
@@ -90,7 +96,23 @@ public class AdminController {
 			cardService.saveCard(card);
 			return "redirect:/adminDashboardControl";
 		}
-	
+		
+		
+		//Accept team
+		@RequestMapping("/teamStatusAccept/{id}")
+		public String teamStatusAccept(@PathVariable String id) {
+			Team team=teamService.getTeam(id);
+			team.setApproved(true);
+			teamService.AddRegisterData(team);
+			return "redirect:/adminDashboardControl";
+		}
+		
+		//reject team
+		@RequestMapping("/teamStatusReject/{id}")
+		public String teamStatusReject(@PathVariable String id) {
+			teamService.deleteById(id);
+			return "redirect:/adminDashboardControl";
+		}
 	
 		
 

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"> 
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Verify Password</title>
+	<link rel="stylesheet" href="/CSS_File/passwordStyle.css">
+</head>
+<body>
+	<form th:action="@{/verifyPassword}" method="post">
+			<div class="userimage">
+				<img src="/image/changepassword.png" width="70px">
+				<h3>Welcome to here</h3>
+				<label class="error" th:text="${error }" ></label>
+			</div>
+			<input type="hidden" id="id" name="id" th:value="${id}" /> 
+			
+			<label for="useridFirst">Enter new Password</label>
+			<input type="text" placeholder="Enter new password" id="useridFirst" name="useridFirst" required>
+			
+			<label for="useridSecond">Enter new Password</label>
+			<input type="text" placeholder="Enter new password" id="useridSecond" name="useridSecond" required>
+			<input type="submit">
+	
+			</form>
+	
+</body>
+</html>

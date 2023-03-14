@@ -1,11 +1,13 @@
 package com.cdac.service;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.cdac.dao.TeamRepo;
+import com.cdac.model.Admin;
 import com.cdac.model.Team;
 
 @Service
@@ -33,6 +35,25 @@ public class TeamServiceImplementation implements TeamService{
 			
 		}
 		return null;
+	}
+	@Override
+	public Team findByUserId(String userid) {
+		// TODO Auto-generated method stub
+		return teamRepo.findByUserId(userid);
+	}
+	@Override
+	public List<Team> getApprovedTeams(boolean b) {
+		// TODO Auto-generated method stub
+		return teamRepo.getApprovedTeams(b);
+	}
+	@Override
+	public Team getTeam(String id) {
+		// TODO Auto-generated method stub
+		return teamRepo.findByUserId(id);
+	}
+	@Override
+	public void deleteById(String id) {
+		teamRepo.deleteById(id);
 	}
 	
 	
