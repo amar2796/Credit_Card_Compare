@@ -13,16 +13,16 @@ public class ContactServiceImplementation implements ContactService {
 
 	@Autowired
 	private ContactRepo contactRepo;
-	
+
 	@Override
 	public void registerContact(Contact contact) {
-		
+
 		contactRepo.save(contact);
 	}
 
 	@Override
 	public List<Contact> findAllDetails() {
-		
+
 		return (List<Contact>) contactRepo.findAll();
 	}
 

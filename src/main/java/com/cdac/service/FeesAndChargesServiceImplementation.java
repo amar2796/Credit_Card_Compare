@@ -10,17 +10,17 @@ import com.cdac.dao.FeesAndChargesRepo;
 import com.cdac.model.FeesAndCharge;
 
 @Service
-public class FeesAndChargesServiceImplementation implements FeesAndChargesService{
+public class FeesAndChargesServiceImplementation implements FeesAndChargesService {
 
 	@Autowired
 	FeesAndChargesRepo feesAndChargesRepo;
 
 	@Override
 	public void addDataRegister(FeesAndCharge feesAndCharges) {
-		//System.out.println(feesAndCharges.getCard().getCardid());
+		// System.out.println(feesAndCharges.getCard().getCardid());
 		System.out.println(feesAndChargesRepo.existsById(2022));
-		if(feesAndChargesRepo.existsById(2022)) {
-			FeesAndCharge data=feesAndChargesRepo.findById(202).orElseThrow();
+		if (feesAndChargesRepo.existsById(2022)) {
+			FeesAndCharge data = feesAndChargesRepo.findById(202).orElseThrow();
 //			System.out.println(data.getBalanceTransfer()+" old value");
 //			System.out.println(feesAndCharges.getBalanceTransfer()+" new value");
 //			data.setNoAnnualFees(feesAndCharges.getNoAnnualFees());
@@ -33,8 +33,7 @@ public class FeesAndChargesServiceImplementation implements FeesAndChargesServic
 //			data.setBalanceTransfer(feesAndCharges.getBalanceTransfer());
 //			data.setInternationalTransaction(feesAndCharges.getInternationalTransaction());
 			feesAndChargesRepo.save(data);
-		}
-		else {
+		} else {
 			feesAndChargesRepo.save(feesAndCharges);
 		}
 	}
@@ -51,5 +50,4 @@ public class FeesAndChargesServiceImplementation implements FeesAndChargesServic
 		return feesAndChargesRepo.findById(id);
 	}
 
-	
 }

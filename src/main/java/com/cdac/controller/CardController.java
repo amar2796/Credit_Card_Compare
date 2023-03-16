@@ -29,31 +29,32 @@ public class CardController {
 
 	@Autowired
 	CardService cardService;
-	
+
 	@Autowired
 	BankService bankService;
-	
+
 	@Autowired
 	CategoryService categoryService;
-	
+
 	@Autowired
 	BankRepo bankRepo;
 	@Autowired
 	CardRepo cardRepo;
-	
+
 	@RequestMapping("/addCardDashboard/{id}")
-	public String addCardDashboard(@PathVariable("id") int id, Model model)
-	{
-		Bank bank = bankRepo.findById(id)
-	            .orElseThrow(() -> new IllegalArgumentException("Invalid bank id: " + id));
-	    model.addAttribute("bank", bank);
-	    model.addAttribute("categories", categoryService.getAllCategories());
+	public String addCardDashboard(@PathVariable("id") int id, Model model) {
+		Bank bank = bankRepo.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid bank id: " + id));
+		model.addAttribute("bank", bank);
+		model.addAttribute("categories", categoryService.getAllCategories());
 		return "addCardDashboard";
 	}
+
 	// add card dashboard register mapping addCard
 	@RequestMapping("/addCardRegister")
-	public String addCardRegister(@RequestParam String imagePath,@RequestParam String urlPath,@RequestParam Integer categoryId, @RequestParam Integer bankid,@RequestParam String bankName, @RequestParam String cardName, Model model)   //Card replace CardDTO
- 	{
+	public String addCardRegister(@RequestParam String imagePath, @RequestParam String urlPath,
+			@RequestParam Integer categoryId, @RequestParam Integer bankid, @RequestParam String bankName,
+			@RequestParam String cardName, Model model) // Card replace CardDTO
+	{
 		Optional<Category> category = categoryService.getCategory(categoryId);
 		Bank bank = bankService.getBank(bankid).get();
 		Card card = new Card();
@@ -69,23 +70,22 @@ public class CardController {
 		model.addAttribute("cardid", card.getCardid());
 		return "redirect:teamDashboard1";
 	}
-	
-		// Card Edit detail
-		@GetMapping("/card/edit/{id}")
-	    public String showEditForm(@PathVariable("id") int id, Model model) {
-	        Card card = cardRepo.findById(id)
-	            .orElseThrow(() -> new IllegalArgumentException("Invalid card id: " + id));
-	        model.addAttribute("card", card);
-	        return "addCardDashboardEditForm";
-	    }
 
-		@PostMapping("/card/update/{id}")
-		public String updatePerson(@ModelAttribute("cardName") String cardName,@PathVariable("id") int id){
-			Card card=cardRepo.findById(id).orElseThrow();
-			card.setCardName(cardName);
-			cardService.saveCard(card);
-			 
-		  return "redirect:/teamDashboard1";
-		}
-		
+	// Card Edit detail
+	@GetMapping("/card/edit/{id}")
+	public String showEditForm(@PathVariable("id") int id, Model model) {
+		Card card = cardRepo.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid card id: " + id));
+		model.addAttribute("card", card);
+		return "addCardDashboardEditForm";
+	}
+
+	@PostMapping("/card/update/{id}")
+	public String updatePerson(@ModelAttribute("cardName") String cardName, @PathVariable("id") int id) {
+		Card card = cardRepo.findById(id).orElseThrow();
+		card.setCardName(cardName);
+		cardService.saveCard(card);
+
+		return "redirect:/teamDashboard1";
+	}
+
 }

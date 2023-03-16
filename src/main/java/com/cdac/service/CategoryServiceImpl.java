@@ -11,7 +11,7 @@ import com.cdac.model.Category;
 
 @Service
 public class CategoryServiceImpl implements CategoryService {
-	
+
 	@Autowired
 	private CategoryRepo categoryRepo;
 
@@ -24,7 +24,5 @@ public class CategoryServiceImpl implements CategoryService {
 	public Optional<Category> getCategory(Integer Id) {
 		return categoryRepo.findById(Id);
 	}
-	
-	
 
 }

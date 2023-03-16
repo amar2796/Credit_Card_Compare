@@ -13,13 +13,16 @@
 				<h3>Welcome to here</h3>
 				<label class="error" th:text="${error }" ></label>
 			</div>
-			<input type="hidden" id="id" name="id" th:value="${id}" /> 
+			<input type="hidden" id="id" name="id" th:value="${id}" / readonly="readonly"> 
+			<input type="hidden" id="otp" name="otp" th:value="${otp}" / readonly="readonly"> 
+			
+			<label for="useridFirst">Enter OTP</label>
+			<input type="password" placeholder="Enter OTP" id="userOtp" name="userOtp" required>
 			
 			<label for="useridFirst">Enter new Password</label>
-			<input type="text" placeholder="Enter new password" id="useridFirst" name="useridFirst" required>
+			<input type="password" placeholder="Enter new password" id="useridFirst" name="useridFirst" required>
 			
-			<label for="useridSecond">Enter new Password</label>
-			<input type="text" placeholder="Enter new password" id="useridSecond" name="useridSecond" required>
+			
 			<input type="submit">
 	
 			</form>

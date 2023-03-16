@@ -7,17 +7,14 @@ import com.cdac.dao.BalanceTransferRepo;
 import com.cdac.model.BalanceTransfers;
 
 @Service
-public class BalanceTransferServiceImplementation implements BalanceTransferService{
+public class BalanceTransferServiceImplementation implements BalanceTransferService {
 
 	@Autowired
 	BalanceTransferRepo balanceTransferRepo;
-	
-
-
 
 	@Override
 	public void addDataRegister(BalanceTransfers balanceTransfers) {
 		balanceTransferRepo.save(balanceTransfers);
-		
+
 	}
 }

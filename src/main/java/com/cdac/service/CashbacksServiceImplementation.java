@@ -7,7 +7,7 @@ import com.cdac.dao.cashbacksRepo;
 import com.cdac.model.Cashbacks;
 
 @Service
-public class CashbacksServiceImplementation implements CashbacksService{
+public class CashbacksServiceImplementation implements CashbacksService {
 
 	@Autowired
 	cashbacksRepo cashbacksRepo;
@@ -15,6 +15,6 @@ public class CashbacksServiceImplementation implements CashbacksService{
 	@Override
 	public void addDataRegister(Cashbacks cashbacks) {
 		cashbacksRepo.save(cashbacks);
-		
-	} 
+
+	}
 }

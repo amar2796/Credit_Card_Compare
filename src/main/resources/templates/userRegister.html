@@ -10,7 +10,7 @@
 	<form action="/userAddRegister">
 		<div class="userimage">
 			<img src="/image/user_registration.png" width="70px">
-			<h3>Welcome to User Registration</h2>
+			<h3>Welcome to User Registration</h3>
 		</div>
 		<label >Full Name</label>
 		<input type="text" id="fullName" name="fullName" placeholder="Enter your Name" required>
@@ -22,7 +22,7 @@
 		<input type="password" id="password" name="password" placeholder="Enter your password" required>
 
 		<label >Mobile Number</label>
-		<input type="number" id="mobileNumber" name="mobileNumber" placeholder="Enter your number" required>
+		<input type="number" id="mobileNumber" name="mobileNumber" pattern="\d{9}" placeholder="Enter your number" required>
 		
 		<label >Email</label>
 		<input type="email" id="email" name="email" placeholder="Enter your email" required>

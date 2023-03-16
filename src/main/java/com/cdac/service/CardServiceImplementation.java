@@ -12,12 +12,11 @@ import com.cdac.model.Bank;
 import com.cdac.model.Card;
 
 @Service
-public class CardServiceImplementation implements CardService{
+public class CardServiceImplementation implements CardService {
 
-	
 	@Autowired
 	CardRepo cardRepo;
-	
+
 	@Autowired
 	BankRepo bankRepo;
 
@@ -25,14 +24,14 @@ public class CardServiceImplementation implements CardService{
 	public void saveCard(Card card) {
 		cardRepo.save(card);
 	}
-	
+
 	public Optional<Card> getCard(Integer id) {
 		return cardRepo.findById(id);
 	}
 
 	@Override
 	public List<Card> getAllCards() {
-		
+
 		return (List<Card>) cardRepo.findAll();
 	}
 
@@ -41,7 +40,7 @@ public class CardServiceImplementation implements CardService{
 		List<Card> cards = cardRepo.findByCategoryId(id);
 		return cards;
 	}
-	
+
 	@Override
 	public List<Card> getCardByBankBankid(Integer id) {
 		List<Card> cards = cardRepo.findByBankBankid(id);
@@ -53,13 +52,12 @@ public class CardServiceImplementation implements CardService{
 		// TODO Auto-generated method stub
 		return cardRepo.getApprovedCards(isApproved);
 	}
-	
+
 	@Override
 	public Card getFirstCard(int i) {
-		
+
 		return cardRepo.getCardId(i);
 	}
-
 
 	@Override
 	public Card getCardById(Integer id) {
@@ -67,13 +65,4 @@ public class CardServiceImplementation implements CardService{
 		return cards;
 	}
 
-	
-	
-
-	
-
-
-	
-	
-	
 }

@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>Add Card Details Dashboard</title>
-  <link rel="stylesheet" type="text/css" th:href="@{/CSS_File/addCardDashboardStyle.css}" />
-  </head>
+<meta charset="UTF-8">
+<title>Add Card Details Dashboard</title>
+<link rel="stylesheet" type="text/css"
+	th:href="@{/CSS_File/addCardDashboardStyle.css}" />
+</head>
 <body>
-  <header>
-    <h1>Add Card Details Dashboard</h1>    
-  </header>
-  
-  <main>
-    <h2>Add Card Type Details</h2>
-     <form th:action="@{/card/update/{id}(id=${card.cardid})}"  th:object="${card}" method="post">
-      
-      <input type="hidden" th:field="*{bank.bankid}" id="bankid" name="bankid" readonly="readonly" >
-      
-      <label for="bankName">Bank Name:</label>
-      <input type="text" th:field="*{bank.bankName}" id="bankName" name="bankName" readonly="readonly">
-      
-      
-      <label for="cardName">Card Name:</label>
-      <input type="text" th:field="*{cardName}" id="cardName" name="cardName" required>
-      
-     
-      
-      <button type="submit">Update</button>
-    </form>
-  </main>
+	<header>
+		<h1>Add Card Details Dashboard</h1>
+	</header>
+
+	<main>
+		<h2>Add Card Type Details</h2>
+		<form th:action="@{/card/update/{id}(id=${card.cardid})}"
+			th:object="${card}" method="post">
+
+			<input type="hidden" th:field="*{bank.bankid}" id="bankid"
+				name="bankid" readonly="readonly"> <label for="bankName">Bank
+				Name:</label> <input type="text" th:field="*{bank.bankName}" id="bankName"
+				name="bankName" readonly="readonly"> <label for="cardName">Card
+				Name:</label> <input type="text" th:field="*{cardName}" id="cardName"
+				name="cardName" required>
+
+
+
+			<button type="submit">Update</button>
+		</form>
+	</main>
 </body>
 </html>

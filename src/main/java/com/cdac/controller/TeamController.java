@@ -28,6 +28,7 @@ import com.cdac.model.Card;
 import com.cdac.model.Team;
 import com.cdac.service.BankService;
 import com.cdac.service.CardService;
+import com.cdac.service.EmailService;
 import com.cdac.service.FeesAndChargesService;
 import com.cdac.service.RewardBenefitsService;
 import com.cdac.service.TeamService;
@@ -35,13 +36,13 @@ import com.cdac.service.TeamService;
 @Controller
 
 public class TeamController {
-	
+
 	@Autowired
 	FeesAndChargesService feesAndChargesService;
-	
+
 	@Autowired
 	RewardBenefitsService benefitsService;
-	
+
 	@Autowired
 	CardService cardService;
 
@@ -49,9 +50,12 @@ public class TeamController {
 	TeamService teamService;
 	@Autowired
 	BankRepo bankRepo;
-	
+
 	@Autowired
 	BankService bankService;
+	
+	@Autowired
+	EmailService emailService;
 
 	// Team register form
 	@RequestMapping("/teamRegister")
@@ -63,6 +67,7 @@ public class TeamController {
 	@RequestMapping("/teamAddRegister")
 	public String teamAddRegister(Team team) {
 		teamService.AddRegisterData(team);
+		emailService.sendMainRegisterTeam(team);
 		return "redirect:/teamLogin";
 	}
 
@@ -79,18 +84,15 @@ public class TeamController {
 		if (team == null) {
 			model.addAttribute("error", "* Please check Id, Password and Try again!");
 			return "teamLogin";
-		}
-		else if (team.isApproved()==false) {
+		} else if (team.isApproved() == false) {
 			model.addAttribute("error", "* Your id is under Processing");
 			return "teamLogin";
-		}
-		else {
-		
-			
+		} else {
+
 			return "redirect:/teamDashboard1";
 		}
 	}
-	
+
 	// Bank Edit detail
 	@GetMapping("/bankDetail/edit/{id}")
 	public String showEditForm(@PathVariable("id") int id, Model model) {
@@ -128,7 +130,7 @@ public class TeamController {
 	// view add dashboard details
 	@RequestMapping("/teamDashboardDetails")
 	public String teamDashboardDetails(Model model) {
-		for(Card card : cardService.getAllCards()) {
+		for (Card card : cardService.getAllCards()) {
 		}
 		model.addAttribute("cards", cardService.getAllCards());
 		return "teamDashboardView";
@@ -139,10 +141,10 @@ public class TeamController {
 	public String backTeamDashboard() {
 		return "redirect:teamDashboard1";
 	}
-	
-	
+
 	@RequestMapping("/logout")
 	public String logout() {
 		return "redirect:/";
 	}
+	
 }

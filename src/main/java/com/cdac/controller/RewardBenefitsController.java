@@ -26,7 +26,7 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @Controller
 public class RewardBenefitsController {
-	
+
 	@Autowired
 	private CardService cardService;
 
@@ -35,29 +35,28 @@ public class RewardBenefitsController {
 	@Autowired
 	CardRepo cardRepo;
 	@Autowired
-	RewardBenefitsRepo rewardBenefitsRepo; 
-	
-	//reward&Benefits redirect page 
+	RewardBenefitsRepo rewardBenefitsRepo;
+
+	// reward&Benefits redirect page
 	@RequestMapping("/reward&Benefits/{cardid}")
-	public String rewardBenefits(@PathVariable("cardid") int cardid, Model model,HttpServletResponse response)
-	{
+	public String rewardBenefits(@PathVariable("cardid") int cardid, Model model, HttpServletResponse response) {
 		Card card = cardRepo.findById(cardid)
-	            .orElseThrow(() -> new IllegalArgumentException("Invalid card id: " + cardid));
-	        model.addAttribute("card", card);
+				.orElseThrow(() -> new IllegalArgumentException("Invalid card id: " + cardid));
+		model.addAttribute("card", card);
 //	        System.out.println(person.getCard_type());
 		return "reward&Benefits";
 	}
-	
-	//rewardBenefitsRegister save data (registration page)
+
+	// rewardBenefitsRegister save data (registration page)
 	@RequestMapping("/rewardBenefitsRegister")
-	public String rewardBenefitsRegister(@RequestParam Integer cardid, Model model,RewardBenefit rewardBenefits, HttpServletRequest request)
-	{
+	public String rewardBenefitsRegister(@RequestParam Integer cardid, Model model, RewardBenefit rewardBenefits,
+			HttpServletRequest request) {
 		rewardBenefitsService.registerData(rewardBenefits);
 		Card card = cardService.getCard(cardid).get();
 		card.setRewardBenefit(rewardBenefits);
 		cardService.saveCard(card);
 //		rewardBenefits.setCard(cardid);
-		//model.addAttribute("cardid", cardid.getCardid());
+		// model.addAttribute("cardid", cardid.getCardid());
 //		Integer idcard = 0;
 //		Cookie[] cookies = request.getCookies();
 //	    if (cookies != null) {
@@ -68,26 +67,25 @@ public class RewardBenefitsController {
 //	        }
 //	    }
 //	    card.setCardid(idcard);
-		//rewardBenefitsService.registerData(rewardBenefits);
+		// rewardBenefitsService.registerData(rewardBenefits);
 		return "redirect:teamDashboard1";
 	}
-	
-	// Reward Edit detail
-		@GetMapping("/rewardAndBenefit/edit/{id}")
-	    public String showEditForm(@PathVariable("id") int id, Model model) {
-	        RewardBenefit rewardBenefit = rewardBenefitsService.findById(id).get();
-	        model.addAttribute("rewardBenefit", rewardBenefit);
-	        return "reward&BenefitsEditForm";
-	    }
 
-		@PostMapping("/rewardAndBenefit/update/")
-		public String updatePerson(@ModelAttribute("rewardBenefit") RewardBenefit rewardBenefit) {
-			rewardBenefitsService.registerData(rewardBenefit);
-		  return "redirect:/teamDashboardDetails";
-		}
-		
-		
-		// Bank detail delete
+	// Reward Edit detail
+	@GetMapping("/rewardAndBenefit/edit/{id}")
+	public String showEditForm(@PathVariable("id") int id, Model model) {
+		RewardBenefit rewardBenefit = rewardBenefitsService.findById(id).get();
+		model.addAttribute("rewardBenefit", rewardBenefit);
+		return "reward&BenefitsEditForm";
+	}
+
+	@PostMapping("/rewardAndBenefit/update/")
+	public String updatePerson(@ModelAttribute("rewardBenefit") RewardBenefit rewardBenefit) {
+		rewardBenefitsService.registerData(rewardBenefit);
+		return "redirect:/teamDashboardDetails";
+	}
+
+	// Bank detail delete
 //		@GetMapping("/bankDetail/delete/{id}")
 //	    public String showDeleteForm(@PathVariable("id") int id) {
 //	        Bank person1 = bankRepo.findById(id)

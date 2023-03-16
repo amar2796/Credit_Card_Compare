@@ -11,7 +11,7 @@ import com.cdac.dao.RewardBenefitsRepo;
 import com.cdac.model.RewardBenefit;
 
 @Service
-public class RewardBenefitsServiceImplementation implements RewardBenefitsService{
+public class RewardBenefitsServiceImplementation implements RewardBenefitsService {
 
 	@Autowired
 	RewardBenefitsRepo rewardBenefitsRepo;
@@ -19,13 +19,13 @@ public class RewardBenefitsServiceImplementation implements RewardBenefitsServic
 	@Override
 	public void registerData(RewardBenefit rewardBenefits) {
 		rewardBenefitsRepo.save(rewardBenefits);
-		
+
 	}
 
 	@Override
 	public List<RewardBenefit> findAllRewardBenefits() {
-		return (List<RewardBenefit>)rewardBenefitsRepo.findAll();
-		
+		return (List<RewardBenefit>) rewardBenefitsRepo.findAll();
+
 	}
 
 	@Override
@@ -33,5 +33,4 @@ public class RewardBenefitsServiceImplementation implements RewardBenefitsServic
 		return rewardBenefitsRepo.findById(id);
 	}
 
-	
 }

@@ -12,22 +12,22 @@ import com.cdac.dao.BankRepo;
 import com.cdac.model.Bank;
 
 @Service
-public class BankServiceImplementation  implements BankService{
+public class BankServiceImplementation implements BankService {
 
 	@Autowired
 	BankRepo bankRepo;
-	
-	//Add bank name in database
+
+	// Add bank name in database
 	@Override
 	public void addDataInBankTable(Bank bank) {
 		bankRepo.save(bank);
-		
+
 	}
 
 	@Override
 	public Optional<Bank> getBank(Integer id) {
 		// TODO Auto-generated method stub
-		return  bankRepo.findById(id);
+		return bankRepo.findById(id);
 	}
 
 	@Override
@@ -46,9 +46,4 @@ public class BankServiceImplementation  implements BankService{
 		return null;
 	}
 
-	
-	
-	
-	
-	
 }

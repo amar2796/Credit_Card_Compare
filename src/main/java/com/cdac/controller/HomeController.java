@@ -18,13 +18,13 @@ import com.cdac.service.RewardBenefitsService;
 
 @Controller
 public class HomeController {
-	
+
 	@Autowired
 	private RewardBenefitsService benefitsService;
-	
+
 	@Autowired
 	private CardService cardService;
-	
+
 	@Autowired
 	private ContactService contactService;
 
@@ -38,48 +38,49 @@ public class HomeController {
 		model.addAttribute("sixCard", cardService.getFirstCard(52));
 		return "home";
 	}
-	
-	//categoriesPage mapping
+
+	// categoriesPage mapping
 	@RequestMapping("/categoriesPage")
 	public String categoriesPage() {
 		return "categoriesPage";
 	}
-	
+
 	// categories page card wise
 	@RequestMapping("/categoriesPage/{id}")
-	public String categoriesPage(@PathVariable int id, Model model){
+	public String categoriesPage(@PathVariable int id, Model model) {
 		List<Card> cards = cardService.getCardByCategoryId(id);
 		model.addAttribute("cards", cards);
 		return "categoriesPage";
 	}
-	
+
 	// CardDetail page mapping
 	@RequestMapping("/cardDetail/{id}")
-	public String cardDetail(@PathVariable int id,Model model) {
+	public String cardDetail(@PathVariable int id, Model model) {
 		Card cards = cardService.getCardById(id);
 		model.addAttribute("cards", cards);
 		return "cardDetail";
 	}
+
 	// bank wise categories
 	@RequestMapping("/categoriesPageBank/{id}")
-	public String categoriesPageBank(@PathVariable int id, Model model){
-		
+	public String categoriesPageBank(@PathVariable int id, Model model) {
+
 		List<Card> cards = cardService.getCardByBankBankid(id);
 		model.addAttribute("cards", cards);
 		return "categoriesPage";
 	}
-	
-	//contact page mapping
+
+	// contact page mapping
 	@RequestMapping("/submitContact")
 	public String submitContact(Contact contact) {
 		contactService.registerContact(contact);
 		return "redirect:/";
 	}
-	
-	//back mapping
+
+	// back mapping
 	@RequestMapping("/back")
 	public String back() {
 		return "redirect:/";
 	}
-	
+
 }

@@ -28,20 +28,18 @@ public class BalanceTransferController {
 	CardRepo cardRepo;
 	@Autowired
 	BalanceTransferRepo balanceTransferRepo;
-	
-	//reward&Benefits redirect page 
+
+	// reward&Benefits redirect page
 	@RequestMapping("/balanceTransfers/{cardid}")
-	public String rewardBenefits(@PathVariable("cardid") int cardid, Model model,HttpServletResponse response)
-	{
+	public String rewardBenefits(@PathVariable("cardid") int cardid, Model model, HttpServletResponse response) {
 		Card person = cardRepo.findById(cardid)
-	            .orElseThrow(() -> new IllegalArgumentException("Invalid person id: " + cardid));
-	        model.addAttribute("person", person);
+				.orElseThrow(() -> new IllegalArgumentException("Invalid person id: " + cardid));
+		model.addAttribute("person", person);
 		return "balanceTransfers";
 	}
-	
+
 	@RequestMapping("/balanceTransfersRegister")
-	public String balanceTransfersRegister(@RequestParam Card cardid,BalanceTransfers balanceTransfers,Model model) 
-	{
+	public String balanceTransfersRegister(@RequestParam Card cardid, BalanceTransfers balanceTransfers, Model model) {
 		balanceTransfers.setCard(cardid);
 //		model.addAttribute("cardid", cardid.get);
 		try {
@@ -51,33 +49,30 @@ public class BalanceTransferController {
 		}
 		return "redirect:teamDashboard1";
 	}
-	
-	// Reward Edit detail
-			@GetMapping("/balanceTransfer/edit/{id}")
-		    public String showEditForm(@PathVariable("id") int id, Model model) {
-		        BalanceTransfers person = balanceTransferRepo.findById(id)
-		            .orElseThrow(() -> new IllegalArgumentException("Invalid person id: " + id));
-		        model.addAttribute("person", person);
-		        return "balanceTransfersEditForm";
-		    }
 
-			@PostMapping("/balanceTransfer/update/{id}")
-			public String updatePerson(@ModelAttribute("person") BalanceTransfers person,@PathVariable("id") int id) {
-				BalanceTransfers person1=balanceTransferRepo.findById(id).orElseThrow();
-				person1.setIntrestFreePeriod(person.getIntrestFreePeriod());
-				person1.setPostBalanceTransfer(person.getPostBalanceTransfer());
-				person1.setZeroPercentBalanceTransfer(person.getZeroPercentBalanceTransfer());
-				person1.setEmiPayment(person.getEmiPayment());
-				person1.setPerpetualBalanceTransfer(person.getPerpetualBalanceTransfer());
-				person1.setTravel(person.getTravel());
-				person1.setDomesticLounge(person.getDomesticLounge());
-				person1.setInternationalLounge(person.getInternationalLounge());
-				person1.setFuels(person.getFuels());
-				balanceTransferRepo.save(person1);
-			  return "redirect:/teamDashboardDetails";
-			}
-	
-	
-	
-	
+	// Reward Edit detail
+	@GetMapping("/balanceTransfer/edit/{id}")
+	public String showEditForm(@PathVariable("id") int id, Model model) {
+		BalanceTransfers person = balanceTransferRepo.findById(id)
+				.orElseThrow(() -> new IllegalArgumentException("Invalid person id: " + id));
+		model.addAttribute("person", person);
+		return "balanceTransfersEditForm";
+	}
+
+	@PostMapping("/balanceTransfer/update/{id}")
+	public String updatePerson(@ModelAttribute("person") BalanceTransfers person, @PathVariable("id") int id) {
+		BalanceTransfers person1 = balanceTransferRepo.findById(id).orElseThrow();
+		person1.setIntrestFreePeriod(person.getIntrestFreePeriod());
+		person1.setPostBalanceTransfer(person.getPostBalanceTransfer());
+		person1.setZeroPercentBalanceTransfer(person.getZeroPercentBalanceTransfer());
+		person1.setEmiPayment(person.getEmiPayment());
+		person1.setPerpetualBalanceTransfer(person.getPerpetualBalanceTransfer());
+		person1.setTravel(person.getTravel());
+		person1.setDomesticLounge(person.getDomesticLounge());
+		person1.setInternationalLounge(person.getInternationalLounge());
+		person1.setFuels(person.getFuels());
+		balanceTransferRepo.save(person1);
+		return "redirect:/teamDashboardDetails";
+	}
+
 }

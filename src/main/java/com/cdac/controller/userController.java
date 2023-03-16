@@ -14,6 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import com.cdac.dao.FeesAndChargesRepo;
 import com.cdac.dao.UserRepo;
 import com.cdac.model.User;
+import com.cdac.service.EmailService;
 import com.cdac.service.UserService;
 
 @Controller
@@ -22,75 +23,65 @@ public class userController {
 	@Autowired
 	UserService userService;
 	@Autowired
-	FeesAndChargesRepo feesAndChargesRepo; 
+	FeesAndChargesRepo feesAndChargesRepo;
+	@Autowired
+	EmailService emailService;
 	
-//	@RequestMapping("/thy")
-//	public String thy() {
-//		return "thy";
-//	}
 	@RequestMapping("/home")
-	public String getHome()
-	{
+	public String getHome() {
 		return "redirect:/";
 	}
+
 	@RequestMapping("/register")
-	public String getRegister()
-	{
+	public String getRegister() {
 		return "register";
 	}
-	//user registration form
+
+	// user registration form
 	@RequestMapping("/userRegister")
-	public String userRegister()
-	{
+	public String userRegister() {
 		return "userRegister";
 	}
-	
+
 	// register detail in database
 	@RequestMapping("/userAddRegister")
-	public String getRegisterData(User user)
-	{
+	public String getRegisterData(User user) {
 		userService.registerData(user);
+		emailService.sendEmailRegisterUser(user);
 		return "redirect:/";
 	}
-	
+
 	// login dashboard
 	@RequestMapping("/login")
-	public String getLogin()
-	{
+	public String getLogin() {
 		return "login";
 	}
-	
-	
-	//View Card page
+
+	// View Card page
 	@RequestMapping("/viewCard")
-	public String viewCard(Model model)
-	{
-		model.addAttribute("feesAndCharges",feesAndChargesRepo.findAll());
+	public String viewCard(Model model) {
+		model.addAttribute("feesAndCharges", feesAndChargesRepo.findAll());
 		System.out.println(model);
 		return "ViewCard";
 	}
-	
-	//Contact page mapping
+
+	// Contact page mapping
 	@RequestMapping("/contact")
-	public String contactPage(Model model)
-	{
+	public String contactPage(Model model) {
 		return "contact";
 	}
-	
-	
-	
-	//about page mapping
+
+	// about page mapping
 	@RequestMapping("/about")
-	public String about()
-	{
+	public String about() {
 		return "about";
 	}
-	
-	//user page mapping
+
+	// user page mapping
 	@RequestMapping("/userLogin")
 	public String userLogin() {
 		return "userLogin";
 	}
 	
-	
+
 }

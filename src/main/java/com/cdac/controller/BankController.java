@@ -19,18 +19,16 @@ public class BankController {
 
 	@Autowired
 	BankService bankService;
-	
-	//addBank page mapping
+
+	// addBank page mapping
 	@RequestMapping("/addBank")
-	public String addBank()
-	{
+	public String addBank() {
 		return "addBank";
 	}
-	
-	//bank register page mapping to addCardDashboard
+
+	// bank register page mapping to addCardDashboard
 	@RequestMapping("/addBankRegister")
-	public String addCard(Bank bank, Model model)
-	{
+	public String addCard(Bank bank, Model model) {
 		bankService.addDataInBankTable(bank);
 		return "redirect:teamDashboard1";
 	}

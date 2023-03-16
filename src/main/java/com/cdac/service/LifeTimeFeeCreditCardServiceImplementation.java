@@ -7,7 +7,7 @@ import com.cdac.dao.LifeTimeFeeCreditCardRepo;
 import com.cdac.model.LifeTimeFeeCreditCard;
 
 @Service
-public class LifeTimeFeeCreditCardServiceImplementation implements LifeTimeFeeCreditCardService{
+public class LifeTimeFeeCreditCardServiceImplementation implements LifeTimeFeeCreditCardService {
 
 	@Autowired
 	LifeTimeFeeCreditCardRepo lifeTimeFeeCreditCardRepo;
@@ -15,6 +15,6 @@ public class LifeTimeFeeCreditCardServiceImplementation implements LifeTimeFeeCr
 	@Override
 	public void addDataRegister(LifeTimeFeeCreditCard lifeTimeFeeCreditCard) {
 		lifeTimeFeeCreditCardRepo.save(lifeTimeFeeCreditCard);
-		
+
 	}
 }

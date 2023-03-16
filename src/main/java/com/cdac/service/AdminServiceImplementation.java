@@ -10,7 +10,7 @@ import com.cdac.model.Admin;
 import com.cdac.model.Team;
 
 @Service
-public class AdminServiceImplementation implements AdminService{
+public class AdminServiceImplementation implements AdminService {
 
 	@Autowired
 	AdminRepo adminRepo;
@@ -23,32 +23,27 @@ public class AdminServiceImplementation implements AdminService{
 
 	@Override
 	public String login(String userId, String userPassword) {
-		Optional<Admin> id=adminRepo.findById(userId);
-		if(id.get().getUserPassword().equals(userPassword))
-		{
+		Optional<Admin> id = adminRepo.findById(userId);
+		if (id.get().getUserPassword().equals(userPassword)) {
 			return "LoginSuccessfully";
-		}
-		else
-		{
+		} else {
 			return "id or password mismatch";
 		}
-		
+
 	}
 
 	@Override
 	public Optional<Admin> validateLogin(String userId, String password) {
 		try {
-			Optional<Admin> admin= adminRepo.findById(userId);
-			if(admin.get().getUserId().equals(userId))
-			{
-				if(admin.get().getUserPassword().equals(password))
-				{
+			Optional<Admin> admin = adminRepo.findById(userId);
+			if (admin.get().getUserId().equals(userId)) {
+				if (admin.get().getUserPassword().equals(password)) {
 					return admin;
 				}
 				return null;
 			}
 		} catch (Exception e) {
-			
+
 		}
 		return null;
 	}
