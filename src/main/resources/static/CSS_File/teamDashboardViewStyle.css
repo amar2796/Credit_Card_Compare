@@ -13,7 +13,13 @@ header {
 	align-items: center;
 	justify-content: space-between;
 }
-
+.headerTag{
+	color: white;
+	text-decoration: none;
+}
+.headerTag:hover{
+	color: #e5e5e5;
+}
 nav ul {
 	list-style: none;
 	margin: 0;
@@ -88,4 +94,13 @@ th {
 }
 a:hover {
 	color:red;
+}
+footer{
+	text-align: center;
+	background-color: rgb(8 37 85);
+	color: white;
+	height: 50px;
+}
+footer p{
+	padding-top: 15px;
 }

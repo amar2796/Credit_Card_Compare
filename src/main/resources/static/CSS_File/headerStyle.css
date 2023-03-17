@@ -16,8 +16,13 @@ nav {
   text-decoration: none;
   font-size: 18px;
 }
-.menu a:hover {
+.headerMenu:hover {
   box-shadow: 2px 5px 5px 2px rgba(0,0,0,0.4);
+  color: blue;
+  transition-duration:1s;
+}
+.dropdown-content a:hover{
+	box-shadow: 2px 5px 5px 2px rgba(0,0,0,0.4);
   color: blue;
   transition-duration:1s;
 }
@@ -81,4 +86,20 @@ li a:hover, .dropdown:hover .dropbtn{
 
 .dropdown:hover .dropdown-content {
   display: block;
+}
+.facebook{
+	width:24px;
+	cursor:pointer;
+	margin-left:14rem;
+	font-size: 18px;
+}
+.twitter{
+	cursor: pointer;
+	margin-left:-25px;
+	font-size: 18px;
+}
+.media li:hover{
+	transform:scale(1.1);
+	color: rgb(51, 30, 235);;
+	transition-duration:1s;
 }

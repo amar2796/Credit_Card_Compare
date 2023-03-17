@@ -1,0 +1,105 @@
+nav {
+    background-color: #333;
+    color: white;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  ul {
+    list-style: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  li {
+    margin-right: 20px;
+  }
+  
+  a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+ 
+  
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+  }
+  .logo h1{
+  	padding-left:10rem; 
+  	margin-top: 0;
+  }
+ 
+  img {
+    width: 200px;
+    margin-bottom: 20px;
+  }
+  
+  .secondLine {
+    line-height: 1.5;
+    text-align:left;
+    margin-bottom: 20px;
+  }
+  .logo{
+  display: flex;
+  }
+  .firstHeading{
+  	font-size: 48px;
+  	font-weight: bold;
+  }
+  .firstHeading:hover {
+  	text-shadow: 2px 2px 4px #000000;
+}
+.profileHeading p{
+	font-weight: bold;
+	text-align: center;
+	font-size: 30px;
+}
+.cardMain{
+	text-align:center;
+	display: flex;
+	height: auto;
+	margin-left: 120px;
+}
+.card1{
+	justify-content:center;
+	margin-right:20px;
+	width: 250px;
+	border: 2px ridge #b9b9b9;
+	height: 300px;
+	margin-bottom: 100px;
+	border-radius: 5px;
+}
+.card1:hover {
+	box-shadow: 0 5px 20px 0 rgba(31, 32, 32, 0.57);
+}
+.card1Img{
+	opacity:0.8;
+	box-shadow: 0 1px 8px 0 rgba(31, 32, 32, 0.57);
+	margin-top:15px;
+	border:2px ridge #b9b9b9;
+	border-radius: 50%;
+	width: 180px;
+	height: 180px;
+}
+.card1:hover .card1Img {
+	opacity:1;
+	box-shadow: 0 0px 0px 0 rgba(31, 32, 32, 0.57);
+}
+.name{
+	color:#001d4c!important;
+	margin-top:-5px;
+	font-weight: bold;
+	font-size: 20px;
+}
+.card1 p{
+	margin:3px;
+	font-weight: bold;
+}
+
