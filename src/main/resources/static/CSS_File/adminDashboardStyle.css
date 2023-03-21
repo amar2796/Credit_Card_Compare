@@ -94,3 +94,10 @@ th {
 	width: 50%;
 	height: auto;
 }
+.userIdFirst{
+	text-align: right;
+}
+.userId{
+	color: blue;
+	font-weight: bold;
+}

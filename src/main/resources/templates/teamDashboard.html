@@ -11,11 +11,13 @@
 		<a class="headerTag" href="/teamDashboard1"><h1>Team Dashboard</h1></a>
 		<nav>
 			<ul>
-				<li><a href="/logout">Logout</a></li>
+				<li><a href="/logoutTeam">Logout</a></li></div> 
 			</ul>
 		</nav>
 	</header>
 	<main>
+	<span class="userIdFirst">Hi <span class="userId" th:text="${session.userName}"></span><span>, Welcome back!</span></span>
+	
 		<section class="overview">
 		<div class="firstSection">
 			<div class="card">

@@ -10,11 +10,13 @@
 		<nav>
 			<ul>
 				
-				<li><a href="/logout">Logout</a></li>
+				<li><a href="/logoutAdmin">Logout</a></li>
 			</ul>
 		</nav>
 	</header>
 	<main>
+	<span class="userIdFirst">Hi <span class="userId" th:text="${session.adminName}"></span></span><span>, Welcome back!</span>
+	
 		<div class="first">
 			<div class="second">
 				<section class="overview">

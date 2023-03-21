@@ -116,3 +116,10 @@ footer{
 footer p{
 	padding-top: 15px;
 }
+.userIdFirst{
+	margin-left: 980px;
+}
+.userId{
+	color: blue;
+	font-weight: bold;
+}

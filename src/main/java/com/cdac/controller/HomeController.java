@@ -1,6 +1,7 @@
 package com.cdac.controller;
 
 import java.util.List;
+import java.util.Random;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -30,12 +31,24 @@ public class HomeController {
 
 	@RequestMapping("/")
 	public String showAllCards(Model model) {
-		model.addAttribute("firstCard", cardService.getFirstCard(1));
-		model.addAttribute("secondCard", cardService.getFirstCard(2));
-		model.addAttribute("thirdCard", cardService.getFirstCard(7));
-		model.addAttribute("forthCard", cardService.getFirstCard(9));
-		model.addAttribute("fiveCard", cardService.getFirstCard(8));
-		model.addAttribute("sixCard", cardService.getFirstCard(52));
+		
+		Random random = new Random();
+        int min = 52; // minimum 4-digit number
+        int max = 114; // maximum 4-digit number
+        
+        int randomNumber1 = random.nextInt(max - min + 1) + min;
+        int randomNumber2 = random.nextInt(max - min + 1) + min;
+        int randomNumber3 = random.nextInt(max - min + 1) + min;
+        int randomNumber4 = random.nextInt(max - min + 1) + min;
+        int randomNumber5 = random.nextInt(max - min + 1) + min;
+        int randomNumber6 = random.nextInt(max - min + 1) + min;
+        
+		model.addAttribute("firstCard", cardService.getFirstCard(randomNumber1));
+		model.addAttribute("secondCard", cardService.getFirstCard(randomNumber2));
+		model.addAttribute("thirdCard", cardService.getFirstCard(randomNumber3));
+		model.addAttribute("forthCard", cardService.getFirstCard(randomNumber4));
+		model.addAttribute("fiveCard", cardService.getFirstCard(randomNumber5));
+		model.addAttribute("sixCard", cardService.getFirstCard(randomNumber6));
 		return "home";
 	}
 
@@ -82,5 +95,6 @@ public class HomeController {
 	public String back() {
 		return "redirect:/";
 	}
-
+	
+	
 }

@@ -33,6 +33,9 @@ import com.cdac.service.FeesAndChargesService;
 import com.cdac.service.RewardBenefitsService;
 import com.cdac.service.TeamService;
 
+import jakarta.mail.Session;
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 
 public class TeamController {
@@ -79,7 +82,7 @@ public class TeamController {
 
 	// validate login data
 	@GetMapping("/teamLoginValidate")
-	public String teamLoginValidate(@RequestParam String userId, @RequestParam String password, Model model) {
+	public String teamLoginValidate(@RequestParam String userId, @RequestParam String password, Model model,HttpSession teamSession) {
 		Team team = teamService.validateLogin(userId, password);
 		if (team == null) {
 			model.addAttribute("error", "* Please check Id, Password and Try again!");
@@ -88,7 +91,8 @@ public class TeamController {
 			model.addAttribute("error", "* Your id is under Processing");
 			return "teamLogin";
 		} else {
-
+			teamSession.setAttribute("userName", team.getFullName());
+			teamSession.setMaxInactiveInterval(60);  //1 hour expire session 
 			return "redirect:/teamDashboard1";
 		}
 	}
@@ -118,13 +122,22 @@ public class TeamController {
 
 	// home page divert
 	@RequestMapping("/teamDashboard1")
-	public String teamDashboard(Model model) {
-		List<Bank> banks = bankService.getApprovedBanks();
-		model.addAttribute("bank", bankService.getApprovedBanks(true));
-		model.addAttribute("card", cardService.getCardsByStatus(true));
-		model.addAttribute("bankStatus", bankService.getApprovedBanks(false));
-		model.addAttribute("cardStatus", cardService.getCardsByStatus(false));
-		return "teamDashboard";
+	public String teamDashboard(Model model, HttpSession teamSession) {
+		
+		if(teamSession.getAttribute("userName")==null)
+		{
+			model.addAttribute("error", "* Please login first!");
+			return "teamLogin";
+		}
+		
+		else {
+			List<Bank> banks = bankService.getApprovedBanks();
+			model.addAttribute("bank", bankService.getApprovedBanks(true));
+			model.addAttribute("card", cardService.getCardsByStatus(true));
+			model.addAttribute("bankStatus", bankService.getApprovedBanks(false));
+			model.addAttribute("cardStatus", cardService.getCardsByStatus(false));
+			return "teamDashboard";
+		}
 	}
 
 	// view add dashboard details
@@ -139,11 +152,14 @@ public class TeamController {
 	// back button to back to team dashboard
 	@RequestMapping("/backTeamDashboard")
 	public String backTeamDashboard() {
+		
 		return "redirect:teamDashboard1";
 	}
 
-	@RequestMapping("/logout")
-	public String logout() {
+	@RequestMapping("/logoutTeam")
+	public String logout(HttpSession teamSession) {
+		
+		teamSession.removeAttribute("userName");
 		return "redirect:/";
 	}
 	

@@ -28,6 +28,9 @@ import com.cdac.service.EmailService;
 import com.cdac.service.TeamService;
 import com.cdac.service.UserService;
 
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 @Controller
 public class AdminController {
 
@@ -62,25 +65,37 @@ public class AdminController {
 
 	// validate login data
 	@GetMapping("/adminLoginValidate")
-	public String adminLoginValidate(@RequestParam String userId, @RequestParam String password, Model model) {
+	public String adminLoginValidate(@RequestParam String userId, @RequestParam String password, Model model,
+			HttpSession adminSession, HttpServletResponse response) {
 		Optional<Admin> team = adminService.validateLogin(userId, password);
 		if (team == null) {
 			model.addAttribute("error", "* Please check Id, Password and Try again!");
 			return "adminLogin";
 		} else {
+			
+			adminSession.setAttribute("adminName", team.get().getFullName());
 			return "redirect:/adminDashboardControl";
 		}
 	}
 
 	// admin dashboard controller
 	@RequestMapping("/adminDashboardControl")
-	public String adminDashboardControl(Model model) {
-		model.addAttribute("bank", bankService.getApprovedBanks(false));
-		model.addAttribute("card", cardService.getCardsByStatus(false));
-		model.addAttribute("contacts", contactService.findAllDetails());
-		model.addAttribute("teamPending", teamService.getApprovedTeams(false));
-		model.addAttribute("teamAccept", teamService.getApprovedTeams(true));
-		return "adminDashboard";
+	public String adminDashboardControl(Model model, HttpSession adminSession) {
+		if(adminSession.getAttribute("adminName")==null)
+		{
+			model.addAttribute("error", "* Please login first!");
+			return "adminLogin";
+		}
+		
+		else {
+		
+			model.addAttribute("bank", bankService.getApprovedBanks(false));
+			model.addAttribute("card", cardService.getCardsByStatus(false));
+			model.addAttribute("contacts", contactService.findAllDetails());
+			model.addAttribute("teamPending", teamService.getApprovedTeams(false));
+			model.addAttribute("teamAccept", teamService.getApprovedTeams(true));
+			return "adminDashboard";
+		}
 	}
 
 	// Accept Bank
@@ -141,5 +156,12 @@ public class AdminController {
 		return list;
 	}
 	
+	//logout admin
+	@RequestMapping("/logoutAdmin")
+	public String logout(HttpSession adminSession) {
+		
+		adminSession.removeAttribute("adminName");
+		return "redirect:/";
+	}
 
 }
