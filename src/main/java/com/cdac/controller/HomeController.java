@@ -33,8 +33,8 @@ public class HomeController {
 	public String showAllCards(Model model) {
 		
 		Random random = new Random();
-        int min = 52; // minimum 4-digit number
-        int max = 114; // maximum 4-digit number
+        int min = 59; // minimum 2-digit number
+        int max = 108; // maximum 3-digit number
         
         int randomNumber1 = random.nextInt(max - min + 1) + min;
         int randomNumber2 = random.nextInt(max - min + 1) + min;

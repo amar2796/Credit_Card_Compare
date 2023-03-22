@@ -50,10 +50,10 @@ public class AdminController {
 
 	@Autowired
 	TeamService teamService;
-	
+
 	@Autowired
 	EmailService emailService;
-	
+
 	@Autowired
 	UserService userService;
 
@@ -72,7 +72,7 @@ public class AdminController {
 			model.addAttribute("error", "* Please check Id, Password and Try again!");
 			return "adminLogin";
 		} else {
-			
+
 			adminSession.setAttribute("adminName", team.get().getFullName());
 			return "redirect:/adminDashboardControl";
 		}
@@ -81,14 +81,13 @@ public class AdminController {
 	// admin dashboard controller
 	@RequestMapping("/adminDashboardControl")
 	public String adminDashboardControl(Model model, HttpSession adminSession) {
-		if(adminSession.getAttribute("adminName")==null)
-		{
+		if (adminSession.getAttribute("adminName") == null) {
 			model.addAttribute("error", "* Please login first!");
 			return "adminLogin";
 		}
-		
+
 		else {
-		
+
 			model.addAttribute("bank", bankService.getApprovedBanks(false));
 			model.addAttribute("card", cardService.getCardsByStatus(false));
 			model.addAttribute("contacts", contactService.findAllDetails());
@@ -113,18 +112,17 @@ public class AdminController {
 		Card card = cardService.getCard(id).get();
 		card.setIsApproved(true);
 		cardService.saveCard(card);
-		
-		//send email all user to notify add a card
-		
-		List<User> user=userService.findAllUserEmail();
+
+		// send email all user to notify add a card
+
+		List<User> user = userService.findAllUserEmail();
 		List<String> list = new ArrayList<String>();
-		for(User name:user) {
-			 list.add(name.getEmail());
+		for (User name : user) {
+			list.add(name.getEmail());
 		}
-		String[] UserList= list.toArray(new String[list.size()]);
-		emailService.sendEmailAllUser(UserList,card);
-		
-		
+		String[] UserList = list.toArray(new String[list.size()]);
+		emailService.sendEmailAllUser(UserList, card);
+
 		return "redirect:/adminDashboardControl";
 	}
 
@@ -144,22 +142,20 @@ public class AdminController {
 		teamService.deleteById(id);
 		return "redirect:/adminDashboardControl";
 	}
-	
 
-	
 	public List<String> UserList() {
-		List<User> user=userService.findAllUserEmail();
+		List<User> user = userService.findAllUserEmail();
 		List<String> list = new ArrayList<String>();
-		for(User name:user) {
-			 list.add(name.getEmail());
+		for (User name : user) {
+			list.add(name.getEmail());
 		}
 		return list;
 	}
-	
-	//logout admin
+
+	// logout admin
 	@RequestMapping("/logoutAdmin")
 	public String logout(HttpSession adminSession) {
-		
+
 		adminSession.removeAttribute("adminName");
 		return "redirect:/";
 	}

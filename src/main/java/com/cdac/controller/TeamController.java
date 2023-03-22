@@ -56,7 +56,7 @@ public class TeamController {
 
 	@Autowired
 	BankService bankService;
-	
+
 	@Autowired
 	EmailService emailService;
 
@@ -82,7 +82,8 @@ public class TeamController {
 
 	// validate login data
 	@GetMapping("/teamLoginValidate")
-	public String teamLoginValidate(@RequestParam String userId, @RequestParam String password, Model model,HttpSession teamSession) {
+	public String teamLoginValidate(@RequestParam String userId, @RequestParam String password, Model model,
+			HttpSession teamSession) {
 		Team team = teamService.validateLogin(userId, password);
 		if (team == null) {
 			model.addAttribute("error", "* Please check Id, Password and Try again!");
@@ -92,7 +93,7 @@ public class TeamController {
 			return "teamLogin";
 		} else {
 			teamSession.setAttribute("userName", team.getFullName());
-			teamSession.setMaxInactiveInterval(60);  //1 hour expire session 
+			teamSession.setMaxInactiveInterval(60); // 1 hour expire session
 			return "redirect:/teamDashboard1";
 		}
 	}
@@ -123,13 +124,12 @@ public class TeamController {
 	// home page divert
 	@RequestMapping("/teamDashboard1")
 	public String teamDashboard(Model model, HttpSession teamSession) {
-		
-		if(teamSession.getAttribute("userName")==null)
-		{
+
+		if (teamSession.getAttribute("userName") == null) {
 			model.addAttribute("error", "* Please login first!");
 			return "teamLogin";
 		}
-		
+
 		else {
 			List<Bank> banks = bankService.getApprovedBanks();
 			model.addAttribute("bank", bankService.getApprovedBanks(true));
@@ -152,15 +152,15 @@ public class TeamController {
 	// back button to back to team dashboard
 	@RequestMapping("/backTeamDashboard")
 	public String backTeamDashboard() {
-		
+
 		return "redirect:teamDashboard1";
 	}
 
 	@RequestMapping("/logoutTeam")
 	public String logout(HttpSession teamSession) {
-		
+
 		teamSession.removeAttribute("userName");
 		return "redirect:/";
 	}
-	
+
 }
